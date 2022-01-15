@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { data } from '../data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'audiophile-e-commerce';
+
 }
+
+const type = 'promotions';
+
+
+const products: Array<Object> = data[type];
+console.log(products);
