@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,6 +22,11 @@ import { CheckoutSummaryListComponent } from './components/checkout-summary-list
 import { CheckoutSummaryItemComponent } from './components/checkout-summary-item/checkout-summary-item.component';
 import { CheckoutModalComponent } from './components/checkout-modal/checkout-modal.component';
 import { ToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
+import { SectionHomeComponent } from './components/section-home/section-home.component';
+import { SectionCategoryComponent } from './components/section-category/section-category.component';
+import { SectionProductsComponent } from './components/section-products/section-products.component';
+import { SectionCheckoutComponent } from './components/section-checkout/section-checkout.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,12 @@ import { ToggleMenuComponent } from './components/toggle-menu/toggle-menu.compon
     CheckoutSummaryListComponent,
     CheckoutSummaryItemComponent,
     CheckoutModalComponent,
-    ToggleMenuComponent
+    ToggleMenuComponent,
+    SectionHomeComponent,
+    SectionCategoryComponent,
+    SectionProductsComponent,
+    SectionCheckoutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
