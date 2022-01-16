@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-section-home',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class SectionHomeComponent implements OnInit {
 
   constructor() { }
+
+  newProduct: any = data.products.find(d => 
+    d.id === data.newProduct  
+  );
 
   ngOnInit(): void {
   }

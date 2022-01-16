@@ -1,0 +1,19 @@
+/* Flexbox container styling */
+
+.f {
+    display: flex;
+
+    &-sb {
+        justify-content: space-between;
+    }
+
+    &-sb-column {
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+}
+

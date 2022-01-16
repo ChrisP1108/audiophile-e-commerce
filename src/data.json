@@ -525,17 +525,17 @@
     {
       "id": 1,
       "category": "headphones",
-      "product": [4, 3, 2]
+      "products": [4, 3, 2]
     },
     {
       "id": 2,
       "category": "speakers",
-      "product": [6, 5]
+      "products": [6, 5]
     },
     {
       "id": 3,
       "category": "earphones",
-      "product": [1]
+      "products": [1]
     }
   ],
   "newProduct": 4,

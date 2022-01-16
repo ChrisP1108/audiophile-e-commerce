@@ -16,12 +16,10 @@ const productsRoutes: Routes = data.products.map(p => {
 
 const routes: Routes = [
   { path: '', component: SectionHomeComponent },
-  ...categoryRoutes, ...productsRoutes,
   { path: 'checkout', component: SectionCheckoutComponent },
+  ...categoryRoutes, ...productsRoutes,
   { path: '**', component: SectionHomeComponent }
 ];
-
-console.log(routes);
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-section-category',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionCategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  category: any = data.categories.find((d: any) => 
+    this.router.url.includes(d.category)
+  );
+
+  products: any = this.category.products.map((d: number) => 
+    data.products.find((p: any) => p.id === d)
+  );
+
+
+  // categoryData: any = data.
 
   ngOnInit(): void {
+    console.log(this.category)
+    console.log(this.products)
   }
+
+
 
 }
