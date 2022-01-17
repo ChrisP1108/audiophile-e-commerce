@@ -1,5 +1,5 @@
 :root { /* Default Body styling */
-    color: $black;
+    color: var(--black);
 }
 
 h1 {
@@ -63,7 +63,7 @@ p {
     letter-spacing: 0.625rem;
     text-transform: uppercase;
     margin: 0;
-    color: $a;
+    color: var(--a);
 }
 
 .subtitle-text {
@@ -72,6 +72,6 @@ p {
     letter-spacing: 0.0625rem;
     text-transform: uppercase;
     margin: 0;
-    color: $a;
+    color: var(--a);
     font-weight: 700;
 }

@@ -23,8 +23,6 @@ export class SectionCategoryComponent implements OnInit {
   // categoryData: any = data.
 
   ngOnInit(): void {
-    console.log(this.category)
-    console.log(this.products)
   }
 
 

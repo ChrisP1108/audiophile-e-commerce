@@ -1,16 +1,10 @@
-<h1>morbi interdum mollis sapien</h1>
-<h2>donec nec justo eget felis facilisis</h2>
-<h3>nunc sem lacus accum</h3>
-<h4>interdum consectetuer</h4>
-<h5>nascetur ridiculus mus</h5>
-<h6>natoque penatibus et</h6>
-<button class="btn-1">see product</button>
-<button class="btn-2">see product</button>
-<div class="overline-text">lorem ipsum</div>
-<div class="subtitle-text">fusce ut est sed dolor gravida convallis</div>
-<app-header></app-header>
+<div class="app-container">
+    <div class="app-boxed">
+        <app-header></app-header>
 
-    <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
 
-<app-bottom-headline *ngIf="routeNot('/checkout')"></app-bottom-headline>
-<app-footer></app-footer>
+        <app-bottom-headline *ngIf="routeNot('/checkout')"></app-bottom-headline>
+        <app-footer></app-footer>
+    </div>
+</div>

@@ -19,20 +19,20 @@ button:hover {
 
 .btn {
     &-1 {
-        background: $a;
-        color: $white;
+        background: var(--a);
+        color: var(--white);
         text-transform: uppercase;
     }
     &-1:hover {
-        background: $e;
+        background: var(--e);
     }
     &-2 {
-        background: $white;
-        color: $black;
-        border: 0.0625rem $black solid;
+        background: var(--white);
+        color: var(--black);
+        border: 0.0625rem var(--black) solid;
     }
     &-2:hover {
-        background: $black;
-        color: white;
+        background: var(--black);
+        color: var(--white);
     }
 }

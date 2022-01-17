@@ -4,16 +4,30 @@
     display: flex;
 
     &-sb {
+        display: flex;
         justify-content: space-between;
     }
 
     &-sb-column {
+        display: flex;
         justify-content: space-between;
         flex-direction: column;
     }
 
     &-column {
+        display: flex;
         flex-direction: column;
     }
+
+    &-jc {
+        display: flex;
+        justify-content: center;
+    }
+    &-ac-column {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
 }
 
