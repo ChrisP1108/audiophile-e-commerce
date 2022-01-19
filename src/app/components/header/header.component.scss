@@ -1,5 +1,44 @@
+$tablet: 768px;
+
 .header-container {
     background: var(--black);
-    color: var(--white);
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: 5.6875rem;
+    border-bottom: 0.0625rem var(--border-trans) solid;
+
+    @media(min-width: $tablet) {
+        border-bottom: 0.0625rem var(--black) solid;
+    }
+}
+
+.header-boxed {
+    max-width: var(--box-max);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--white);
+    padding: 0 var(--boxed-padding) 0;
+
+    @media(min-width: $tablet) {
+        justify-content: flex-start;
+    }
+}
+
+img {
+    cursor: pointer;
+}
+
+.img-logo {
+    @media(min-width: $tablet) {
+        margin-left: 2.5rem;
+    }
+}
+
+.img-cart {
+    @media(min-width: $tablet) {
+        margin-left: auto;
+    }
 }

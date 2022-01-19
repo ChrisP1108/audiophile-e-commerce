@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import '../styles.scss';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,6 @@ export class AppComponent {
   }
 
   routeNot(url: string): boolean {
-    return this.router.url !== url
+    return this.router.url !== url;
   }
 }

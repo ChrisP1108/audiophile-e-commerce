@@ -1,5 +1,9 @@
 <div class="header-container">
-    <p>Test</p>
-    <p>Test2</p>
-
+    <div class="header-boxed">
+        <img (click)="menuToggler()" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+        <img (click)="reload()" class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
+        <img (click)="cartToggler()" class="img-cart" src="/assets/shared/desktop/icon-cart.svg" alt="cart">
+    </div>
 </div>
+<app-toggle-menu class="mobile-only" *ngIf="menuToggled"></app-toggle-menu>
+<app-cart-modal-list *ngIf="cartToggled"></app-cart-modal-list>

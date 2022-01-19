@@ -1,0 +1,13 @@
+:root {
+    --box-max: 100rem;
+    --boxed-padding: 1.5rem;
+    --tablet: 768px!important;
+}
+
+$tablet : 768px;
+
+.mobile-only {
+    @media(min-width: $tablet) {
+        display: none;
+    }
+}

@@ -1,12 +1,14 @@
 /* Files imported from global-styles folder*/
 
+@import 'global-styles/responsive';
 @import 'global-styles/fonts';
 @import 'global-styles/colors';
 @import 'global-styles/buttons';
-@import 'global-styles/responsive';
 @import 'global-styles/texts';
 @import 'global-styles/containers';
 
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }

@@ -1,11 +1,16 @@
 .app-container {
-
-}
-
-.app-boxed {
-    max-width: 100rem;
+    width: 100vw;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.app-boxed {
+    max-width: var(--box-max);
+    display: flex;
     width: 100%;
+    align-items: center;
+    flex-direction: column;
+    background: var(--black);
+    padding: 0 var(--boxed-padding) 0;
 }
