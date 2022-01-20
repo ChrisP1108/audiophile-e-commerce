@@ -1,0 +1,30 @@
+$tablet : 768px;
+$desktop: 1024px;
+
+:root {
+    --box-max: 69.375rem;
+    --boxed-padding: 1.5rem;
+    --tablet: 768px!important;
+
+    @media(min-width: $tablet) {
+        --boxed-padding: 2.4375rem;
+    }
+}
+
+.mobile-only {
+    @media(min-width: $tablet) {
+        display: none;
+    }
+}
+
+.tablet-only {
+    @media(max-width: $tablet) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @media(max-width: $desktop) {
+        display: none;
+    }
+}

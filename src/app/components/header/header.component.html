@@ -1,5 +1,11 @@
 <div class="header-container">
-    <p>Test</p>
-    <p>Test2</p>
-
+    <div class="header-boxed">
+        <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+        <img (click)="reload()" class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
+        <div class="nav-links subtitle-text">
+            <a routerLink="/">home</a>
+            <a *ngFor="let category of categories" routerLink="/category/{{category}}">{{category}}</a>
+        </div>
+        <img (click)="cartToggler()" class="img-cart" src="/assets/shared/desktop/icon-cart.svg" alt="cart">
+    </div>
 </div>
