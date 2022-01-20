@@ -1,7 +1,14 @@
 <div class="app-container">  
-    <app-header></app-header>
+    <!-- Grayout Overlay When Mobile Menu Or Cart Is Toggled -->
+    <div class="modal-overlay" (click)="overlayClick()" *ngIf="menuToggled || cartToggled"></div>
+    
     <div class="app-boxed">
+        <app-header (menuToggle)="toggleMenu()" (cartToggle)="toggleCart()"></app-header>
+        <app-toggle-menu class="mobile-only" *ngIf="menuToggled"></app-toggle-menu>
+        <app-cart-modal-list *ngIf="cartToggled"></app-cart-modal-list>
+        
         <router-outlet></router-outlet>
+        
         <app-bottom-headline *ngIf="routeNot('/checkout')"></app-bottom-headline>
     </div>
     <app-footer></app-footer>

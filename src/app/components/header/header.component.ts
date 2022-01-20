@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-header',
@@ -9,21 +10,17 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  menuToggled: boolean = false;
-  cartToggled: boolean = false;
+  @Output() menuToggle: EventEmitter<boolean> = new EventEmitter();
+  @Output() cartToggle: EventEmitter<boolean> = new EventEmitter();
+
+  categories: Array<string> = data.categories.map(c => c.category);
 
   menuToggler(): void {
-    if (this.cartToggled) {
-      this.cartToggled = false;
-    }
-    this.menuToggled = !this.menuToggled;
+    this.menuToggle.emit();
   }
 
   cartToggler(): void {
-    if (this.menuToggled) {
-      this.menuToggled = false;
-    }
-    this.cartToggled = !this.cartToggled;
+    this.cartToggle.emit();
   }
 
   reload(): void {
@@ -31,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log(this.categories)
   }
 
 }
