@@ -6,7 +6,7 @@ $desktop: 1024px;
     width: 100vw;
     display: flex;
     justify-content: center;
-    height: 5.6875rem;
+    height: 5.625rem;
 }
 
 .header-boxed {
@@ -24,10 +24,12 @@ $desktop: 1024px;
         justify-content: flex-start;
     }
     @media(min-width: $desktop) {
-        border-bottom: 0.0625rem var(--border-trans) solid;
+        height: 6rem!important;
+        border-bottom: 0.4375rem var(--border-trans) solid;
         justify-content: space-between;
         padding: 0;
         margin: 0 2.4375rem 0;
+        
     }
 }
 

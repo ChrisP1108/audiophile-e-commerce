@@ -1,0 +1,16 @@
+.new-product-container {
+    height: 135vw;
+    width: 100vw;
+    background: url('/assets/home/mobile/image-header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    // @media(min-width: 500px) {
+    //     background: url('/assets/home/tablet/image-header.jpg');
+    //     background-size: cover;
+    //     background-repeat: no-repeat;
+    //     height: 130vw;
+    //     background-position: 50% -12vw;
+    // }
+}
