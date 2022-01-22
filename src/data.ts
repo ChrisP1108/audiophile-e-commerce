@@ -538,11 +538,15 @@ export const data = {
       "products": [1]
     }
   ],
-  "newProduct": 4,
+  "newProduct": {
+    id: 4,
+    headline: "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
+  },
   "shoppingItems": {
     "headphones": 3,
     "speakers": 6,
     "earphones": 1 
   },
-  "promotions": [6, 5, 1]
+  "promotions": [6, 5, 1],
+  "buttonTexts": ["See Product", "Add To Cart", "Checkout", "Continue & Pay", "Back To Home"]
 }

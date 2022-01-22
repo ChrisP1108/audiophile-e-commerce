@@ -28,5 +28,11 @@
         align-items: center;
         flex-direction: column;
     }
+    &-ac-jc-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
 }

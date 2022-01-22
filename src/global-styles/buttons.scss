@@ -10,11 +10,10 @@ button {
     border: 0;
     height: 3rem;
     width: 10rem;
-    transition: 0.5s;
-}
 
-button:hover {
-    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .btn {

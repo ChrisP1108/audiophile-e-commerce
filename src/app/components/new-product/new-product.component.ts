@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-product',
@@ -7,12 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NewProductComponent implements OnInit {
 
-  @Input() newProduct: any;
+  @Input() newProductData: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    console.log(this.newProduct)
-  }
+  ngOnInit(): void {}
 
 }
