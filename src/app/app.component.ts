@@ -14,11 +14,20 @@ export class AppComponent {
   menuToggled: boolean = false;
   cartToggled: boolean = false;
 
+  yScrollHide(toggle: boolean): void {
+    if (toggle) {
+      document.body.style.overflowY = 'clip';
+    } else {
+      document.body.style.overflowY = 'visible';
+    }
+  }
+
   toggleMenu(): void {
     if (this.cartToggled) {
       this.cartToggled = false;
     }
     this.menuToggled = !this.menuToggled;
+    this.yScrollHide(this.menuToggled);
   }
 
   toggleCart(): void {
@@ -26,11 +35,13 @@ export class AppComponent {
       this.menuToggled = false;
     }
     this.cartToggled = !this.cartToggled;
+    this.yScrollHide(this.cartToggled);
   }
 
-  overlayClick(): void {
+  checkoutOverlayClick(): void {
     this.cartToggled = false;
     this.menuToggled = false;
+    this.yScrollHide(false);
   }
 
   routeNot(url: string): boolean {

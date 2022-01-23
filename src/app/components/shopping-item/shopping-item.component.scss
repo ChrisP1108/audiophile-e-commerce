@@ -21,6 +21,7 @@ $extended: 1200px;
     @media(min-width: $desktop) {
         width: 28vw;
         max-width: 20rem;
+        height: 12.75rem;
     }
 
     @media(min-width: $extended) {
@@ -42,11 +43,23 @@ img {
     height: 8.75rem;
     position: absolute;
     transform: translateY(-38%);
-    z-index: 10;
+    z-index: 9;
+
+    @media(min-width: $desktop) {
+        height: 13.4575rem!important;
+        transform: translateY(-36%);
+    }
 }
+
 
 p {
     font-weight: 800;
     letter-spacing: 0.0669rem;
     margin-top: 5.375rem;
+
+    @media(min-width: $desktop) {
+        font-size: 1.125rem;
+        letter-spacing: 0.0806rem;
+        margin-top: 7.5rem;
+    }
 }

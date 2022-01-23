@@ -30,25 +30,42 @@ $margin: 0;
     justify-content: center;
 }
 .new-product-boxed-background {
+    margin-top: var(--header-height)!important;
     max-width: var(--box-max);
     height: $height;
     width: 100%;
     filter: contrast(1.25);
     background: url('/assets/home/mobile/image-header.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0% 100%;
+    background-size: contain;
+    background-position: 0% 0%;
+    background-attachment: fixed;
     display: flex;
     padding: $padding;
+
+    @media(min-width: 575px) {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0% 0%;
+        background-attachment: fixed;
+    }
 
     @media(min-width: $tablet) {
         background: url('/assets/home/tablet/image-header.jpg');
         height: 83.205vw;
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 0% -10%;
+        background-size: contain;
+        background-position: 0% 0%;
+        background-attachment: fixed;
         margin: 0 2.4375rem 0;
         padding: 0 18vw 0;
+    }
+
+    @media(min-width: 960px) {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0% 0%;
+        background-attachment: fixed;
     }
 
     @media(min-width: $desktop) {
@@ -57,19 +74,25 @@ $margin: 0;
         max-height: 39.5rem;
         max-width: var(--box-max);
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 0% -2.5rem;
+        background-size: auto;
+        background-position: 55% -1vw;
+        background-attachment: fixed;
         margin: 0;
-        padding: 0 38.5rem 0 2.4375rem;
+        padding: 0 37rem 0 2.4375rem;
     }
 
     @media(min-width: $extended) {
         padding: 0 38rem 0 0;
         height: 39.4375rem;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 50% 0%;
+        background-attachment: fixed;
     }
 }
 
 .new-product-boxed-content {
+    margin-top: var(--header-height)!important;
     max-width: var(--box-max);
     background: transparent;
     position: absolute;
@@ -89,7 +112,7 @@ $margin: 0;
         max-height: 39.5rem;
         max-width: var(--box-max);
         margin: 0;
-        padding: 0 38.5rem 0 2.4375rem;
+        padding: 0 37rem 0 2.4375rem;
     }
 
     @media(min-width: $extended) {

@@ -7,10 +7,14 @@ $extended: 1200px;
     width: 100vw;
     display: flex;
     justify-content: center;
-    height: 5.625rem;
+    height: var(--header-height);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    left: 0;
 
     @media(min-width: $desktop) {
-        height: 6rem!important;
+        height: var(--header-height);
     }
 }
 
