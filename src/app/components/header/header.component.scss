@@ -18,6 +18,7 @@ $extended: 1200px;
     max-width: var(--box-max);
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
     align-items: center;
     width: 100%;
     color: var(--white);

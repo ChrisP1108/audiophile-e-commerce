@@ -1,0 +1,52 @@
+$large-mobile: 600px;
+$tablet: 768px;
+$desktop: 1024px;
+$extended: 1200px;
+
+.shopping-item-container {
+    height: 10.3125rem;
+    max-width: 22.5rem;
+    width: 100%;
+    background: var(--c);
+    margin: 4.25rem auto 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    @media(min-width: $tablet) {
+        margin: 0;
+        width: 28vw;
+        max-width: 16.25rem;
+    }
+
+    @media(min-width: $desktop) {
+        width: 28vw;
+        max-width: 20rem;
+    }
+
+    @media(min-width: $extended) {
+        width: 21.875rem;
+        max-width: 21.875rem
+    }
+
+    &:hover {
+        .btn {
+            &-3 {
+                color: var(--a);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+img {
+    height: 8.75rem;
+    position: absolute;
+    transform: translateY(-38%);
+    z-index: 10;
+}
+
+p {
+    font-weight: 800;
+    letter-spacing: 0.0669rem;
+    margin-top: 5.375rem;
+}

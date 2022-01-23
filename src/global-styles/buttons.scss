@@ -10,6 +10,9 @@ button {
     border: 0;
     height: 3rem;
     width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
         cursor: pointer;
@@ -33,5 +36,23 @@ button {
     &-2:hover {
         background: var(--black);
         color: var(--white);
+    }
+    &-3 {
+        background: transparent;
+        color: var(--black);
+        opacity: 0.5;
+        font-weight: 800;
+    }
+    &-3 span {
+        background: url('../assets/shared/desktop/icon-arrow-right.svg');
+        width: 8px;
+        height: 12px;
+        background-repeat: no-repeat;
+        color: transparent;
+        margin: 0 0 0.0625rem 0.75rem;
+    }
+    &-3:hover {
+        color: var(--a);
+        opacity: 1;
     }
 }

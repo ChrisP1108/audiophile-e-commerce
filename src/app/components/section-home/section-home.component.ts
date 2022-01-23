@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from '../../../data';
-import { newProductDataInterface } from './section-home.component.interfaces'
+import { newProductInterface, newProductDataInterface } from './section-home.component.interfaces';
 
 @Component({
   selector: 'app-section-home',
@@ -11,8 +11,15 @@ export class SectionHomeComponent implements OnInit {
 
   constructor() { }
 
-  newProduct: any = data.products.find(d => 
-    d.id === data.newProduct.id);
+  productFind: any = data.products.find(d => 
+    d.id === data.newProduct.id)
+
+  newProduct: newProductInterface = {
+    id: this.productFind.id,
+    name: this.productFind.name,
+    category: this.productFind.category,
+    slug: this.productFind.slug
+  };
 
   newProductData: newProductDataInterface = { 
     id: this.newProduct.id, 
