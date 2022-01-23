@@ -3,6 +3,11 @@
 .f {
     display: flex;
 
+    &-c {
+        display: flex;
+        justify-content: center;
+    }
+
     &-sb {
         display: flex;
         justify-content: space-between;

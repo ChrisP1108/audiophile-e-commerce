@@ -15,18 +15,18 @@ $extended: 1200px;
     background: url('/assets/home/mobile/image-header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: 0% 100%;
     display: flex;
-    padding: 0 14.9333vw 0;
+    padding: 0 13vw 0;
 
     @media(min-width: $tablet) {
         background: url('/assets/home/tablet/image-header.jpg');
         height: 83.205vw;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: bottom;
+        background-position: 0% -10%;
         margin: 0 2.4375rem 0;
-        padding: 0 19vw 0;
+        padding: 0 18vw 0;
     }
 
     @media(min-width: $desktop) {

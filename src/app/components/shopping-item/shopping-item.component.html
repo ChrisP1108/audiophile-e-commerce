@@ -1,1 +1,5 @@
-<p>shopping-item works!</p>
+<div routerLink="/category/{{item.category}}" class="shopping-item-container f-ac-column">
+    <img src={{item.images}} alt={{item.category}}>
+    <p>{{item.category.toUpperCase()}}</p>
+    <button class="btn-3">shop<span>></span></button>
+</div>
