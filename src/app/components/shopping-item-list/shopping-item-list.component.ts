@@ -8,6 +8,7 @@ import { data } from '../../../data';
 })
 export class ShoppingItemListComponent implements OnInit {
 
+
   constructor() { }
 
   shoppingItems: any = Object.values(data.shoppingItems).map((s, i) => {

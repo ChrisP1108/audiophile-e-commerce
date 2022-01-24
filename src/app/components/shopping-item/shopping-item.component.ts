@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { itemInterface } from './shopping-item.component.interfaces';
+import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 
 @Component({
   selector: 'app-shopping-item',
@@ -9,9 +10,12 @@ import { itemInterface } from './shopping-item.component.interfaces';
 export class ShoppingItemComponent implements OnInit {
 
   @Input() item!: itemInterface;
+  
+  constructor(private menuToggle: MenuToggleService) { }
 
-  constructor() { }
-
+  itemClick() {
+    this.menuToggle.setMenuToggle(false);
+  }
   ngOnInit(): void { }
 
 }

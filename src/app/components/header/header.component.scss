@@ -10,7 +10,7 @@ $extended: 1200px;
     height: var(--header-height);
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 12;
     left: 0;
 
     @media(min-width: $desktop) {

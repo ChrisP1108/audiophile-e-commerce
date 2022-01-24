@@ -1,0 +1,9 @@
+app-shopping-item-list {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    left: 0;
+    background: var(--white);
+    top: var(--header-height);
+    padding: 1.5rem var(--boxed-padding) 2.1875rem;
+}

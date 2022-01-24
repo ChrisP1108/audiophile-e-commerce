@@ -20,4 +20,13 @@ $extended: 1200px;
 
 app-shopping-item-list {
     width: 100%;
+    padding-top: 1.5rem;
+
+    @media(min-width: $tablet) {
+        padding-top: 9.25rem;
+    }
+
+    @media(min-width: $desktop) {
+        padding-top: 12.5rem;
+    }
 }
