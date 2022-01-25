@@ -1,4 +1,9 @@
+$tablet: 768px;
+$desktop: 1024px;
+
 app-shopping-item-list {
+    border-bottom-left-radius: 0.5rem; 
+    border-bottom-right-radius: 0.5rem; 
     position: absolute;
     z-index: 11;
     width: 100%;
@@ -6,4 +11,12 @@ app-shopping-item-list {
     background: var(--white);
     top: var(--header-height);
     padding: 1.5rem var(--boxed-padding) 2.1875rem;
+
+    @media(min-width: $tablet) {
+        padding: 6.75rem var(--boxed-padding) 4.1875rem;
+    }
+
+    @media(min-width: $desktop) {
+        display: none;
+    }
 }

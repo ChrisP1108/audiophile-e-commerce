@@ -32,10 +32,11 @@ $extended: 1200px;
     @media(min-width: $tablet) {
         justify-content: flex-start;
         margin: 0 2.4375rem 0;
+        padding: 0;
     }
     @media(min-width: $desktop) {
         justify-content: space-between;
-        margin: 0;
+        margin: 0 2.4375rem 0;
     }
     @media(min-width: $extended) {
         padding: 0;

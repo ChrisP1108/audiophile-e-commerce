@@ -14,7 +14,7 @@ export class AppComponent {
   cartToggled: boolean = false;
 
   constructor(private router: Router, 
-    public menuToggle: MenuToggleService) { 
+    private menuToggle: MenuToggleService) { 
       this.menuToggle.menuToggled().subscribe(value => {
         if (this.cartToggled) {
           this.cartToggled = false;
