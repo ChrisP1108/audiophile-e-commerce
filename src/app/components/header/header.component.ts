@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { data } from '../../../data';
+import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 
 @Component({
   selector: 'app-header',
@@ -8,23 +9,26 @@ import { data } from '../../../data';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  menuToggled: boolean = false;
+  cartToggled: boolean = false;
 
-  @Output() menuToggle: EventEmitter<boolean> = new EventEmitter();
-  @Output() cartToggle: EventEmitter<boolean> = new EventEmitter();
+  constructor(private menuToggle: MenuToggleService) {
+    this.menuToggle.menuToggled().subscribe(value => {
+      this.menuToggled = value;
+    });
+    this.menuToggle.cartToggled().subscribe(value => {
+      this.cartToggled = value;
+    });
+  }
 
   categories: Array<string> = data.categories.map(c => c.category);
 
   menuToggler(): void {
-    this.menuToggle.emit();
+    this.menuToggle.setMenuToggle(!this.menuToggled);
   }
 
   cartToggler(): void {
-    this.cartToggle.emit();
-  }
-
-  reload(): void {
-    window.location.reload();
+    this.menuToggle.setCartToggle(!this.cartToggled);
   }
 
   ngOnInit(): void {

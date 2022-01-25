@@ -4,7 +4,6 @@ $desktop: 1024px;
 $extended: 1200px;
 
 .shopping-item-list-container {
-    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -12,6 +11,5 @@ $extended: 1200px;
     @media(min-width: $tablet) {
         flex-direction: row;
         justify-content: space-between;
-        padding-top: 9.25rem;
     }
 }

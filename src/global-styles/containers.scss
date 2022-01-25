@@ -7,6 +7,10 @@ $extended: 1200px;
 :root {
     --header-height: 5.625rem;
 
+    @media(min-width: $tablet) {
+        --header-height: 5.625rem;
+    }
+
     @media(min-width: $desktop) {
         --header-height: 6rem;
     }
