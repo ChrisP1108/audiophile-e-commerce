@@ -5,6 +5,7 @@ $extended: 1200px;
 .section-home-container {
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .section-home-boxed {
@@ -12,6 +13,8 @@ $extended: 1200px;
     max-width: var(--box-max);
     margin: 0;
     width: 100%;
+    background: var(--white);
+    z-index: 1;
 
     @media(min-width: $extended) {
         padding: 0;

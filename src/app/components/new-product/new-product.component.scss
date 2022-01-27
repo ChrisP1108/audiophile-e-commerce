@@ -28,6 +28,8 @@ $margin: 0;
     width: 100vw;
     display: flex;
     justify-content: center;
+    z-index: 0;
+    position: relative;
 }
 .new-product-boxed-background {
     margin-top: var(--header-height)!important;
@@ -100,6 +102,8 @@ $margin: 0;
     height: $height;
     display: flex;
     padding: $padding;
+    position: fixed;
+    z-index: 0;
 
     @media(min-width: $tablet) {
         margin: 0 2.4375rem 0;
