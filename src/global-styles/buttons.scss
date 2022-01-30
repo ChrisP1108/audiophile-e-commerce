@@ -1,3 +1,7 @@
+$tablet: 768px;
+$desktop: 1024px;
+$extended: 1200px;
+
 button {
     font-family: 'Manrope', sans-serif;
     font-size: 0.8125rem;
@@ -54,5 +58,12 @@ button {
     &-3:hover {
         color: var(--a);
         opacity: 1;
+    }
+    &-4 {
+        background: var(--black);
+        color: var(--white);
+    }
+    &-4:hover {
+        background: var(--f);
     }
 }

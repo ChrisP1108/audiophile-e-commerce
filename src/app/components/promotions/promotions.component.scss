@@ -1,0 +1,148 @@
+$mobileLarge: 500px;
+$tablet: 768px;
+$desktop: 1024px;
+$maxed: 1200px;
+
+.promotion1-container {
+    background: var(--a); 
+    width: 100vw;
+    background-image: url('/assets/home/desktop/pattern-circles.svg');
+    background-size: 173%;
+    background-position: 50% -31vw;
+    background-repeat: no-repeat;
+    padding-bottom: 5vw;
+    overflow: hidden;
+
+    @media(min-width: $mobileLarge) {
+        padding-bottom: 6vw;
+    }
+
+    @media(min-width: $tablet) {
+        background-size: 135%;
+        background-position: 50% -35vw;
+    }
+
+    @media(min-width: $desktop) {
+        background-size: 100%;
+        padding-bottom: 0;
+    }
+}
+
+.text-and-button1 {
+    @media(min-width: $desktop) {
+        align-items: flex-start;
+    }
+    @media(min-width: $maxed) {
+        margin-left: 5rem;
+    }
+}
+
+.promotion1-boxed {
+    max-width: $tablet;
+
+    @media(min-width: $desktop) {
+        flex-direction: row;
+        max-width: 100%;
+        padding: 0 10vw 0;
+    }
+
+    @media(min-width: $tablet) {
+        padding: 0 23vw 0;
+    }
+    @media(min-width: $desktop) {
+        padding: 0 5rem 0;;
+    }
+    @media(min-width: $maxed) {
+        padding: 0 8.75rem 0;
+    }
+}
+
+.img1 {
+    width: 50%;
+    margin-top: 15vw;
+
+    @media(min-width: $mobileLarge) {
+        width: 12.3125rem;
+        margin-top: 17vw;
+    }
+    @media(min-width: $tablet) {
+        width: 25.71vw;
+        margin-top: 8vw;
+    }
+    @media(min-width: $desktop) {
+        margin: 3.885rem 5rem 0 0;
+        width: 25.625rem;
+        transform: translateY(1rem);
+    }
+}
+
+.img-1-heading {
+    margin-top: 10vw;
+    font-size: 9.6vw;
+    font-weight: 600;
+    letter-spacing: 0.125rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: var(--white);
+    padding: 0 5rem 0;
+
+    @media(min-width: $mobileLarge) {
+        font-size: 3.5rem;
+        margin-top: 8vw;
+        line-height: 3.625rem;
+    }
+
+    @media(min-width: $tablet) {
+        font-size: 3.5rem;
+        margin-top: 6vw;
+        padding: 0;
+    }
+
+    @media(min-width: $desktop) {
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin-top: 0;
+    }
+}
+
+p {
+    color: var(--white);
+    text-align: center;
+    margin: 7vw 0 0;
+    padding: 0 6vw 0;
+
+    @media(min-width: $mobileLarge) {
+        padding: 0 5vw 0;
+        margin: 6vw 0 0;
+    }
+
+    @media(min-width: $tablet) {
+        padding: 0;
+        margin: 3vw 0 0;
+    }
+
+    @media(min-width: $desktop) {
+        text-align: left;
+        padding: 0;
+    }
+}
+
+.btn-4 {
+    margin: 7vw 0 ;
+
+    @media(min-width: $mobileLarge) {
+        margin: 8vw 0 0;
+    }
+
+    @media(min-width: $tablet) {
+        margin: 4vw 0 0;
+    }
+    @media(min-width: $desktop) {
+        margin-bottom: 2.25rem;
+    }
+}
+
+.promotion-2-container {
+    
+}

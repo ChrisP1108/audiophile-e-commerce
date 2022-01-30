@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from '../../../data';
-import { newProductInterface, newProductDataInterface } from './section-home.component.interfaces';
+import { newProductInterface, newProductDataInterface,
+  promotionsInterface } from './section-home.component.interfaces';
 
 @Component({
   selector: 'app-section-home',
@@ -11,25 +12,53 @@ export class SectionHomeComponent implements OnInit {
 
   constructor() { }
 
-  productFind: any = data.products.find(d => 
+  productFind: any = data.products.find((d: any) => 
     d.id === data.newProduct.id)
 
   newProduct: newProductInterface = {
     id: this.productFind.id,
     name: this.productFind.name,
+    slug: this.productFind.slug,
     category: this.productFind.category,
-    slug: this.productFind.slug
+    topText: data.newProduct.topText
   };
 
   newProductData: newProductDataInterface = { 
     id: this.newProduct.id, 
-    name: this.newProduct.name, 
+    name: this.newProduct.name,
+    topText: this.newProduct.topText, 
     headline: data.newProduct.headline,
     buttonText: data.buttonTexts[0],
     buttonRoute: `/products/${this.newProduct.category}/${this.newProduct.slug}` 
   }
 
-  ngOnInit(): void {
-  }
+  promotions: any = data.promotions;
+
+  promotionProducts: any = data.promotions.map((i: any) => {
+    return data.products.find(d => d.id === i.id)
+  });
+
+  promotionsData: promotionsInterface = this.promotionProducts.map((p: any, i: number) => {
+    if (this.promotions[i].headline)  {
+      return {
+        id: this.promotions[i].id,
+        name: p.name,
+        slug: p.slug,
+        category: p.category,
+        image: this.promotions[i].image,
+        headline: this.promotions[i].headline
+      }
+    } else {
+      return {
+        id: this.promotions[i].id,
+        name: p.name,
+        slug: p.slug,
+        category: p.category,
+        image: this.promotions[i].image,
+      }
+    }
+  });
+
+  ngOnInit(): void { }
 
 }

@@ -7,11 +7,9 @@ $yShift: -38%;
 
 .shopping-item-container {
     height: 10.3125rem;
-    max-width: 22.5rem;
     width: 100%;
     background: var(--c);
     margin: 4.25rem auto 0;
-    border-radius: 0.5rem;
     cursor: pointer;
 
     @media(min-width: $tablet) {

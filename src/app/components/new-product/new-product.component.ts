@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-new-product',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 export class NewProductComponent implements OnInit {
 
   @Input() newProductData: any;
+  buttonText: string = data.buttonTexts[0];
 
   constructor(private router: Router) { }
 

@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: '**', component: SectionHomeComponent }
 ];
 
+console.log(routes);
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
