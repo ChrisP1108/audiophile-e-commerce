@@ -23,37 +23,42 @@ $maxed: 1200px;
     }
 
     @media(min-width: $desktop) {
-        background-size: 100%;
+        width: 100%;
+        background-size: 90%;
+        background-position: -160% -5rem;
         padding-bottom: 0;
+    }
+
+    @media(min-width: $maxed) {
+        background-position: -10.9375rem -5rem;
     }
 }
 
 .text-and-button1 {
+    padding: 0 3vw 0;
     @media(min-width: $desktop) {
         align-items: flex-start;
+        padding-right: 7vw;
     }
     @media(min-width: $maxed) {
         margin-left: 5rem;
+        padding-right: 0;
     }
 }
 
 .promotion1-boxed {
     max-width: $tablet;
 
-    @media(min-width: $desktop) {
-        flex-direction: row;
-        max-width: 100%;
-        padding: 0 10vw 0;
-    }
-
     @media(min-width: $tablet) {
         padding: 0 23vw 0;
     }
     @media(min-width: $desktop) {
-        padding: 0 5rem 0;;
+        flex-direction: row;
+        max-width: 100%;
+        padding: 0 5rem 0;
     }
     @media(min-width: $maxed) {
-        padding: 0 8.75rem 0;
+        padding: 0 6rem 0 8.75rem;
     }
 }
 
@@ -70,9 +75,13 @@ $maxed: 1200px;
         margin-top: 8vw;
     }
     @media(min-width: $desktop) {
-        margin: 3.885rem 5rem 0 0;
-        width: 25.625rem;
+        margin: 6vw 8vw 0 0;
+        width: 37vw;
         transform: translateY(1rem);
+    }
+    @media(min-width: $maxed) {
+        margin: 3.885rem 5rem 0 0;
+        width: 23.75rem;
     }
 }
 
@@ -110,10 +119,10 @@ p {
     color: var(--white);
     text-align: center;
     margin: 7vw 0 0;
-    padding: 0 6vw 0;
+    padding: 0 11vw 0;
 
     @media(min-width: $mobileLarge) {
-        padding: 0 5vw 0;
+        padding: 0 8vw 0;
         margin: 6vw 0 0;
     }
 
@@ -125,6 +134,7 @@ p {
     @media(min-width: $desktop) {
         text-align: left;
         padding: 0;
+        margin: 1.5rem 0 0;
     }
 }
 
@@ -139,7 +149,10 @@ p {
         margin: 4vw 0 0;
     }
     @media(min-width: $desktop) {
-        margin-bottom: 2.25rem;
+        margin: 3vw 0 5vw;
+    }
+    @media(min-width: $maxed) {
+        margin: 2.25rem 0 1.5rem;
     }
 }
 
