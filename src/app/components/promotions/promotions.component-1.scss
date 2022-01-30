@@ -31,6 +31,7 @@ $maxed: 1200px;
 
     @media(min-width: $maxed) {
         background-position: -10.9375rem -5rem;
+        padding-top: 2.2769rem;
     }
 }
 
@@ -41,8 +42,7 @@ $maxed: 1200px;
         padding-right: 7vw;
     }
     @media(min-width: $maxed) {
-        margin-left: 5rem;
-        padding-right: 0;
+        padding: 0 0 0 5rem;
     }
 }
 

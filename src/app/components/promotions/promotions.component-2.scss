@@ -8,12 +8,14 @@ $maxed: 1200px;
     background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: right;
     width: 100vw;
     height: 85.75vw;
     padding: 0 6.4vw 0;
 
     @media(min-width: $tablet) {
         background-image: url('/assets/home/tablet/image-speaker-zx7.jpg');
+        background-position: center;
         height: 41.668vw;
         padding: 0 8.335vw 0;
         margin-top: 2rem;
@@ -29,7 +31,7 @@ $maxed: 1200px;
 }
 
 .img-2-heading {
-    font-size: 7.47vw;
+    font-size: 7vw;
     font-weight: 700;
     letter-spacing: 0.125rem;
     line-height: 2.5rem;
