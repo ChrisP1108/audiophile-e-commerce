@@ -43,7 +43,7 @@ export class SectionHomeComponent implements OnInit {
       return {
         id: this.promotions[i].id,
         name: p.name,
-        slug: p.slug,
+        url: `/products/${p.category}/${p.slug}`,
         category: p.category,
         image: this.promotions[i].image,
         headline: this.promotions[i].headline
@@ -52,7 +52,7 @@ export class SectionHomeComponent implements OnInit {
       return {
         id: this.promotions[i].id,
         name: p.name,
-        slug: p.slug,
+        url: `/products/${p.category}/${p.slug}`,
         category: p.category,
         image: this.promotions[i].image,
       }

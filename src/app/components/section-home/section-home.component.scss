@@ -36,4 +36,12 @@ app-shopping-item-list {
 
 app-promotions {
     padding-top: 7.5rem;
+
+    @media(min-width: $tablet) {
+        padding-top: 6rem;
+    }
+
+    @media(min-width: $desktop) {
+        padding-top: 10.5rem;
+    }
 }

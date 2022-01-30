@@ -18,7 +18,7 @@ export interface newProductDataInterface {
 export interface promotionsInterface {
     id: number;
     name: string;
-    slug: string;
+    url: string;
     category: string;
     image: string;
     headline?: string;

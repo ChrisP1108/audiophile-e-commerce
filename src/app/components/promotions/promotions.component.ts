@@ -4,8 +4,10 @@ import { data } from '../../../data'
 @Component({
   selector: 'app-promotions',
   templateUrl: './promotions.component.html',
-  styleUrls: ['./promotions.component.scss']
+  styleUrls: ['./promotions.component-1.scss', 
+    './promotions.component-2.scss']
 })
+
 export class PromotionsComponent implements OnInit {
 
   @Input() promotionsData: any
