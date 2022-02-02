@@ -37,6 +37,13 @@ $maxed: 1200px;
 
 .text-and-button1 {
     padding: 0 3vw 0;
+
+    @media(min-width: $mobileLarge) {
+        padding: 0 5vw 0;
+    }
+    @media(min-width: $tablet) {
+        padding: 0 3vw 0;
+    }
     @media(min-width: $desktop) {
         align-items: flex-start;
         padding-right: 7vw;
@@ -63,12 +70,12 @@ $maxed: 1200px;
 }
 
 .img1 {
-    width: 50%;
-    margin-top: 15vw;
+    width: 40%;
+    margin-top: 16vw;
 
     @media(min-width: $mobileLarge) {
-        width: 12.3125rem;
-        margin-top: 17vw;
+        width: 40%;
+        margin-top: 15vw;
     }
     @media(min-width: $tablet) {
         width: 25.71vw;
@@ -118,7 +125,7 @@ $maxed: 1200px;
 p {
     color: var(--white);
     text-align: center;
-    margin: 7vw 0 0;
+    margin: 6vw 0 0;
     padding: 0 11vw 0;
 
     @media(min-width: $mobileLarge) {
@@ -142,7 +149,7 @@ p {
     margin: 7vw 0 ;
 
     @media(min-width: $mobileLarge) {
-        margin: 8vw 0 0;
+        margin: 7vw 0 0;
     }
 
     @media(min-width: $tablet) {

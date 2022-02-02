@@ -4,20 +4,22 @@ $desktop: 1024px;
 $maxed: 1200px;
 
 .promotion2-container {
-    margin-top: 1.5rem;
     background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
     width: 100vw;
     height: 85.75vw;
-    padding: 0 6.4vw 0;
+    padding: 26.5vw 6.4vw 27.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @media(min-width: $tablet) {
         background-image: url('/assets/home/tablet/image-speaker-zx7.jpg');
         background-position: center;
         height: 41.668vw;
-        padding: 0 8.335vw 0;
+        padding: 13.025vw 8.335vw 13.025vw;
         margin-top: 2rem;
     }
 
@@ -27,24 +29,22 @@ $maxed: 1200px;
         margin-top: 3rem;
         background-size: cover;
         background-position: right;
+        padding: 6.3125rem 6rem 6.3125rem;
     }
 }
 
 .img-2-heading {
     font-size: 7vw;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.125rem;
     line-height: 2.5rem;
     color: var(--black);
-    padding: 25.5vw 0 8.54vw;
 
     @media(min-width: $tablet) {
         font-size: 3.647vw;
-        padding: 13.025vw 0 4.168vw;
     }
 
     @media(min-width: $desktop) {
         font-size: 1.75rem;
-        padding: 6.25rem 0 2rem;
     }
 }

@@ -39,24 +39,15 @@ export class SectionHomeComponent implements OnInit {
   });
 
   promotionsData: promotionsInterface = this.promotionProducts.map((p: any, i: number) => {
-    if (this.promotions[i].headline)  {
       return {
         id: this.promotions[i].id,
         name: p.name,
         url: `/products/${p.category}/${p.slug}`,
+        shortName: p.shortName,
         category: p.category,
         image: this.promotions[i].image,
         headline: this.promotions[i].headline
       }
-    } else {
-      return {
-        id: this.promotions[i].id,
-        name: p.name,
-        url: `/products/${p.category}/${p.slug}`,
-        category: p.category,
-        image: this.promotions[i].image,
-      }
-    }
   });
 
   ngOnInit(): void { }

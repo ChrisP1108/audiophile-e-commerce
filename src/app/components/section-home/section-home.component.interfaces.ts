@@ -19,6 +19,7 @@ export interface promotionsInterface {
     id: number;
     name: string;
     url: string;
+    shortName: string;
     category: string;
     image: string;
     headline?: string;

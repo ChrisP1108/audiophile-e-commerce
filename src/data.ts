@@ -4,6 +4,7 @@ export const data = {
       "id": 1,
       "slug": "yx1-earphones",
       "name": "YX1 Wireless Earphones",
+      "shortName": "YX1 Earphones",
       "image": {
         "mobile": "./assets/product-yx1-earphones/mobile/image-product.jpg",
         "tablet": "./assets/product-yx1-earphones/tablet/image-product.jpg",
