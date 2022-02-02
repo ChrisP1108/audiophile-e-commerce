@@ -4,6 +4,7 @@ export const data = {
       "id": 1,
       "slug": "yx1-earphones",
       "name": "YX1 Wireless Earphones",
+      "shortName": "YX1 Earphones",
       "image": {
         "mobile": "./assets/product-yx1-earphones/mobile/image-product.jpg",
         "tablet": "./assets/product-yx1-earphones/tablet/image-product.jpg",
@@ -539,14 +540,29 @@ export const data = {
     }
   ],
   "newProduct": {
-    id: 4,
-    headline: "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
+    "id": 4,
+    "topText": "New Product",
+    "headline": "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast."
   },
   "shoppingItems": {
     "headphones": 3,
     "speakers": 6,
     "earphones": 1 
   },
-  "promotions": [6, 5, 1],
-  "buttonTexts": ["See Product", "Add To Cart", "Checkout", "Continue & Pay", "Back To Home"]
+  "promotions": [
+    {
+      "id": 6,
+      "image": "./assets/home/desktop/image-speaker-zx9.png",
+      "headline": "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
+    },
+    {
+      "id": 5,
+      "image": "./assets/home/desktop/image-speaker-zx7.jpg"
+    },
+    {
+      "id": 1,
+      "image": "./assets/home/desktop/image-earphones-yx1.jpg"
+    }
+  ],
+  "buttonTexts": ["See Product", "Shop", "Add To Cart", "Checkout", "Continue & Pay", "Back To Home"]
 }

@@ -1,1 +1,27 @@
-<p>promotions works!</p>
+<div class="promotion1-container border-curve f-ac-column">
+    <div class="promotion1-boxed f-ac-column">
+        <img class="img1" src="{{promotionsData[0].image}}" alt="{{promotionsData.name}}">
+        <div class="text-and-button1 f-ac-column"> 
+            <div class="img-1-heading">{{promotionsData[0].name.toUpperCase()}}</div>
+            <p>{{promotionsData[0].headline}}</p>
+            <button routerLink="{{promotionsData[0].url}}" class="btn-4">
+                {{ buttonText }}
+            </button>
+        </div> 
+    </div>
+</div>
+<div class="promotion2-container border-curve top-margin">
+    <div class="img-2-heading">{{promotionsData[1].name.toUpperCase()}}</div>
+    <button routerLink="{{promotionsData[1].url}}" class="btn-2">
+        {{ buttonText }}
+    </button>
+</div>
+<div class="promotion-3-main-container">
+    <div class="promotion3-image-container border-curve top-margin"></div>
+    <div class="promotion3-content-container border-curve top-margin">
+        <div class="img-3-heading">{{promotionsData[2].shortName.toUpperCase()}}</div>
+        <button routerLink="{{promotionsData[2].url}}" class="btn-2">
+            {{ buttonText }}
+        </button>
+    </div>
+</div>

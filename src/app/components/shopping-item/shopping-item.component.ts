@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { itemInterface } from './shopping-item.component.interfaces';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-shopping-item',
@@ -10,6 +11,7 @@ import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.servic
 export class ShoppingItemComponent implements OnInit {
 
   @Input() item!: itemInterface;
+  buttonText: string = data.buttonTexts[1];
   
   constructor(private menuToggle: MenuToggleService) { }
 
