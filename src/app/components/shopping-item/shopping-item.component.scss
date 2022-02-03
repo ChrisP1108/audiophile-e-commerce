@@ -11,6 +11,7 @@ $yShift: -38%;
     background: var(--c);
     margin: 4.25rem auto 0;
     cursor: pointer;
+    max-width: 22.5rem;
 
     @media(min-width: $tablet) {
         margin: 0;
