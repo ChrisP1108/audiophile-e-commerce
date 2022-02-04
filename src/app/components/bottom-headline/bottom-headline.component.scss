@@ -1,0 +1,32 @@
+$tablet: 768px;
+$desktop: 1024px;
+$extended: 1200px;
+
+.bottom-headline-container {
+    background: var(--white);
+    width: 100vw;
+    padding: 0 var(--boxed-padding) 0;
+
+    h4 {
+        font-size: 7.5vw;
+        letter-spacing: 0.0625rem;
+        line-height: 10vw;
+        text-align: center;
+        padding: 10.7vw 0;
+    }
+    span {
+        color: var(--a);
+    }
+
+    p {
+        opacity: 0.5;
+        text-align: center;
+    }
+}
+
+.bottom-headline-image {
+    width: 100vw;
+    height: 75.85vw;
+    background-image: url('/assets/shared/mobile/image-best-gear.jpg');
+    background-size: cover;
+}

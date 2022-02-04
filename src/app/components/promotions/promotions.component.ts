@@ -15,8 +15,6 @@ export class PromotionsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.promotionsData);
-  }
+  ngOnInit(): void { }
 
 }

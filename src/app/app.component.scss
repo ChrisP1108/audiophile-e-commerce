@@ -21,3 +21,9 @@ router-outlet {
     z-index: 10;
     overflow-y: clip!important;
 }
+
+app-bottom-headline {
+    background: var(--white);
+    padding-top: 7.5rem;
+    z-index: 1;
+}

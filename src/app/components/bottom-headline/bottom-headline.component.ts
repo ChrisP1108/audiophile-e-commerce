@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { data } from '../../../data';
+import { BottomHeadlineInterface } from './bottom-headline.component.interfaces';
 
 @Component({
   selector: 'app-bottom-headline',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BottomHeadlineComponent implements OnInit {
 
+  content: BottomHeadlineInterface = data.bottomHeadline;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.content)
   }
 
 }
