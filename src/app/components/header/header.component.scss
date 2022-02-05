@@ -43,7 +43,7 @@ $extended: 1200px;
     }
 }
 
-.nav-links {
+app-nav-links {
     display: none;
     @media(min-width: $desktop) {
         display: flex;
@@ -77,14 +77,5 @@ img {
 .img-hamburger {
     @media(min-width: $desktop) {
         display: none;
-    }
-}
-
-a {
-    color: var(--white);
-    text-decoration: none;
-
-    &:hover {
-        color: var(--a);
     }
 }

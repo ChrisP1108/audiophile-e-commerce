@@ -26,8 +26,9 @@ $extended: 1200px;
         @media(min-width: $desktop) {
             font-size: 2.5rem;
             letter-spacing: 0.0894rem;
-            line-height: 3rem;
+            line-height: 2.75rem;
             text-align: left;
+            padding: 0 0 2rem;
         }
     }
     span {
@@ -82,7 +83,7 @@ $extended: 1200px;
     }
 
     @media(min-width: $desktop) {
-        padding: 0 7.75rem 0 0;
+        padding: 0 7.25rem 0 0;
         width: 50%;
         margin-right: 0.9375rem;
     }

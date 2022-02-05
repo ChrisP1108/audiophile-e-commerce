@@ -34,4 +34,14 @@ app-bottom-headline {
     @media(min-width: $tablet) {
         padding-top: 6rem;
     }
+
+    @media(min-width: $desktop) {
+        padding-top: 12.5rem;
+    }
+}
+
+app-footer {
+    padding-top: 7.5rem;
+    background: var(--white);
+    z-index: 1;
 }
