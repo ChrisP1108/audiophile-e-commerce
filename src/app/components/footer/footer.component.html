@@ -1,1 +1,24 @@
-<p>footer works!</p>
+<div class="footer-container f-ac-column">
+    <div class="footer-boxed f-ac-column">
+        <div class="footer-divider"></div>
+        <div class="logo-nav-container f-ac-column">
+            <img class="img-logo" routerLink="/" src="/assets/shared/desktop/logo.svg" alt="logo">
+            <app-nav-links></app-nav-links>
+        </div>
+        <p class="footer-body-text">{{ footerText }}</p>
+        <div class="footer-copy-social-container f-ac-column">
+            <p class="footer-copyright-text"><b>Copyright {{ currentYear }}. All Rights Reserved</b></p>
+            <div class="footer-social-links">
+                <a href="https://www.facebook.com/frontendmentor" target="_blank">
+                    <div class="social-facebook"></div>
+                </a>
+                <a href="https://twitter.com/frontendmentor" target="_blank">
+                    <div class="social-twitter"></div>
+                </a>
+                <a href="https://www.instagram.com/explore/tags/frontendmentor/" target="_blank">
+                    <div class="social-instagram"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

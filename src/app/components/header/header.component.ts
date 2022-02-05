@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from '../../../data';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 
 @Component({
@@ -20,8 +19,6 @@ export class HeaderComponent implements OnInit {
       this.cartToggled = value;
     });
   }
-
-  categories: Array<string> = data.categories.map(c => c.category);
 
   menuToggler(): void {
     this.menuToggle.setMenuToggle(!this.menuToggled);

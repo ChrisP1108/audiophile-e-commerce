@@ -27,6 +27,7 @@ import { SectionCategoryComponent } from './components/section-category/section-
 import { SectionProductsComponent } from './components/section-products/section-products.component';
 import { SectionCheckoutComponent } from './components/section-checkout/section-checkout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NavLinksComponent } from './components/nav-links/nav-links.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     SectionCategoryComponent,
     SectionProductsComponent,
     SectionCheckoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavLinksComponent
   ],
   imports: [
     BrowserModule,

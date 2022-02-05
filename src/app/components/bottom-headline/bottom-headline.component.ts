@@ -13,8 +13,6 @@ export class BottomHeadlineComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.content)
-  }
+  ngOnInit(): void { }
 
 }
