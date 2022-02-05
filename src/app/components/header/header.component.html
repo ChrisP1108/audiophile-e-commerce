@@ -1,8 +1,8 @@
-<div class="header-container">
+<div class="header-container" #headerContainer [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
     <div class="header-boxed">
         <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
         <img routerLink="/" class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
         <app-nav-links></app-nav-links>  
-        <img (click)="cartToggler()" class="img-cart" src="/assets/shared/desktop/icon-cart.svg" alt="cart">
+        <div (click)="cartToggler()" class="img-cart"></div>
     </div>
 </div>

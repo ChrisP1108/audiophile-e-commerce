@@ -3,13 +3,13 @@
     <div class="cart-checkout-overlay" (click)="checkoutOverlayClick()" 
         *ngIf="menuToggled || cartToggled"></div>
     
-    <app-header></app-header>
+    <app-header [footerPosition]="footerPosition"></app-header>
     <app-toggle-menu *ngIf="menuToggled"></app-toggle-menu>
     <app-cart-modal-list *ngIf="cartToggled"></app-cart-modal-list>
 
     <router-outlet></router-outlet>
     
     <app-bottom-headline *ngIf="routeNot('/checkout')"></app-bottom-headline>
-    <app-footer></app-footer>
+    <app-footer #footer></app-footer>
 
 </div>

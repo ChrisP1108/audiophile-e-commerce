@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, 
+  Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuToggleService } from './services/menu-toggle/menu-toggle.service';
 import '../styles.scss';
@@ -12,6 +13,10 @@ export class AppComponent {
 
   menuToggled: boolean = false;
   cartToggled: boolean = false;
+  footerPosition: number = 0;
+
+  @ViewChild('footer', { static: false, read: ElementRef })
+  footer!: ElementRef;
 
   constructor(private router: Router, 
     private menuToggle: MenuToggleService) { 
@@ -40,6 +45,25 @@ export class AppComponent {
     return this.router.url !== url;
   }
 
-  ngOnInit(): void {
+  // @HostListener('window:scroll', ['$event'])
+  // handleScroll() {
+  //   const scrollY = (window.scrollY + window.innerHeight) - this.headerHeight;
+  //   const footerY = this.footer.nativeElement.offsetTop;
+  //   if (scrollY >= footerY) {
+  //     console.log('In View')
+  //   }
+  // }
+
+  @HostListener('window:resize', ['$event'])
+  handleResize() {
+    this.footerPosition = this.footer.nativeElement.offsetTop +
+    this.footer.nativeElement.clientHeight;
+  }
+
+  ngOnInit(): void { 
+    setTimeout(() => {
+      this.footerPosition = this.footer.nativeElement.offsetTop +
+      this.footer.nativeElement.clientHeight;
+    }, 0)
   }
 }

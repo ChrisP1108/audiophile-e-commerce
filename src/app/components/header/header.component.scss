@@ -66,15 +66,33 @@ img {
 }
 
 .img-cart {
+    background-image: url('/assets/shared/desktop/icon-cart.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.4375rem + 1.25rem;
+    height: 1.25rem + 1.25rem;
+    margin-right: -0.625rem;
+    margin-bottom: 0.1875rem;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-image: url('/assets/shared/desktop/icon-cart-hover.svg');
+    }
     @media(min-width: $tablet) {
         margin-left: auto;
     }
     @media(min-width: $desktop) {
         margin-left: 0;
+        width: 1.4375rem + 0.75rem;
+        height: 1.25rem + 0.75rem;
+        margin-right: -0.375rem;
     }
 }
 
 .img-hamburger {
+    margin: -0.75rem;
+    padding: 0.75rem;
     @media(min-width: $desktop) {
         display: none;
     }
