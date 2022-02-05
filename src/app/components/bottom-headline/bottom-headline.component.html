@@ -1,1 +1,11 @@
-<p>bottom-headline works!</p>
+<div class="bottom-headline-container f-ac-column">
+    <div class="bottom-headline-image border-curve"></div>
+    <div class="bottom-headline-text-container">
+        <h4>
+            {{ content.heading.slice(0, 17).toUpperCase()}} 
+            <span>{{content.heading.slice(17, 21).toUpperCase()}}</span>
+            {{ content.heading.slice(21).toUpperCase()}}    
+        </h4>
+        <p>{{ content. body }}</p>
+    </div>
+</div>
