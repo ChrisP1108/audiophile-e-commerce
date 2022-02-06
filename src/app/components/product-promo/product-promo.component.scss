@@ -1,0 +1,108 @@
+$tablet: 768px;
+$desktop: 1024px;
+$extended: 1200px;
+
+.product-promo-container {
+    margin-bottom: 7.5rem;
+
+    @media(min-width: $desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10rem;
+    }
+}
+
+.img-headline {
+    width: 100vw;
+    height: 88.8vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media(min-width: $tablet) {
+        background-color: var(--c);
+        height: 44.75vw;
+        background-size: 50%;
+        margin-bottom: 6.25vw;
+    }
+
+    @media(min-width: $desktop) {
+        margin-bottom: 0;
+        width: 48.7%;
+        height: 35rem;
+        background-size: cover;
+    }
+}
+
+.product-promo-text-button-container {
+    @media(min-width: $desktop) {
+        width: 41%;
+    }
+}
+
+.overline-text {
+    color: var(--a);
+    text-align: center;
+    margin-top: 7.65vw;
+    padding-left: 0.75rem;
+
+    @media(min-width: $tablet) {
+        margin-top: 0;
+    }
+
+    @media(min-width: $desktop) {
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 1.25rem;
+    }
+}
+
+.section-heading {
+    letter-spacing: 0.0625rem;
+    line-height: 10vw;
+    text-align: center;
+    margin: 8.55vw 0 7vw 0vw;
+    padding: 0 10vw 0;
+
+    @media(min-width: $tablet) {
+        font-size: 5.21vw;
+        line-height: 6vw;
+        margin: 2.20vw 0 4.25vw 0vw;
+        padding: 0 23vw 0;
+    }
+
+    @media(min-width: $desktop) {
+        text-align: left;
+        padding: 0 28% 0 0;
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+        margin: 0 0 2.5rem;
+    }
+}
+
+p {
+    text-align: center;
+    opacity: 0.5;
+
+    @media(min-width: $tablet) {
+        padding: 0 7.75vw 0;
+    }
+
+    @media(min-width: $desktop) {
+        text-align: left;
+        padding: 0 12% 0 0;
+    }
+}
+
+button {
+    margin: 1.5rem auto 0;
+
+    @media(min-width: $desktop) {
+        margin: 2.5rem 0 0;
+    }
+}
+
+.reversed {
+    flex-direction: row-reverse;
+}

@@ -1,3 +1,8 @@
+$mobileLarge: 500px;
+$tablet: 768px;
+$desktop: 1024px;
+$maxed: 1110px;
+
 :root { /* Default Body styling */
     color: var(--black);
 }
@@ -72,4 +77,20 @@ p {
     text-transform: uppercase;
     margin: 0;
     font-weight: 600;
+}
+
+.section-heading {
+    font-size: 7.5vw;
+    font-weight: 800;
+    letter-spacing: 0.125rem;
+    line-height: 2.5rem;
+    color: var(--black);
+
+    @media(min-width: $tablet) {
+        font-size: 3.647vw;
+    }
+
+    @media(min-width: $desktop) {
+        font-size: 1.75rem;
+    }
 }
