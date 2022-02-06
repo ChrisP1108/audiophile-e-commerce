@@ -1,1 +1,6 @@
-<p>section-category works!</p>
+<div class="section-category-container">
+    <div class="section-category-boxed">
+        <app-product-promo [product]="product" *ngFor="let product of products"></app-product-promo>
+        <app-shopping-item-list></app-shopping-item-list>
+    </div>
+</div>

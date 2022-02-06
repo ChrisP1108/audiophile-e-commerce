@@ -1,1 +1,9 @@
-<p>product-promo works!</p>
+<div class="product-promo-container">
+    <div class="img-headline border-curve" [ngStyle]="{'background-image': 'url(' + product.image.desktop + ')'}"></div>
+    <div *ngIf="product.new" class="overline-text">{{ newText.toUpperCase() }}</div>
+    <div class="section-heading">{{product.name.toUpperCase()}}</div>
+    <p>{{product.description}}</p>
+    <button routerLink="/products/{{product.category}}/{{product.slug}}" 
+        class="btn-1 indexed">{{ buttonText }}
+    </button>
+</div>

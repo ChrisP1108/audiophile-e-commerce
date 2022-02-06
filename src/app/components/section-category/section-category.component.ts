@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { data } from '../../../data';
+import { productInterface } from '../../app-interfaces';
 
 @Component({
   selector: 'app-section-category',
@@ -15,15 +16,11 @@ export class SectionCategoryComponent implements OnInit {
     this.router.url.includes(d.category)
   );
 
-  products: any = this.category.products.map((d: number) => 
+  products: productInterface[] = this.category.products.map((d: any) => 
     data.products.find((p: any) => p.id === d)
   );
 
-
-  // categoryData: any = data.
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 
 
