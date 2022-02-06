@@ -58,7 +58,7 @@ $margin: 0;
         background-size: contain;
         background-position: 0% 0%;
         background-attachment: fixed;
-        margin: 0 2.4375rem 0;
+        margin: 0 var(--boxed-padding) 0;
         padding: 0 18vw 0;
     }
 
@@ -79,7 +79,7 @@ $margin: 0;
         background-position: 55% -1vw;
         background-attachment: fixed;
         margin: 0;
-        padding: 0 37rem 0 2.4375rem;
+        padding: 0 37rem 0 0rem;
     }
 
     @media(min-width: $extended) {
@@ -104,7 +104,7 @@ $margin: 0;
     z-index: 0;
 
     @media(min-width: $tablet) {
-        margin: 0 2.4375rem 0;
+        margin: 0 var(--boxed-padding) 0;
         height: 83.205vw;
         padding: 0 18vw 0;
     }
@@ -113,7 +113,6 @@ $margin: 0;
         height: 57vw;
         max-height: 39.5rem;
         max-width: var(--box-max);
-        margin: 0;
         padding: 0 37rem 0 2.4375rem;
     }
 

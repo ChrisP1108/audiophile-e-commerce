@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, EventEmitter, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild, HostListener } from '@angular/core';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 
 @Component({
@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
     this.menuToggle.setCartToggle(!this.cartToggled);
   }
 
+  @HostListener('window:click', ['$event'])
   @HostListener('window:scroll', ['$event'])
   @HostListener('window:resize', ['$event'])
   handleHeight() {

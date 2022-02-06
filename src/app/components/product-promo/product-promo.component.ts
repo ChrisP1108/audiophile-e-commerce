@@ -9,6 +9,7 @@ import { data } from '../../../data';
 export class ProductPromoComponent implements OnInit {
 
   @Input() product: any;
+  @Input() index: any;
 
   buttonText: string = data.buttonTexts[0];
   newText: string = data.newText;

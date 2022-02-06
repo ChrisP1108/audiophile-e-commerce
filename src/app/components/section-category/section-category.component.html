@@ -1,6 +1,8 @@
 <div class="section-category-container">
+    <app-category-heading [headline]="category.category"></app-category-heading>
     <div class="section-category-boxed">
-        <app-product-promo [product]="product" *ngFor="let product of products"></app-product-promo>
+        <app-product-promo [index]="i + 1" [product]="product" *ngFor="let product of products, index as i"></app-product-promo>
+        <div class="tablet-gap-filler"></div>
         <app-shopping-item-list></app-shopping-item-list>
     </div>
 </div>

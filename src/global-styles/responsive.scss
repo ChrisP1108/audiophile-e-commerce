@@ -4,7 +4,7 @@ $desktop: 1024px;
 $extended: 1200px;
 
 :root {
-    --box-max: 69.375rem;
+    --box-max: 1110px;
     --boxed-padding: 6.4vw;
     --tablet: 768px!important;
 
@@ -13,6 +13,10 @@ $extended: 1200px;
     }
 
     @media(min-width: $tablet) {
+        --boxed-padding: 2.4375rem;
+    }
+
+    @media(min-width: $desktop) {
         --boxed-padding: 2.4375rem;
     }
 
