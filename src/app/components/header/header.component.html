@@ -6,3 +6,8 @@
         <div (click)="cartToggler()" class="img-cart"></div>
     </div>
 </div>
+<app-category-heading [headline]="categoryType" [headerShift]="shiftHeader === -100 ? true : false"
+    *ngIf="routeIncludes('category')"
+    [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
+</app-category-heading>
+

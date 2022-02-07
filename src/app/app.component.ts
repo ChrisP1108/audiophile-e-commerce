@@ -45,15 +45,6 @@ export class AppComponent {
     return this.router.url !== url;
   }
 
-  // @HostListener('window:scroll', ['$event'])
-  // handleScroll() {
-  //   const scrollY = (window.scrollY + window.innerHeight) - this.headerHeight;
-  //   const footerY = this.footer.nativeElement.offsetTop;
-  //   if (scrollY >= footerY) {
-  //     console.log('In View')
-  //   }
-  // }
-
   @HostListener('window:resize', ['$event'])
   handleResize() {
     this.footerPosition = this.footer.nativeElement.offsetTop +

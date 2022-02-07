@@ -8,7 +8,9 @@ import { Component, OnInit, ElementRef, Input, ViewChild, HostListener } from '@
 export class CategoryHeadingComponent implements OnInit {
 
   @Input() headline: any;
-  scrolled: boolean = false;
+  @Input() headerShift: any;
+  fixedCategoryShift: number = 100;
+  headlineScaling: number = 1;
 
   @ViewChild('categoryContainer', { static: false, read: ElementRef })
   category!: ElementRef;
@@ -17,11 +19,22 @@ export class CategoryHeadingComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
-    const scrollY = window.scrollY;
-    const categoryY = this.category.nativeElement.clientHeight;
-    if (scrollY >= categoryY) {
-      this.scrolled = true;
-    } else this.scrolled = false;
+    const headerHeight = this.category.nativeElement.clientHeight;
+    const scrollY = window.scrollY - headerHeight;
+    console.log(headerHeight);
+    console.log(scrollY);
+    if (scrollY < 0) {
+      const textScaler = (scrollY * -1) / (headerHeight);
+      this.headlineScaling = textScaler <= 0.75 ? 0.75 : textScaler ;
+      this.fixedCategoryShift = (scrollY * -1) / (headerHeight) * 100;
+    }
+    if (scrollY >= 0) {
+      this.fixedCategoryShift = 0;
+      this.headlineScaling = 0.75;
+    }
+    if ((scrollY * -1) === headerHeight) {
+      this.headlineScaling = 1;
+    }
   }
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@ $extended: 1200px;
     display: flex;
     justify-content: center;
     height: var(--header-height);
-    position: fixed;
+    position: fixed!important;
     width: 100%;
     z-index: 12;
     left: 0;

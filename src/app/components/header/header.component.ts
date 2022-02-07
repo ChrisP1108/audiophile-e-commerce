@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Input, ViewChild, HostListener } from '@angular/core';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +11,15 @@ export class HeaderComponent implements OnInit {
 
   @Input() footerPosition: any;
 
-  @ViewChild('headerContainer', { static: false, read: ElementRef })
-  header!: ElementRef;
-
   menuToggled: boolean = false;
   cartToggled: boolean = false;
   shiftHeader: number = 0;
+  categoryType: string = '';
 
-  constructor(private menuToggle: MenuToggleService) {
+  @ViewChild('headerContainer', { static: false, read: ElementRef })
+  header!: ElementRef;
+
+  constructor(private router: Router, private menuToggle: MenuToggleService) {
     this.menuToggle.menuToggled().subscribe(value => {
       this.menuToggled = value;
     });
@@ -45,6 +47,13 @@ export class HeaderComponent implements OnInit {
     } else {
       this.shiftHeader = 0;
     }
+  }
+
+  routeIncludes(url: string) {
+    this.categoryType = this.router.url.slice(10);
+    if (this.router.url.includes(url)) {
+      return true
+    } else return false
   }
 
   ngOnInit(): void { }
