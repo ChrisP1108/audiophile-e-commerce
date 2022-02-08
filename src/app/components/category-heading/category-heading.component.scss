@@ -3,7 +3,6 @@ $desktop: 1024px;
 $extended: 1200px;
 
 .category-heading-container-top {
-    transition: 0s!important;
     z-index: 1;
     width: 100vw;
     height:  6.375rem;
@@ -23,6 +22,7 @@ $extended: 1200px;
 }
 
 .category-heading-container-scroll {
+    transition: 0s;
     position: fixed;
     z-index: 2;
     top: calc(var(--header-height) - 0.5%);
@@ -34,7 +34,7 @@ $extended: 1200px;
     justify-content: center;
 
     @media(min-width: $tablet) {
-        height: 5rem;
+        height: 4rem;
     }
 
     @media(min-width: $desktop) {
@@ -44,6 +44,10 @@ $extended: 1200px;
 
 .shift-up {
     top: 0;
+}
+
+.trans-on {
+    transition: 0.25s!important;
 }
 
 h4 {

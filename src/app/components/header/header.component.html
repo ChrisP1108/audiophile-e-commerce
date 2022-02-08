@@ -7,7 +7,6 @@
     </div>
 </div>
 <app-category-heading [headline]="categoryType" [headerShift]="shiftHeader === -100 ? true : false"
-    *ngIf="routeIncludes('category')"
-    [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
+    *ngIf="routeIncludes('category')">
 </app-category-heading>
 
