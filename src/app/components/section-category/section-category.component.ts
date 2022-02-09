@@ -20,7 +20,9 @@ export class SectionCategoryComponent implements OnInit {
     data.products.find((p: any) => p.id === d)
   );
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    window.scrollTo(0,0);
+  }
 
 
 

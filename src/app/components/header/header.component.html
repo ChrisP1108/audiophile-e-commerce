@@ -9,4 +9,7 @@
 <app-category-heading [headline]="categoryType" [headerShift]="shiftHeader === -100 ? true : false"
     *ngIf="routeIncludes('category')">
 </app-category-heading>
+<div *ngIf="routeIncludes('products')" class="go-back-container" #goBackContainer [ngClass]="shiftHeader === -100 ? 'top-up' : ''">
+    <a (click)="goBackRoute()" class="go-back-text">Go Back</a>
+</div>
 

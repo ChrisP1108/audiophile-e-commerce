@@ -97,3 +97,31 @@ img {
         display: none;
     }
 }
+
+a {
+    text-decoration: none;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    cursor: pointer;
+}
+.go-back-text {
+    font-size: 0.9375rem;
+    opacity: 0.5;
+    font-weight: 400;
+    color: var(--black); 
+}
+
+.go-back-container {
+    width: 100%;
+    padding: 1rem 0;
+    background: var(--white);
+    position: fixed;
+    top: var(--header-height);
+    padding-left: var(--boxed-padding);
+    left: 0;
+    z-index: 5;
+}
+
+.top-up {
+    top: 0;
+}

@@ -1,4 +1,4 @@
-<a routerLink="/" class="subtitle-text">home</a>
-<a *ngFor="let category of categories" class="subtitle-text"
+<a (click)="routeClicked()" routerLink="/" class="subtitle-text">home</a>
+<a (click)="routeClicked()" *ngFor="let category of categories" class="subtitle-text"
         routerLink="/category/{{category}}">{{category}}
 </a>

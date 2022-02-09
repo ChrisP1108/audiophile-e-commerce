@@ -12,6 +12,10 @@ export class NavLinksComponent implements OnInit {
 
   constructor() { }
 
+  routeClicked(): void {
+    window.scrollTo(0, 0);
+  }
+
   ngOnInit(): void { }
 
 }

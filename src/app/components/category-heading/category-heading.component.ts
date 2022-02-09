@@ -24,8 +24,6 @@ export class CategoryHeadingComponent implements OnInit {
     const headerHeight = this.category.nativeElement.clientHeight;
 
     const scrollY = window.scrollY - headerHeight;
-    console.log(headerHeight);
-    console.log(scrollY);
     if (scrollY < 0) {
       const textScaler = (scrollY * -1) / (headerHeight);
       this.headlineScaling = textScaler <= 0.75 ? 0.75 : textScaler ;

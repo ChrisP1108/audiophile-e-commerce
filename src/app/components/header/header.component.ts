@@ -19,6 +19,9 @@ export class HeaderComponent implements OnInit {
   @ViewChild('headerContainer', { static: false, read: ElementRef })
   header!: ElementRef;
 
+  @ViewChild('goBackContainer', { static: false, read: ElementRef })
+  goBack!: ElementRef;
+
   constructor(private router: Router, private menuToggle: MenuToggleService) {
     this.menuToggle.menuToggled().subscribe(value => {
       this.menuToggled = value;
@@ -54,6 +57,10 @@ export class HeaderComponent implements OnInit {
     if (this.router.url.includes(url)) {
       return true
     } else return false
+  }
+
+  goBackRoute(): void {
+    window.history.back();
   }
 
   ngOnInit(): void { }
