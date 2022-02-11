@@ -7,9 +7,9 @@
         <h6>${{product.price.toLocaleString()}}</h6>
         <div class="product-quantity-container">
             <div class="quantity-body">
-                <span class="quarter-trans">-</span>
-                <span>1</span>
-                <span class="quarter-trans">+</span>
+                <span (click)="decrementer()" class="quarter-trans">-</span>
+                <span>{{ quantity }}</span>
+                <span (click)="incrementer()" class="quarter-trans">+</span>
             </div>
             <button routerLink="/products/{{product.category}}/{{product.slug}}" 
                 class="btn-1 indexed">{{ buttonText }}
