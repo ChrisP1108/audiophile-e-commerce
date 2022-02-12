@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
-import { data } from '../../../data'
+import { productInterface } from '../../app-interfaces';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-product-details',
@@ -9,23 +10,37 @@ import { data } from '../../../data'
 })
 export class ProductDetailsComponent implements OnInit {
 
-  @Input() product: any;
+  @Input()
+  product!: productInterface;
 
   buttonText: string = data.buttonTexts[2];
   newText: string = data.newText;
+  quantityMaxedMessage: string = data.quantityMaxedMessage
   quantity: number = 1;
+  total: number = 0;
+  
+  constructor(private shoppingCart: ShoppingCartService) {
+    this.shoppingCart.shoppingCartList().subscribe(value => {
+      const shoppingCartItem: any = value.find(item => item.id === this.product.id);
+      this.total = shoppingCartItem.quantity;
+    })
+  }
 
-  constructor(private shoppingCart: ShoppingCartService) { }
-
-  buttonClicked() {
-    const submitData = { 
-      id: this.product.id, name: this.product.name, quantity: this. quantity
+  submitTally(): void {
+    if (this.total > 10) {
+      return;
     }
-    this.shoppingCart.setShoppingCart(submitData)
+    const submitData = { 
+      id: this.product.id, 
+      name: this.product.name, 
+      quantity: this.quantity
+    }
+    this.shoppingCart.setShoppingItemQuantity(submitData);
+    this.quantity = 1;
   }
 
   incrementer(): void {
-    if (this.quantity >= 10) {
+    if ((this.quantity + this.total) >= 10) {
       return
     }
     this.quantity++;
@@ -39,7 +54,12 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.shoppingCart)
+    const initData = { 
+      id: this.product.id, 
+      name: this.product.name, 
+      quantity: 0
+    } 
+    this.shoppingCart.setShoppingItemQuantity(initData);
   }
 
 }

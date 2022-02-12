@@ -35,8 +35,20 @@ $extended: 1200px;
 }
 
 .product-quantity-container {
+    height: 3rem;
     display: flex;
     justify-content: space-between;
+}
+
+.quantity-button-active {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.quantity-maxed {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .quantity-body {
@@ -92,7 +104,7 @@ $extended: 1200px;
     }
 }
 
-p {
+.product-description {
     text-align: left;
     opacity: 0.5;
 
@@ -104,6 +116,10 @@ p {
         text-align: left;
         padding: 0 12% 0 0;
     }
+}
+
+.maxed-message {
+    color: var(--a);
 }
 
 h6 {

@@ -3,17 +3,22 @@
     <div class="product-promo-text-button-container">
         <div *ngIf="product.new" class="overline-text">{{ newText.toUpperCase() }}</div>
         <div class="section-heading">{{product.name.toUpperCase()}}</div>
-        <p>{{product.description}}</p>
+        <p class="product-description">{{product.description}}</p>
         <h6>${{product.price.toLocaleString()}}</h6>
         <div class="product-quantity-container">
-            <div class="quantity-body">
-                <span (click)="decrementer()" class="quarter-trans">-</span>
-                <span>{{ quantity }}</span>
-                <span (click)="incrementer()" class="quarter-trans">+</span>
+            <div *ngIf="total < 10" class="quantity-button-active">
+                <div class="quantity-body">
+                    <span (click)="decrementer()" class="quarter-trans">-</span>
+                    <span>{{ quantity }}</span>
+                    <span (click)="incrementer()" class="quarter-trans">+</span>
+                </div>
+                <button (click)="submitTally()" routerLink="/products/{{product.category}}/{{product.slug}}" 
+                    class="btn-1 indexed">{{ buttonText }}
+                </button>
             </div>
-            <button routerLink="/products/{{product.category}}/{{product.slug}}" 
-                class="btn-1 indexed">{{ buttonText }}
-            </button>
+            <div *ngIf="total >= 10" class="quantity-maxed">
+                <p class="maxed-message">{{quantityMaxedMessage}}</p>
+            </div>
         </div>
     </div>
 </div>

@@ -11,18 +11,21 @@ export class ShoppingCartService {
     data.products.map(product => {
       return { id: product.id, name: product.name, quantity: 0}
     });
-  private subjectShoppingCart = new Subject<Array<Object>>();
+  private subjectShoppingCartList = new Subject<Array<shoppingCartInterface>>();
 
   constructor() { }
 
-  setShoppingCart(input: shoppingCartInterface): void {
-    this.shoppingCart = this.shoppingCart.map((item: { id: number; }) => 
-      item.id === input.id ? input : item);
-    this.subjectShoppingCart.next(this.shoppingCart)
+  setShoppingItemQuantity(input: shoppingCartInterface): void {
+    const index = this.shoppingCart.findIndex((item: { id: number; }) => 
+      item.id === input.id);
+    if (this.shoppingCart[index].quantity < 10) {
+      this.shoppingCart[index].quantity += input.quantity;
+    } else this.shoppingCart[index].quantity = 10;
+    this.subjectShoppingCartList.next(this.shoppingCart);
   }
 
-  shoppingCartList(): any {
-    return this.subjectShoppingCart.asObservable();
+  shoppingCartList(): Observable<shoppingCartInterface[]> {
+    return this.subjectShoppingCartList.asObservable();
   }
 
 }
