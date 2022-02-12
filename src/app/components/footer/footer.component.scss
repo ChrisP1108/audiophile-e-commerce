@@ -19,7 +19,6 @@ $extended: 1200px;
 }
 
 .footer-boxed {
-    max-width: var(--box-max);
     padding: 0 var(--boxed-padding) 0;
     width: 100%;
 
@@ -29,6 +28,7 @@ $extended: 1200px;
 
     @media(min-width: $extended) {
         padding: 0;
+        max-width: var(--box-max);
     }
 
 }

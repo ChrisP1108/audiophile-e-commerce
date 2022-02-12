@@ -13,7 +13,6 @@ $extended: 1200px;
 
 .section-category-boxed {
     padding: 4rem var(--boxed-padding) 0;
-    max-width: var(--box-max);
     background: var(--white);
     margin: 0;
     width: 100%;
@@ -30,6 +29,7 @@ $extended: 1200px;
 
     @media(min-width: $extended) {
         padding: 10rem 0 0;
+        max-width: var(--box-max);
     }
 }
 

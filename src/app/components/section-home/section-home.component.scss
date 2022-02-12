@@ -12,7 +12,6 @@ $extended: 1200px;
 
 .section-home-boxed {
     padding: 0 var(--boxed-padding) 0;
-    max-width: var(--box-max);
     background: var(--white);
     margin: 0;
     width: 100%;
@@ -20,6 +19,7 @@ $extended: 1200px;
     z-index: 1;
 
     @media(min-width: $extended) {
+        max-width: var(--box-max);
         padding: 0;
     }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
+import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface'
 import { productInterface } from '../../app-interfaces';
 import { data } from '../../../data';
 
@@ -10,8 +11,7 @@ import { data } from '../../../data';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  @Input()
-  product!: productInterface;
+  @Input() product!: productInterface;
 
   buttonText: string = data.buttonTexts[2];
   newText: string = data.newText;
@@ -20,10 +20,11 @@ export class ProductDetailsComponent implements OnInit {
   total: number = 0;
   
   constructor(private shoppingCart: ShoppingCartService) {
-    this.shoppingCart.shoppingCartList().subscribe(value => {
-      const shoppingCartItem: any = value.find(item => item.id === this.product.id);
-      this.total = shoppingCartItem.quantity;
-    })
+    this.shoppingCart.shoppingCartList()
+      .subscribe((value: Array<shoppingCartInterface>) => {
+        const shoppingCartItem: any = value.find((item: shoppingCartInterface) => item.id === this.product.id);
+        this.total = shoppingCartItem.quantity;
+    });
   }
 
   submitTally(): void {

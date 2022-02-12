@@ -3,8 +3,8 @@ $desktop: 1024px;
 $extended: 1200px;
 
 .header-container {
+    transition: 0s;
     background: var(--black);
-    width: 100vw;
     display: flex;
     justify-content: center;
     height: var(--header-height);
@@ -19,7 +19,7 @@ $extended: 1200px;
 }
 
 .header-boxed {
-    max-width: var(--box-max);
+    transition: 0s;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -40,6 +40,7 @@ $extended: 1200px;
     }
     @media(min-width: $extended) {
         padding: 0;
+        max-width: var(--box-max);
     }
 }
 
@@ -104,6 +105,12 @@ a {
     margin: -0.5rem;
     cursor: pointer;
 }
+
+.header-bottom-filler {
+    height: 1rem;
+    width: 100%;
+}
+
 .go-back-text {
     font-size: 0.9375rem;
     opacity: 0.5;
@@ -112,16 +119,60 @@ a {
 }
 
 .go-back-container {
-    width: 100%;
-    padding: 1rem 0;
-    background: var(--white);
+    transition: 0s;
+    width: 100vw;
     position: fixed;
-    top: var(--header-height);
-    padding-left: var(--boxed-padding);
+    left: 0;
+    top: calc(var(--header-height) + 0.4375rem);
+    z-index: 5;
+    padding: 0 var(--boxed-padding) 0;
+
+    @media(min-width: $tablet) {
+        top: calc(var(--header-height) + 1.5rem);
+    }
+    @media(min-width: $desktop) {
+        top: calc(var(--header-height) + 4.5rem);
+    }
+
+}
+
+.go-back-boxed {
+    transition: 0s;
+    max-width: var(--box-max);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    background: var(--white);
     left: 0;
     z-index: 5;
 }
 
+.go-back-top-up {
+    top: var(--header-height);
+    background: var(--black);
+    a {
+        color: var(--white)
+    }
+
+    .go-back-boxed {
+        a {
+            color: var(--white)!important;
+            opacity: 1;
+        }
+        background: var(--black);
+    }
+}
+
 .top-up {
+    background: var(--black);
     top: 0;
+
+    .go-back-boxed {
+        a {
+            color: var(--white)!important;
+            opacity: 1;
+        }
+        background: var(--black);
+    }
 }

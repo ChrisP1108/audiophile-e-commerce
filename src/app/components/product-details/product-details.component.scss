@@ -3,10 +3,10 @@ $desktop: 1024px;
 $extended: 1200px;
 
 .product-details-container {
-    margin-top: 0.5rem;
 
     @media(min-width: $tablet) {
         display: flex;
+        justify-content: space-between
     }
 
 }
@@ -20,17 +20,21 @@ $extended: 1200px;
 
     @media(min-width: $tablet) {
         background-color: var(--c);
-        height: 44.75vw;
-        width: 50%;
+        background-size: 120%!important;
+        height: 62.5vw;
+        width: 40%;
         background-size: 50%;
-        margin-bottom: 6.25vw;
     }
 
     @media(min-width: $desktop) {
+        background-size: cover!important;
         margin-bottom: 0;
-        width: 48.7%;
         height: 35rem;
         background-size: cover;
+    }
+
+    @media(min-width: $extended) {
+        width: 33.75rem;
     }
 }
 
@@ -38,12 +42,17 @@ $extended: 1200px;
     height: 3rem;
     display: flex;
     justify-content: space-between;
+
 }
 
 .quantity-button-active {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media(min-width: $tablet) {
+        justify-content: flex-start;
+    }
 }
 .quantity-maxed {
     display: flex;
@@ -63,7 +72,14 @@ $extended: 1200px;
 
 .product-promo-text-button-container {
     @media(min-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 50%;
+    }
+
+    @media(min-width: $extended) {
+        width: 40%;
     }
 }
 
@@ -113,8 +129,7 @@ $extended: 1200px;
     }
 
     @media(min-width: $desktop) {
-        text-align: left;
-        padding: 0 12% 0 0;
+        padding: 0;
     }
 }
 
@@ -138,4 +153,13 @@ span {
 .quarter-trans {
     opacity: 0.25;
     cursor: pointer;
+}
+
+.btn-1 {
+    @media(min-width: $tablet) {
+        margin-left: 2.09vw;
+    }
+    @media(min-width: $desktop) {
+        margin-left: 1rem;
+    }
 }
