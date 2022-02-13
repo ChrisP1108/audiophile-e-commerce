@@ -1,0 +1,258 @@
+$tablet: 768px;
+$desktop: 1024px;
+$extended: 1200px;
+
+.product-details-container {
+
+    @media(min-width: $tablet) {
+        display: flex;
+        justify-content: space-between
+    }
+
+}
+
+.product-image {
+    width: 100vw;
+    height: 82.699vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media(min-width: $tablet) {
+        background-color: var(--c);
+        background-size: 120%!important;
+        height: 62.5vw;
+        width: 40%;
+        background-size: 50%;
+    }
+
+    @media(min-width: $desktop) {
+        background-size: cover!important;
+        margin-bottom: 0;
+        height: 35rem;
+        background-size: cover;
+    }
+
+    @media(min-width: $extended) {
+        width: 33.75rem;
+    }
+}
+
+.product-quantity-container {
+    position: relative;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.quantity-button-active {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.quantity-maxed {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.quantity-absolute {
+    position: absolute;
+    top: calc(100% + 1.5rem);
+    z-index: 5;
+}
+
+.quantity-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 7.5rem;
+    height: 3rem;
+    background: var(--c);
+    padding: 0 1.25rem 0;
+}
+
+.product-promo-text-button-container {
+    @media(min-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+
+    @media(min-width: $extended) {
+        width: 40.1%;
+    }
+}
+
+.overline-text {
+    color: var(--a);
+    text-align: left;
+    margin-top: 7.65vw;
+
+    @media(min-width: $tablet) {
+        margin-top: 0;
+    }
+
+    @media(min-width: $desktop) {
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 1.25rem;
+    }
+}
+
+.section-heading {
+    letter-spacing: 0.0625rem;
+    line-height: 10vw;
+    text-align: left;
+    margin: 6.4vw 0 7vw;
+
+    @media(min-width: $tablet) {
+        font-size: 5.21vw;
+        line-height: 6vw;
+        margin: 2.20vw 0 4.25vw 0vw;
+    }
+
+    @media(min-width: $desktop) {
+        text-align: left;
+        padding: 0 28% 0 0;
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+        margin: 0 0 2.5rem;
+    }
+}
+
+.product-features-main-container {
+    @media(min-width: $desktop) {
+        display: flex;
+        justify-content: space-between
+    }
+}
+
+.product-features-section {
+    margin-top: 5.75rem;
+}
+
+.in-the-box-section {
+    @media(min-width: $tablet) {
+        display: flex;
+    }
+    @media(min-width: $desktop) {
+        flex-direction: column;
+        width: 31%;
+    }
+}
+
+.in-the-box-text {
+    @media(min-width: $tablet) {
+        width: 50%;
+        margin-top: -0.25rem;
+    }
+    @media(min-width: $desktop) {
+        width: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+.product-features-description {
+    opacity: 0.5;
+    margin: 1.5rem 0;
+}
+
+.feature-section {
+    @media(min-width: $desktop) {
+        width: 58%;
+    }
+}
+
+.quantity-description-main-container {
+    margin-top: 2.625rem;
+
+    @media(min-width: $tablet) {
+        margin-top: 0;
+        width: 50%;
+    }
+
+    @media(min-width: $desktop) {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+}
+
+.quantity-description-row-container {
+    position: relative;
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.product-features-quantity {
+    color:  var(--a);
+    font-weight: 800;
+}
+
+.quantity-description {
+    position: absolute;
+    opacity: 0.5;
+    margin-left: 2.5rem;
+}
+
+.feature-headline {
+    letter-spacing: 0.0537rem;
+    font-weight: 800;
+    font-size: 6.5vw;
+    padding-bottom: 0.5rem;
+
+    @media(min-width: $tablet) {
+        font-size: 4.17vw;
+    }
+
+    @media(min-width: $desktop) {
+        font-size: 2rem;
+    }
+}
+
+.product-headline-description {
+    text-align: left;
+    opacity: 0.5;
+
+    @media(min-width: $tablet) {
+        text-align: left;
+    }
+
+    @media(min-width: $desktop) {
+        padding: 0;
+    }
+}
+
+.maxed-message {
+    color: var(--a);
+}
+
+h6 {
+    margin: 1.5rem 0 1.875rem;
+}
+
+span {
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.0625rem;
+    color: var(--black);
+    padding: 1rem;
+    margin: -1rem;
+}
+
+.quarter-trans {
+    opacity: 0.25;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+        color: var(--a);
+    }
+}
+
+.btn-1 {
+    margin-left: 1rem;
+}

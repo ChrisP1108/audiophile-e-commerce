@@ -1,1 +1,42 @@
-<p>product-details works!</p>
+<div class="product-details-container">
+    <div class="product-image border-curve" [ngStyle]="{'background-image': 'url(' + product.image.desktop + ')'}"></div>
+    <div class="product-promo-text-button-container">
+        <div *ngIf="product.new" class="overline-text">{{ newText.toUpperCase() }}</div>
+        <div class="section-heading">{{product.name.toUpperCase()}}</div>
+        <p class="product-headline-description">{{product.description}}</p>
+        <h6>${{product.price.toLocaleString()}}</h6>
+        <div class="product-quantity-container">
+            <div *ngIf="total < 10" class="quantity-button-active">
+                <div class="quantity-body">
+                    <span (click)="decrementer()" class="quarter-trans">-</span>
+                    <span>{{ quantity }}</span>
+                    <span (click)="incrementer()" class="quarter-trans">+</span>
+                </div>
+                <button (click)="submitTally()" routerLink="/products/{{product.category}}/{{product.slug}}" 
+                    class="btn-1 indexed">{{ buttonText }}
+                </button>
+            </div>
+            <div *ngIf="total >= 10" class="quantity-maxed">
+                <p class="maxed-message">{{quantityMaxedMessage[0]}}</p>
+            </div>
+            <div *ngIf="(total + quantity) >= 10 && total < 10" class="quantity-maxed quantity-absolute">
+                <p class="maxed-message">{{quantityMaxedMessage[1]}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-features-main-container">
+    <div class="product-features-section feature-section">
+        <div class="feature-headline">{{featureHeadline[0].toUpperCase()}}</div>
+        <p *ngFor="let feature of features" class="product-features-description">{{feature}}</p>
+    </div>
+    <div class="product-features-section in-the-box-section">
+        <div class="feature-headline in-the-box-text">{{featureHeadline[1].toUpperCase()}}</div>
+        <div class="quantity-description-main-container">
+            <div *ngFor="let include of product.includes" class="quantity-description-row-container">
+                <p class="product-features-quantity">{{include.quantity}}x</p>
+                <p class="quantity-description">{{include.item}}</p>
+            </div>
+        </div>
+    </div>
+</div>

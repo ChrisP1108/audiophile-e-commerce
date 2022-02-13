@@ -6,13 +6,16 @@ $extended: 1110px;
 
 :root {
     --header-height: 5.625rem;
+    --go-back-height: 3.375rem;
 
     @media(min-width: $tablet) {
         --header-height: 5.625rem;
+        --go-back-height: 5.125rem;
     }
 
     @media(min-width: $desktop) {
         --header-height: 6rem;
+        --go-back-height: 10rem;
     }
 }
 

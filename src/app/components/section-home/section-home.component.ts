@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { data } from '../../../data';
 import { newProductInterface, newProductDataInterface,
   promotionsInterface } from './section-home.component.interfaces';
+import { productInterface } from '../../app-interfaces'
 
 @Component({
   selector: 'app-section-home',
@@ -12,7 +13,7 @@ export class SectionHomeComponent implements OnInit {
 
   constructor() { }
 
-  productFind: any = data.products.find((d: any) => 
+  productFind: any = data.products.find((d: {id: number}) => 
     d.id === data.newProduct.id)
 
   newProduct: newProductInterface = {
@@ -34,7 +35,7 @@ export class SectionHomeComponent implements OnInit {
 
   promotions: any = data.promotions;
 
-  promotionProducts: any = data.promotions.map((i: any) => {
+  promotionProducts: any = data.promotions.map((i: {id: number, image: string, headline?: string}) => {
     return data.products.find(d => d.id === i.id)
   });
 
@@ -50,6 +51,8 @@ export class SectionHomeComponent implements OnInit {
       }
   });
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    window.scrollTo(0,0);
+  }
 
 }

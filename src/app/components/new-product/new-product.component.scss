@@ -32,7 +32,7 @@ $margin: 0;
     position: relative;
 }
 .new-product-boxed-background {
-    max-width: var(--box-max);
+    
     height: $height;
     width: 100%;
     filter: contrast(1.25);
@@ -83,6 +83,7 @@ $margin: 0;
     }
 
     @media(min-width: $extended) {
+        max-width: var(--box-max);
         padding: 0 38rem 0 0;
         height: 39.4375rem;
         background-repeat: no-repeat;
@@ -93,7 +94,6 @@ $margin: 0;
 }
 
 .new-product-boxed-content {
-    max-width: var(--box-max);
     background: transparent;
     position: absolute;
     width: 100%;
@@ -110,13 +110,14 @@ $margin: 0;
     }
 
     @media(min-width: $desktop) {
+        margin: 0;
         height: 57vw;
         max-height: 39.5rem;
-        max-width: var(--box-max);
-        padding: 0 37rem 0 2.4375rem;
+        padding: 0 37rem 0 var(--boxed-padding);
     }
 
     @media(min-width: $extended) {
+        max-width: var(--box-max);
         padding: 0 38rem 0 0;
         height: 39.4375rem;
     }
