@@ -15,9 +15,11 @@ export class ProductDetailsComponent implements OnInit {
 
   buttonText: string = data.buttonTexts[2];
   newText: string = data.newText;
-  quantityMaxedMessage: string = data.quantityMaxedMessage
+  quantityMaxedMessage: string[] = data.quantityMaxedMessages
   quantity: number = 1;
   total: number = 0;
+  features: string[] = [];
+  featureHeadline: string[] = data.productHeadlines;
   
   constructor(private shoppingCart: ShoppingCartService) {
     this.shoppingCart.shoppingCartList()
@@ -61,6 +63,14 @@ export class ProductDetailsComponent implements OnInit {
       quantity: 0
     } 
     this.shoppingCart.setShoppingItemQuantity(initData);
+    if (this.product.features.indexOf('\n') !== -1) {
+      const newLinePoint = this.product.features.indexOf('\n');
+      const partOne = this.product.features.slice(0, newLinePoint);
+      const partTwo = this.product.features.slice(newLinePoint);
+      this.features = [partOne, partTwo]
+    } else {
+      this.features = [...this.product.features]
+    }
   }
 
 }

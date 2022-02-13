@@ -39,6 +39,7 @@ $extended: 1200px;
 }
 
 .product-quantity-container {
+    position: relative;
     height: 3rem;
     display: flex;
     justify-content: space-between;
@@ -47,17 +48,19 @@ $extended: 1200px;
 
 .quantity-button-active {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
-
-    @media(min-width: $tablet) {
-        justify-content: flex-start;
-    }
 }
 .quantity-maxed {
     display: flex;
     align-items: center;
     width: 100%;
+}
+
+.quantity-absolute {
+    position: absolute;
+    top: calc(100% + 1.5rem);
+    z-index: 5;
 }
 
 .quantity-body {
@@ -79,7 +82,7 @@ $extended: 1200px;
     }
 
     @media(min-width: $extended) {
-        width: 40%;
+        width: 40.1%;
     }
 }
 
@@ -120,7 +123,97 @@ $extended: 1200px;
     }
 }
 
-.product-description {
+.product-features-main-container {
+    @media(min-width: $desktop) {
+        display: flex;
+        justify-content: space-between
+    }
+}
+
+.product-features-section {
+    margin-top: 5.75rem;
+}
+
+.in-the-box-section {
+    @media(min-width: $tablet) {
+        display: flex;
+    }
+    @media(min-width: $desktop) {
+        flex-direction: column;
+        width: 31%;
+    }
+}
+
+.in-the-box-text {
+    @media(min-width: $tablet) {
+        width: 50%;
+        margin-top: -0.25rem;
+    }
+    @media(min-width: $desktop) {
+        width: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+.product-features-description {
+    opacity: 0.5;
+    margin: 1.5rem 0;
+}
+
+.feature-section {
+    @media(min-width: $desktop) {
+        width: 58%;
+    }
+}
+
+.quantity-description-main-container {
+    margin-top: 2.625rem;
+
+    @media(min-width: $tablet) {
+        margin-top: 0;
+        width: 50%;
+    }
+
+    @media(min-width: $desktop) {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+}
+
+.quantity-description-row-container {
+    position: relative;
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.product-features-quantity {
+    color:  var(--a);
+    font-weight: 800;
+}
+
+.quantity-description {
+    position: absolute;
+    opacity: 0.5;
+    margin-left: 2.5rem;
+}
+
+.feature-headline {
+    letter-spacing: 0.0537rem;
+    font-weight: 800;
+    font-size: 6.5vw;
+    padding-bottom: 0.5rem;
+
+    @media(min-width: $tablet) {
+        font-size: 4.17vw;
+    }
+
+    @media(min-width: $desktop) {
+        font-size: 2rem;
+    }
+}
+
+.product-headline-description {
     text-align: left;
     opacity: 0.5;
 
@@ -153,13 +246,13 @@ span {
 .quarter-trans {
     opacity: 0.25;
     cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+        color: var(--a);
+    }
 }
 
 .btn-1 {
-    @media(min-width: $tablet) {
-        margin-left: 2.09vw;
-    }
-    @media(min-width: $desktop) {
-        margin-left: 1rem;
-    }
+    margin-left: 1rem;
 }

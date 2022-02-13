@@ -571,5 +571,6 @@ export const data = {
   "footerText": "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.",
   "buttonTexts": ["See Product", "Shop", "Add To Cart", "Checkout", "Continue & Pay", "Back To Home", "Go Back"],
   "newText": "New Product",
-  "quantityMaxedMessage": "Maximum Quantity Of 10 Added To Cart"
+  "quantityMaxedMessages": ["Maximum Quantity Of 10 Added To Cart", "Quantity Limited Of 10 Per Shopper"],
+  "productHeadlines" :["Features", "In The Box"]
 }
