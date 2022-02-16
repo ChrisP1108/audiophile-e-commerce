@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { data } from '../../../data'
 
 @Component({
   selector: 'app-other-product-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherProductListComponent implements OnInit {
 
+  @Input() others: any
+
+  otherHeadline: string = data.otherHeadline
+  
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

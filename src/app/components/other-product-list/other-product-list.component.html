@@ -1,1 +1,4 @@
-<p>other-product-list works!</p>
+<div class="other-product-list-container">
+    <h5>{{ otherHeadline.toUpperCase() }}</h5>
+    <app-other-product-item *ngFor="let other of others" [item]="other"></app-other-product-item>
+</div>

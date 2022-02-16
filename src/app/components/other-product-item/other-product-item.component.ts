@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { othersInterface } from '../section-products/section-products.component-interfaces';
 
 @Component({
   selector: 'app-other-product-item',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherProductItemComponent implements OnInit {
 
+  @Input() item!: othersInterface
+
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.item);
   }
 
 }
