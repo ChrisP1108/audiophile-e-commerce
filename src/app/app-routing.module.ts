@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: '', component: SectionHomeComponent },
   { path: 'checkout', component: SectionCheckoutComponent },
   ...categoryRoutes, ...productsRoutes,
-  { path: '**', component: SectionHomeComponent }
+  { path: '**', redirectTo: '' }
 ];
 
 console.log(routes);

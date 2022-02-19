@@ -23,9 +23,10 @@ export class SectionProductsComponent implements OnInit {
   }
 
   others: othersInterface = this.product.others;
-
+  
   ngOnInit(): void {
     window.scrollTo(0,0);
+    console.log(this.others);
   }
 
 }
