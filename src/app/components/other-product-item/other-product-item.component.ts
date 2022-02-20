@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { othersInterface } from '../section-products/section-products.component-interfaces';
 import { RouteConfigLoadStart, Router } from '@angular/router';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-other-product-item',
@@ -12,6 +13,7 @@ export class OtherProductItemComponent implements OnInit {
   @Input() item!: othersInterface
 
   route: string = ''
+  buttonText: string = data.buttonTexts[0];
 
   constructor(private router: Router) { }
 
@@ -21,5 +23,6 @@ export class OtherProductItemComponent implements OnInit {
         this.route = `/${item.path}`;
       }
     })
+    console.log(this.item);
   }  
 }

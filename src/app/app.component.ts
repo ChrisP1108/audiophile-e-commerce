@@ -46,6 +46,7 @@ export class AppComponent {
     return this.router.url !== url;
   }
 
+
   @HostListener('window:resize', ['$event'])
   handleResize() {
     this.footerPosition = this.footer.nativeElement.offsetTop +

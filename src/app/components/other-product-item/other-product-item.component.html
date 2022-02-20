@@ -1,5 +1,7 @@
-<div routerLink="{{route}}" class="other-product-item-container border-curve f-ac-column">
-    <!-- <img src={{item.images}} alt={{item.category}}> -->
-    <p>{{item}}</p>
-    <!-- <button class="btn-3">{{ buttonText }}<span>></span></button> -->
+<div class="other-product-item-container">
+    <div class="other-product-item-image-container border-curve f-ac-column">
+        <img src={{item.image.desktop}} alt={{item.name}}>
+    </div>
+    <h5>{{item.name}}</h5>
+    <button routerLink="{{route}}" class="btn-1">{{buttonText}}</button>
 </div>
