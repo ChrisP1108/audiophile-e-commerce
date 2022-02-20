@@ -1,4 +1,5 @@
 <div class="section-category-container">
+    <app-category-heading [headline]="category"></app-category-heading>
     <div class="section-category-boxed">
         <app-product-promo [index]="i + 1" [product]="product" *ngFor="let product of products, index as i"></app-product-promo>
         <div class="tablet-gap-filler"></div>

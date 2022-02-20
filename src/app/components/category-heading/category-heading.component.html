@@ -1,10 +1,7 @@
 <div class="category-heading-container-top" #categoryContainer>
-    <div [ngStyle]="{ 'transform': 'translateY(' + fixedCategoryShift + '%)'}" 
-        class="category-heading-container-scroll" [ngClass]="scrolled ? 'container-top-up' : ''"
-        [ngClass]="headerShift ? 'shift-up' : 'container-top-up'" #categoryFixed>
-        <h4 [ngStyle]="{ 'transform': 'scale(' + headlineScaling + ')'}">{{headline.toUpperCase()}}</h4>
-    </div>
+        <h4>{{headline.category.toUpperCase()}}</h4>
 </div>
+
 
 
 

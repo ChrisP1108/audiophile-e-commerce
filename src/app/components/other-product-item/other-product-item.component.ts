@@ -23,6 +23,5 @@ export class OtherProductItemComponent implements OnInit {
         this.route = `/${item.path}`;
       }
     })
-    console.log(this.item);
   }  
 }

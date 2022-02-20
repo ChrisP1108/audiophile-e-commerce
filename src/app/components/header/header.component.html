@@ -7,9 +7,6 @@
             <app-nav-links></app-nav-links>  
             <div (click)="cartToggler()" class="img-cart"></div>
         </div>
-        <app-category-heading [headline]="categoryType" [headerShift]="shiftHeader === -100 ? true : false"
-            *ngIf="routeIncludes('category')">
-        </app-category-heading>
         <div *ngIf="!menuToggled && !cartToggled && routeIncludes('products')" class="go-back-container f-ac-column" #goBackContainer
             [ngClass]="shiftHeader === -100 ? 'top-up' : goBackScrolled ? 'go-back-top-up' : ''">
                 <div *ngIf="routeIncludes('products')" class="go-back-boxed">

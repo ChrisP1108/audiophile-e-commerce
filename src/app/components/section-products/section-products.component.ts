@@ -26,7 +26,6 @@ export class SectionProductsComponent implements OnInit {
   
   ngOnInit(): void {
     window.scrollTo(0,0);
-    console.log(this.others);
   }
 
 }
