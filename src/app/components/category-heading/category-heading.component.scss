@@ -67,3 +67,9 @@ h5 {
         font-size: 2.5rem;
     }
 }
+
+.container-top-up {
+    z-index: 1000;
+    top: calc(var(--header-height) - 3%);
+
+}
