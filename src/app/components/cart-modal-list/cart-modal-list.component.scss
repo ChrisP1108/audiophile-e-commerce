@@ -28,10 +28,15 @@ $extended: 1200px;
 }
 
 .cart-modal-heading {
-    margin-bottom: 1.875rem;
+    margin-bottom: 1rem;
 }
 
-h5 {
+.cart-modal-total {
+    padding-top: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.empty-cart-text {
     text-align: center;
     margin: 25% 0;
 }
@@ -50,4 +55,13 @@ p {
 
 .total-text {
     font-weight: 500;
+}
+
+.click-image-text {
+    font-size: 0.875rem;
+    margin-bottom: 1.875rem;
+}
+
+button {
+    width: 100%;
 }

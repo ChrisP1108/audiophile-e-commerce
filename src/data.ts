@@ -574,5 +574,15 @@ export const data = {
   "quantityMaxedMessages": ["Maximum Quantity Of 10 Added To Cart", "Quantity Limited To 10 Per Customer"],
   "productHeadlines" :["Features", "In The Box"],
   "otherHeadline": "You May Also Like",
-  "cartModal": ["Cart", "Remove all", "Total", "Cart Is Empty"]
+  "cartModal": {
+    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart"],
+    "products": [
+      { "id": 1, name: "YX1"},
+      { "id": 2, name: "XX59"},
+      { "id": 3, name: "XX99 MKI"},
+      { "id": 4, name: "XX99 MKII"},
+      { "id": 5, name: "ZX7"},
+      { "id": 6, name: "ZX9"}
+    ]
+  }
 }

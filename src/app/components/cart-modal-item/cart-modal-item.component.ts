@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
-import { productInterface } from '../../app-interfaces';
 import { data } from '../../../data';
 
 @Component({
@@ -19,37 +18,47 @@ export class CartModalItemComponent implements OnInit {
     quantity: 0
   };
 
+  cartModalName: any = { }
+
+  totalQuantity: number = 0;
+
   product: any = { };
 
   constructor(private shoppingCart: ShoppingCartService) { }
 
   incrementer(): void {
-    if (this.quantityChange.quantity >= 10) {
+    if (this.totalQuantity >= 10) {
       return
     }
-    this.quantityChange.quantity = this.quantityChange.quantity += 1;
+    this.quantityChange.quantity = 1;
+    this.totalQuantity += 1;
     this.shoppingCart.incrementShoppingItemQuantity(this.quantityChange);
-    console.log(this.quantityChange)
   }
 
   decrementer(): void {
-    if (this.quantityChange.quantity <= 1) {
+    if (this.totalQuantity === 1) {
       return
-    }
-    this.quantityChange.quantity = this.quantityChange.quantity -= 1;
+    } 
+    this.quantityChange.quantity = 1;
+    this.totalQuantity -= 1;
     this.shoppingCart.decrementShoppingItemQuantity(this.quantityChange);
-    console.log(this.quantityChange)
+  }
+
+  removeItem(): void {
+    this.shoppingCart.zeroOutShoppingItemQuantity(this.item.id)
   }
 
   ngOnInit(): void {
     this.quantityChange = {
       id: this.item.id,
       name: this.item.name,
-      quantity: this.item.quantity
+      quantity: 0
     }
-    console.log(this.item);
-    this.product = data.products.find((product: any) => product.id === this.item.id);
-    console.log(this.product);
+    this.totalQuantity = this.item.quantity;
+    this.product = data.products.find((product: any): any => product.id === this.item.id);
+    this.cartModalName = data.cartModal.products.find(name => 
+      name.id === this.item.id
+    );
   }
 
 }

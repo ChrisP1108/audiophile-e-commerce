@@ -12,7 +12,7 @@ export class ShoppingCartService {
       return { 
         id: product.id, 
         name: product.name,
-        price: product.price, 
+        price: product.price,
         quantity: 0
       }
     });
@@ -39,6 +39,13 @@ export class ShoppingCartService {
     if (this.shoppingCart[index].quantity > 0) {
       this.shoppingCart[index].quantity -= input.quantity;
     } else this.shoppingCart[index].quantity = 0;
+    this.subjectShoppingCartList.next(this.shoppingCart);
+  }
+
+  zeroOutShoppingItemQuantity(input: number): void {
+    const index = this.shoppingCart.findIndex((item: { id: number; }) => 
+      item.id === input);
+    this.shoppingCart[index].quantity = 0;
     this.subjectShoppingCartList.next(this.shoppingCart);
   }
 

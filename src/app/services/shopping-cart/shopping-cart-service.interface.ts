@@ -1,6 +1,6 @@
 export interface shoppingCartInterface {
     id: number;
     name: string;
-    price?: number;
+    price?: Number;
     quantity: number;
 }
