@@ -1,1 +1,16 @@
-<p>cart-modal-item works!</p>
+<div class="cart-modal-item-container f">
+    <div class="image-container border-curve" (click)="removeItem()">
+    <img class="border-curve" src="{{product.image.desktop}}" 
+        alt="{{cartModalName.name.toUpperCase()}}">
+    <h2 class="delete-x">X</h2>
+    </div>
+    <div class="name-price-container">
+        <p>{{ cartModalName.name.toUpperCase() }}</p>
+        <p class="price-text">${{ product.price.toLocaleString() }}</p>
+    </div>
+    <div class="quantity-container f-sb">
+        <span (click)="decrementer()" class="quarter-trans">-</span>
+        <span>{{totalQuantity}}</span>
+        <span (click)="incrementer()" class="quarter-trans">+</span>
+    </div>
+</div>
