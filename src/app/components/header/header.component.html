@@ -1,19 +1,21 @@
-<div class="header-container" #headerContainer [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
-    <div class="header-boxed">
-        <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
-        <img routerLink="/" [ngClass]="goBackScrolled ? 'logo-top-up-shift' : ''" 
-            class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
-        <app-nav-links></app-nav-links>  
-        <div (click)="cartToggler()" class="img-cart"></div>
-    </div>
-</div>
-<app-category-heading [headline]="categoryType" [headerShift]="shiftHeader === -100 ? true : false"
-    *ngIf="routeIncludes('category')">
-</app-category-heading>
-<div *ngIf="!menuToggled" class="go-back-container f-ac-column" #goBackContainer
-    [ngClass]="shiftHeader === -100 ? 'top-up' : goBackScrolled ? 'go-back-top-up' : ''">
-        <div *ngIf="routeIncludes('products')" class="go-back-boxed">
-            <a (click)="goBackRoute()" class="go-back-text">{{ goBackText }}</a>
+<div class="header-section-headings-container"> 
+    <div class="header-section-headings-boxed">
+        <div class="header-container" #headerContainer [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
+            <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+            <img routerLink="/" [ngClass]="goBackScrolled ? 'logo-top-up-shift' : ''" 
+                class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
+            <app-nav-links></app-nav-links>  
+            <div (click)="cartToggler()" class="img-cart"></div>
         </div>
-</div>
+        <app-category-heading [headline]="categoryType" [headerShift]="shiftHeader === -100 ? true : false"
+            *ngIf="routeIncludes('category')">
+        </app-category-heading>
+        <div *ngIf="!menuToggled && !cartToggled && routeIncludes('products')" class="go-back-container f-ac-column" #goBackContainer
+            [ngClass]="shiftHeader === -100 ? 'top-up' : goBackScrolled ? 'go-back-top-up' : ''">
+                <div *ngIf="routeIncludes('products')" class="go-back-boxed">
+                    <a (click)="goBackRoute()" class="go-back-text">{{ goBackText }}</a>
+                </div>
+        </div>
+    </div>
+</div> 
 

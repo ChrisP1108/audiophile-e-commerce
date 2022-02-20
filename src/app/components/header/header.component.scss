@@ -1,37 +1,53 @@
+$mobileLarge: 500px;
 $tablet: 768px;
 $desktop: 1024px;
 $extended: 1200px;
 
-.header-container {
-    transition: 0s;
+.header-section-headings-container {
+    height: var(--header-height);
+    width: 100vw;
+    position: fixed;
+    left: 0;
     background: var(--black);
     display: flex;
     justify-content: center;
-    height: var(--header-height);
-    position: fixed!important;
-    width: 100%;
     z-index: 12;
-    left: 0;
+}
 
+.header-section-headings-boxed {
+    position: relative;
+    width: 100%;
+    max-width: var(--box-max);
+    padding: 0 var(--boxed-padding) 0;
+
+    @media(min-width: $tablet) {
+        justify-content: flex-start;
+        margin: 0 var(--boxed-padding) 0;
+        padding: 0;
+    }
     @media(min-width: $desktop) {
-        height: var(--header-height);
+        justify-content: space-between;
+
+    }
+    @media(min-width: $extended) {
+        padding: 0;
+        max-width: var(--box-max);
     }
 }
 
-.header-boxed {
+.header-container {
     transition: 0s;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
+    height: var(--header-height);
     width: 100%;
     color: var(--white);
-    padding: 0 var(--boxed-padding) 0;
     border-bottom: 0.0625rem var(--border-trans) solid;
 
     @media(min-width: $tablet) {
         justify-content: flex-start;
-        margin: 0 var(--boxed-padding) 0;
         padding: 0;
     }
     @media(min-width: $desktop) {
@@ -150,23 +166,29 @@ a {
 }
 
 .go-back-top-up {
+    position: absolute;
     top: var(--header-height);
-    transform: translate(24%, -168%);
+    transform: translate(60vw, -168%);
+    width: 4.5rem!important;
     a {
         color: var(--white);
-        margin: 0 auto;
+        margin: 0;
+    }
+
+    @media(min-width: $mobileLarge) {
+        transform: translate(295%, -168%);
     }
 
     @media(min-width: $tablet) {
-        transform: translate(0%, -168%);
+        transform: translate(50vw, -168%);
     }
 
     @media(min-width: $desktop) {
-        transform: translate(-25vw, -174%);
+        transform: translate(16vw, -173%);
     }
 
     @media(min-width: $extended) {
-        transform: translate(-300px, -174%);
+        transform: translate(180%, -173%);
     }
 
     .go-back-boxed {
@@ -174,7 +196,13 @@ a {
             color: var(--white)!important;
             opacity: 1;
         }
+        width: 4.5rem!important;
         background: transparent;
+
+        @media(min-width: $desktop) {
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 }
 
