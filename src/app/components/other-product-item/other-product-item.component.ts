@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { othersInterface } from '../section-products/section-products.component-interfaces';
+import { RouteConfigLoadStart, Router } from '@angular/router';
+import { data } from '../../../data';
 
 @Component({
   selector: 'app-other-product-item',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherProductItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() item!: othersInterface
+
+  route: string = ''
+  buttonText: string = data.buttonTexts[0];
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-
+    this.router.config.forEach((item: any) => {
+      if (item.path.includes(this.item.slug)) {
+        this.route = `/${item.path}`;
+      }
+    })
+    console.log(this.item);
+  }  
 }

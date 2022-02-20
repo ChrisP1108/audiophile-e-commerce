@@ -6,10 +6,10 @@
     <app-header [footerPosition]="footerPosition"></app-header>
     <app-toggle-menu *ngIf="menuToggled"></app-toggle-menu>
     <app-cart-modal-list *ngIf="cartToggled"></app-cart-modal-list>
-
-    <router-outlet></router-outlet>
+    <router-outlet *ngIf="!menuToggled"></router-outlet>
     
-    <app-bottom-headline *ngIf="routeNot('/checkout')"></app-bottom-headline>
+    <app-bottom-headline [ngClass]="!routeNot('/') ? 'home-headline-padding' : ''" 
+        *ngIf="routeNot('/checkout')">
+    </app-bottom-headline>
     <app-footer #footer></app-footer>
-
 </div>

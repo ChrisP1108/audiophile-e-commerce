@@ -15,3 +15,13 @@ export interface galleryInterface {
         desktop: string;
     };
 }
+
+export interface othersInterface {
+    slug: string;
+    name: string;
+    image: {
+        mobile: string;
+        tablet: string;
+        desktop: string;
+    }
+}

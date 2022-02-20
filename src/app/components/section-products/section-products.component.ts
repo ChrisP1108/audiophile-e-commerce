@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from '../../../data';
 import { Router } from '@angular/router';
-import { galleryInterface } from './section-products.component-interfaces';
+import { galleryInterface, othersInterface } from './section-products.component-interfaces';
 
 @Component({
   selector: 'app-section-products',
@@ -22,8 +22,11 @@ export class SectionProductsComponent implements OnInit {
     third: this.product.gallery.third
   }
 
+  others: othersInterface = this.product.others;
+  
   ngOnInit(): void {
     window.scrollTo(0,0);
+    console.log(this.others);
   }
 
 }

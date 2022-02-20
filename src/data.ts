@@ -572,5 +572,6 @@ export const data = {
   "buttonTexts": ["See Product", "Shop", "Add To Cart", "Checkout", "Continue & Pay", "Back To Home", "Go Back"],
   "newText": "New Product",
   "quantityMaxedMessages": ["Maximum Quantity Of 10 Added To Cart", "Quantity Limited To 10 Per Customer"],
-  "productHeadlines" :["Features", "In The Box"]
+  "productHeadlines" :["Features", "In The Box"],
+  "otherHeadline": "You May Also Like"
 }
