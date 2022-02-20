@@ -1,4 +1,5 @@
-<div class="header-section-headings-container"> 
+<div class="header-section-headings-container" [ngClass]="shiftHeader === -100 && routeIncludes('products') ? 'header-go-back-out' 
+: shiftHeader === -100 ? 'header-out' : ''"> 
     <div class="header-section-headings-boxed">
         <div class="header-container" #headerContainer [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
             <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">

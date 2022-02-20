@@ -51,6 +51,8 @@ app-bottom-headline {
 }
 
 app-cart-modal-list {
+    display: flex;
+    justify-content: center;
     position: relative;
     box-sizing: border-box;
     width: 100%;

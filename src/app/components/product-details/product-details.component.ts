@@ -38,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
       name: this.product.name, 
       quantity: this.quantity
     }
-    this.shoppingCart.setShoppingItemQuantity(submitData);
+    this.shoppingCart.incrementShoppingItemQuantity(submitData);
     this.quantity = 1;
   }
 
@@ -57,12 +57,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const initData = { 
-      id: this.product.id, 
-      name: this.product.name, 
-      quantity: 0
-    } 
-    this.shoppingCart.setShoppingItemQuantity(initData);
+    this.shoppingCart.initShoppingCart();
     if (this.product.features.indexOf('\n') !== -1) {
       const newLinePoint = this.product.features.indexOf('\n');
       const partOne = this.product.features.slice(0, newLinePoint);

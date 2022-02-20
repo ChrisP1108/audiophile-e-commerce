@@ -22,7 +22,6 @@ $extended: 1200px;
 .header-section-headings-boxed {
     position: relative;
     width: 100%;
-    max-width: var(--box-max);
     margin: 0 var(--boxed-padding) 0;
 
     @media(min-width: $tablet) {
@@ -41,7 +40,6 @@ $extended: 1200px;
 }
 
 .header-container {
-    transition: 0s;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
@@ -230,4 +228,12 @@ a {
     @media(min-width: $tablet) {
         transform: translateX(0%)!important;
     }
+}
+
+.header-out {
+    height: 0rem!important;
+}
+
+.header-go-back-out {
+    height: 2.5rem!important;
 }

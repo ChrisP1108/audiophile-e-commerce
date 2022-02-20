@@ -1,3 +1,16 @@
 <div class="cart-modal-main-container">
-    <div class="cart-modal-boxed border-curve"></div>
+    <div class="cart-modal-boxed border-curve">
+        <h5 *ngIf="cartEmpty">{{cartModalText[3]}}</h5>
+        <div *ngIf="!cartEmpty" class="cart-modal-body">
+            <div class="cart-modal-heading f-sb">
+                <h6>{{cartModalText[0].toUpperCase()}} ({{cartModalList.length}})</h6>
+                <p (click)="clearList()" class="remove-text">{{cartModalText[1]}}</p>
+            </div>
+            <app-cart-modal-item *ngFor="let item of cartModalList" [item]="item"></app-cart-modal-item>
+            <div class="cart-modal-total f-sb">
+                <p class="total-text">{{cartModalText[2].toUpperCase()}}</p>
+                <h6>${{cartTotal.toLocaleString()}}</h6>
+            </div>
+        </div>
+    </div>
 </div>

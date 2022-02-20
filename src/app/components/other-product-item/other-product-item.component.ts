@@ -10,7 +10,7 @@ import { data } from '../../../data';
 })
 export class OtherProductItemComponent implements OnInit {
 
-  @Input() item!: othersInterface
+  @Input() item!: othersInterface;
 
   route: string = ''
   buttonText: string = data.buttonTexts[0];

@@ -573,5 +573,6 @@ export const data = {
   "newText": "New Product",
   "quantityMaxedMessages": ["Maximum Quantity Of 10 Added To Cart", "Quantity Limited To 10 Per Customer"],
   "productHeadlines" :["Features", "In The Box"],
-  "otherHeadline": "You May Also Like"
+  "otherHeadline": "You May Also Like",
+  "cartModal": ["Cart", "Remove all", "Total", "Cart Is Empty"]
 }
