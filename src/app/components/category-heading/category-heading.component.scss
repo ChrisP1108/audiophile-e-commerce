@@ -69,7 +69,8 @@ h5 {
 }
 
 .container-top-up {
-    z-index: 1000;
-    top: calc(var(--header-height) - 3%);
+    transition: 0.25s;
+    z-index: 4;
+    top: -6.25rem;
 
 }
