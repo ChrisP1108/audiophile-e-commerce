@@ -28,6 +28,18 @@ p {
     text-align: left;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
+.quantity-text {
+    opacity: 0.5;
+}
+
+.quantity-count-container {
+    margin: auto 0 auto auto;
+}
+
 .image-container {
     cursor: pointer;
     position: relative;

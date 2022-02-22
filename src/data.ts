@@ -575,14 +575,121 @@ export const data = {
   "productHeadlines" :["Features", "In The Box"],
   "otherHeadline": "You May Also Like",
   "cartModal": {
-    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart"],
+    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart", "Summary", "Shipping", "VAT (Included)", "Grand Total"],
+    "costs": [
+      {
+        "type": "Shipping",
+        "price": 50
+      },
+      {
+        "type": "VAT",
+        "percentage": .20
+      }
+    ],
     "products": [
-      { "id": 1, name: "YX1"},
-      { "id": 2, name: "XX59"},
-      { "id": 3, name: "XX99 MKI"},
-      { "id": 4, name: "XX99 MKII"},
-      { "id": 5, name: "ZX7"},
-      { "id": 6, name: "ZX9"}
+      { "id": 1, "name": "YX1"},
+      { "id": 2, "name": "XX59"},
+      { "id": 3, "name": "XX99 MKI"},
+      { "id": 4, "name": "XX99 MKII"},
+      { "id": 5, "name": "ZX7"},
+      { "id": 6, "name": "ZX9"}
     ]
-  }
+  },
+  "checkoutForms": [
+    {
+      "id": 1, 
+      "section": "Billing Details", 
+      "fields": [
+        {
+          "id": 1,
+          "name": "Name",
+          "value": "name",
+          "type": "text",
+          "fullWidth": false
+        },
+        {
+          "id": 2,
+          "name": "Email Address",
+          "value": "email",
+          "type": "email",
+          "fullWidth": false
+        },
+        {
+          "id": 3,
+          "name": "Phone Number",
+          "value": "phone",
+          "type": "tel",
+          "fullWidth": false
+        },
+      ]
+    },
+    {
+      "id": 2, 
+      "section": "Shipping Info", 
+      "fields": [
+        {
+          "id": 1,
+          "name": "Your Address",
+          "value": "address",
+          "type": "text",
+          "fullWidth": true
+        },
+        {
+          "id": 2,
+          "name": "Zip Code",
+          "value": "zip",
+          "type": "number",
+          "fullWidth": false
+        },
+        {
+          "id": 3,
+          "name": "City",
+          "value": "city",
+          "type": "text",
+          "fullWidth": false
+        },
+        {
+          "id": 3,
+          "name": "Country",
+          "value": "country",
+          "type": "text",
+          "fullWidth": false
+        },
+      ]
+    },
+    {
+      "id": 3, 
+      "section": "Payment Details", 
+      "fields": [
+        {
+          "id": 1,
+          "name": "e-Money",
+          "value": "eMoney",
+          "type": "radio",
+          "fullWidth": false
+        },
+        {
+          "id": 2,
+          "name": "Cash on Delivery",
+          "value": "cashOnDelivery",
+          "type": "radio",
+          "fullWidth": false
+        },
+        {
+          "id": 3,
+          "name": "e-Money Number",
+          "value": "eMoneyNumber",
+          "type": "number",
+          "fullWidth": false
+        },
+        {
+          "id": 3,
+          "name": "e-Money PIN",
+          "value": "eMoneyPin",
+          "type": "number",
+          "fullWidth": false
+        },
+      ]
+    }
+  ]
 }

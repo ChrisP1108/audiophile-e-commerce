@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
+import { Router } from '@angular/router';
 import { data } from '../../../data'
 
 @Component({
@@ -15,12 +16,16 @@ export class CartModalListComponent implements OnInit {
   cartModalList: shoppingCartInterface[] = [];
   cartEmpty: boolean = true;
   cartTotal: number = 0;
-  buttonText: string = data.buttonTexts[3];
-
+  buttonTextCheckout: string = data.buttonTexts[3];
+  buttonTextContinue: string = data.buttonTexts[4];
   cartModalText: string[] = data.cartModal.text;
+  shipping: any = data.cartModal.costs[0].price;
+  grandTotal: number = 0;
+  vat: any = data.cartModal.costs[1].percentage;
+  checkout: boolean = false;
 
   constructor(private shoppingCart: ShoppingCartService,
-    private menuToggle: MenuToggleService) { 
+    private menuToggle: MenuToggleService, private router: Router) { 
     this.shoppingCart.shoppingCartList()
       .subscribe((value: shoppingCartInterface[]) => {
         this.cartModalList = value.filter(item => item.quantity > 0);
@@ -42,8 +47,15 @@ export class CartModalListComponent implements OnInit {
     this.menuToggle.setCartToggle(false);
   }
 
+  submitPayment(): void {
+    console.log('Submitted');
+  }
+
   ngOnInit(): void {
     this.shoppingCart.initShoppingCart();
+    this.checkout = this.router.url.includes('checkout') ? true : false;
+    this.vat = Math.ceil(this.cartTotal * this.vat);
+    this.grandTotal = this.shipping + this.cartTotal;
   }
 
 }

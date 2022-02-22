@@ -2,18 +2,37 @@
     <div class="cart-modal-boxed border-curve">
         <h6 class="empty-cart-text" *ngIf="cartEmpty">{{cartModalText[3]}}</h6>
         <div *ngIf="!cartEmpty" class="cart-modal-body">
-            <div class="cart-modal-heading f-sb">
-                <h6>{{cartModalText[0].toUpperCase()}} ({{cartModalList.length}})</h6>
-                <p (click)="clearList()" class="remove-text">{{cartModalText[1]}}</p>
+            <div class="f-sb" [ngClass]="checkout ? 'cart-modal-heading-summary' : 'cart-modal-heading-cart'">
+                <h6 *ngIf="!checkout">{{cartModalText[0].toUpperCase()}} ({{cartModalList.length}})</h6>
+                <h6 *ngIf="checkout">{{cartModalText[5].toUpperCase()}}</h6>
+                <p *ngIf="!checkout" (click)="clearList()" class="remove-text">{{cartModalText[1]}}</p>
             </div>
-            <p class="click-image-text">{{cartModalText[4]}}</p>
+            <p *ngIf="!checkout" class="click-image-text">{{cartModalText[4]}}</p>
             <app-cart-modal-item *ngFor="let item of cartModalList" [item]="item"></app-cart-modal-item>
-            <div class="cart-modal-total f-sb">
+            <div class="cart-modal-price f-sb">
                 <p class="total-text">{{cartModalText[2].toUpperCase()}}</p>
                 <h6>${{cartTotal.toLocaleString()}}</h6>
             </div>
-            <button (click)="unToggleModal()" routerLink="/checkout" class="btn-1">
-                {{buttonText}}
+            <div *ngIf="checkout">
+                <div class="cart-modal-shipping-vat f-sb">
+                    <p class="total-text">{{cartModalText[6].toUpperCase()}}</p>
+                    <h6>${{shipping.toLocaleString()}}</h6>
+                </div>
+                <div class="cart-modal-shipping-vat f-sb">
+                    <p class="total-text">{{cartModalText[7].toUpperCase()}}</p>
+                    <h6>${{vat.toLocaleString()}}</h6>
+                </div>
+                <div class="cart-modal-grand-total f-sb">
+                    <p class="total-text">{{cartModalText[8].toUpperCase()}}</p>
+                    <h6 class="grand-total-text">${{grandTotal.toLocaleString()}}</h6>
+                </div>
+            </div>
+            <button *ngIf="!checkout" (click)="unToggleModal()" routerLink="/checkout" 
+                class="btn-1 checkout-button">
+                {{buttonTextCheckout}}
+            </button>
+            <button *ngIf="checkout" (click)="submitPayment()" class="btn-1 continue-button">
+                {{buttonTextContinue}}
             </button>
         </div>
     </div>

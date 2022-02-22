@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
+import { Router } from '@angular/router';
 import { data } from '../../../data';
 
 @Component({
@@ -24,7 +25,8 @@ export class CartModalItemComponent implements OnInit {
 
   product: any = { };
 
-  constructor(private shoppingCart: ShoppingCartService) { }
+  constructor( private router: Router, 
+    private shoppingCart: ShoppingCartService) { }
 
   incrementer(): void {
     if (this.totalQuantity >= 10) {
@@ -46,6 +48,10 @@ export class CartModalItemComponent implements OnInit {
 
   removeItem(): void {
     this.shoppingCart.zeroOutShoppingItemQuantity(this.item.id)
+  }
+
+  checkoutRoute(): boolean {
+    return this.router.url.includes('checkout');
   }
 
   ngOnInit(): void {

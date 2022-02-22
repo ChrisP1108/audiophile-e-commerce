@@ -8,9 +8,13 @@
         <p>{{ cartModalName.name.toUpperCase() }}</p>
         <p class="price-text">${{ product.price.toLocaleString() }}</p>
     </div>
-    <div class="quantity-container f-sb">
+    <div *ngIf="!checkoutRoute()" class="quantity-container f-sb">
         <span (click)="decrementer()" class="quarter-trans">-</span>
         <span>{{totalQuantity}}</span>
         <span (click)="incrementer()" class="quarter-trans">+</span>
+    </div>
+    <div *ngIf="checkoutRoute()" class="quantity-count-container">
+        <p class="quantity-text">x{{totalQuantity}}</p>
+        <p class="invisible">x1{{totalQuantity}}</p>
     </div>
 </div>

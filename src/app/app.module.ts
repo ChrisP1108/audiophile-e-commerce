@@ -18,8 +18,6 @@ import { OtherProductItemComponent } from './components/other-product-item/other
 import { CartModalListComponent } from './components/cart-modal-list/cart-modal-list.component';
 import { CartModalItemComponent } from './components/cart-modal-item/cart-modal-item.component';
 import { CheckoutInfoComponent } from './components/checkout-info/checkout-info.component';
-import { CheckoutSummaryListComponent } from './components/checkout-summary-list/checkout-summary-list.component';
-import { CheckoutSummaryItemComponent } from './components/checkout-summary-item/checkout-summary-item.component';
 import { CheckoutModalComponent } from './components/checkout-modal/checkout-modal.component';
 import { ToggleMenuComponent } from './components/toggle-menu/toggle-menu.component';
 import { SectionHomeComponent } from './components/section-home/section-home.component';
@@ -48,8 +46,6 @@ import { NavLinksComponent } from './components/nav-links/nav-links.component';
     CartModalListComponent,
     CartModalItemComponent,
     CheckoutInfoComponent,
-    CheckoutSummaryListComponent,
-    CheckoutSummaryItemComponent,
     CheckoutModalComponent,
     ToggleMenuComponent,
     SectionHomeComponent,
