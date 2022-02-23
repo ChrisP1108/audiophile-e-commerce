@@ -36,9 +36,9 @@ export class CartModalListComponent implements OnInit {
           }
           return a + (b.price * b.quantity);
         }, 0);
-        if (this.cartEmpty && this.router.url === '/checkout') {
-          window.history.back();
-        }
+        // if (this.cartEmpty && this.router.url === '/checkout') {
+        //   window.history.back();
+        // }
     })
   }
 

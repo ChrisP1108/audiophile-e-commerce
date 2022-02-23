@@ -1,0 +1,82 @@
+.checkout-info-container {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    letter-spacing: 0.0625rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-size: 0.75rem;
+    letter-spacing: -0.0131rem;
+    font-weight: 700;
+}
+
+.subtitle-text {
+    color: var(--a);
+    letter-spacing: 0.0581rem;
+    font-weight: 700;
+}
+
+.form-section-container {
+    margin-bottom: 1.5rem;
+}
+
+.input-container {
+    margin-top: 1rem;
+}
+
+input {
+    border: 0.0625rem var(--g) solid;
+    margin: 0.5rem 0;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0.4;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 3.5rem;
+    position: relative;
+
+    .radio-btn-container {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0 0 0 0.9375rem;
+        border: 0.0625rem var(--g) solid;
+        border-radius: 50%;
+        display: flex;
+        opacity: 0.4;
+    }
+
+    .radio-dot {
+        width: 0.625rem;
+        height: 0.625rem;
+        background: var(--a);
+        border-radius: 50%;
+        margin-left: 1.25rem;
+        position: absolute;
+    }
+
+    label {
+        margin-left: 1rem;
+    }
+
+    .radio-border-fill {
+        border: 0.0625rem var(--g) solid;
+        border-radius: 0.5rem;
+        opacity: 0.4;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}

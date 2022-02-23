@@ -30,6 +30,7 @@ router-outlet {
 app-bottom-headline {
     background: var(--white);
     padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
     z-index: 1;
 
     @media(min-width: $tablet) {
@@ -38,6 +39,7 @@ app-bottom-headline {
 
     @media(min-width: $desktop) {
         padding-top: 10rem;
+        padding-bottom: 10rem;
     }
 }
 
@@ -65,11 +67,6 @@ app-toggle-menu {
 }
 
 app-footer {
-    padding-top: 7.5rem;
     background: var(--white);
     z-index: 1;
-
-    @media(min-width: $desktop) {
-        padding-top: 10rem;
-    }
 }

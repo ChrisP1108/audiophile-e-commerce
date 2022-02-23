@@ -575,7 +575,7 @@ export const data = {
   "productHeadlines" :["Features", "In The Box"],
   "otherHeadline": "You May Also Like",
   "cartModal": {
-    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart", "Summary", "Shipping", "VAT (Included)", "Grand Total"],
+    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart", "Summary", "Shipping", "VAT (Included)", "Grand Total", "Checkout"],
     "costs": [
       {
         "type": "Shipping",
@@ -602,22 +602,26 @@ export const data = {
       "fields": [
         {
           "id": 1,
-          "name": "Name",
-          "value": "name",
+          "display": "Name",
+          "name": "name",
+          "value": "Name",
           "type": "text",
+          "input": "",
           "fullWidth": false
         },
         {
           "id": 2,
-          "name": "Email Address",
-          "value": "email",
+          "display": "Email Address",
+          "name": "email",
+          "value": "Email",
           "type": "email",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "Phone Number",
-          "value": "phone",
+          "display": "Phone Number",
+          "name": "phone",
+          "value": "Phone",
           "type": "tel",
           "fullWidth": false
         },
@@ -629,29 +633,33 @@ export const data = {
       "fields": [
         {
           "id": 1,
-          "name": "Your Address",
-          "value": "address",
+          "display": "Your Address",
+          "name": "Address",
+          "value": "Address",
           "type": "text",
           "fullWidth": true
         },
         {
           "id": 2,
-          "name": "Zip Code",
-          "value": "zip",
+          "display": "Zip Code",
+          "name": "zip",
+          "value": "Zip Code",
           "type": "number",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "City",
-          "value": "city",
+          "display": "City",
+          "name": "city",
+          "value": "City",
           "type": "text",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "Country",
-          "value": "country",
+          "display": "Country",
+          "name": "country",
+          "value": "Country",
           "type": "text",
           "fullWidth": false
         },
@@ -663,28 +671,32 @@ export const data = {
       "fields": [
         {
           "id": 1,
-          "name": "e-Money",
+          "display": "e-Money",
+          "name": "payMethod",
           "value": "eMoney",
           "type": "radio",
           "fullWidth": false
         },
         {
           "id": 2,
-          "name": "Cash on Delivery",
-          "value": "cashOnDelivery",
+          "display": "Cash on Delivery",
+          "name": "payMethod",
+          "value": "cash",
           "type": "radio",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "e-Money Number",
+          "display": "e-Money Number",
+          "name": "eMoneyNumber",
           "value": "eMoneyNumber",
           "type": "number",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "e-Money PIN",
+          "display": "e-Money PIN",
+          "name": "eMoneyPin",
           "value": "eMoneyPin",
           "type": "number",
           "fullWidth": false
