@@ -673,7 +673,7 @@ export const data = {
           "id": 1,
           "display": "e-Money",
           "name": "payMethod",
-          "value": "eMoney",
+          "value": "",
           "type": "radio",
           "fullWidth": false
         },
@@ -681,7 +681,7 @@ export const data = {
           "id": 2,
           "display": "Cash on Delivery",
           "name": "payMethod",
-          "value": "cash",
+          "value": "",
           "type": "radio",
           "fullWidth": false
         },

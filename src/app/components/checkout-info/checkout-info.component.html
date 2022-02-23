@@ -3,14 +3,15 @@
     <div *ngFor="let section of checkoutForms" class="form-section-container">
         <div class="subtitle-text">{{section.section}}</div>
         <div class="input-container" *ngFor="let field of section.fields">
-            <div [ngClass]="field.type === 'radio' ? 'radio-container' : 'f-column'">
+            <div (click)="radioSelect(field.name, field.display)" [ngClass]="field.type === 'radio' ? 'radio-container' : 'f-column'">
                 <label for={{field.name}}>{{field.display}}</label>
                 <input *ngIf="field.type !== 'radio'" name={{field.name}} 
                 type={{field.type}} id={{field.name}}
                     placeholder="{{field.value}}">
-                <div class="radio-border-fill"></div>
+                <div [ngClass]="formValues[field.name] === field.display ? 'border-selected' : ''" 
+                    class="radio-border-fill"></div>
                 <div class="radio-btn-container"></div>
-                <div *ngIf="field.value" class="radio-dot"></div>
+                <div *ngIf="formValues[field.name] === field.display" class="radio-dot"></div>
             </div>
         </div>
     </div>
