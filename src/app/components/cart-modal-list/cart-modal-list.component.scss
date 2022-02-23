@@ -27,12 +27,14 @@ $extended: 1200px;
     max-width: 23.5625rem;
 }
 
-.cart-modal-heading-cart {
-    margin-bottom: 1rem;
+.cart-checkout-container {
+    background: var(--white);
+    min-height: 15rem;
+    padding: 2rem 1.75rem;
 }
 
-.cart-modal-heading-summary {
-    margin-bottom: 1.875rem;
+.cart-modal-heading-cart {
+    margin-bottom: 1rem;
 }
 
 .cart-modal-price {

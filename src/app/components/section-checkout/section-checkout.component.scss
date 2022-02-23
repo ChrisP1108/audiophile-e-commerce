@@ -1,0 +1,16 @@
+$tablet: 768px;
+$desktop: 1024px;
+$extended: 1200px;
+
+.section-checkout-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--d);
+    width: 100vw;
+}
+
+.section-checkout-boxed {
+    width: 100%;
+    padding: 0 var(--boxed-padding) 0;
+}

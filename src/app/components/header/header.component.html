@@ -6,9 +6,9 @@
             <img routerLink="/" [ngClass]="goBackScrolled ? 'logo-top-up-shift' : ''" 
                 class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
             <app-nav-links></app-nav-links>  
-            <div (click)="cartToggler()" class="img-cart"></div>
+            <div (click)="cartToggler()" class="img-cart" [ngClass]="!routeIncludes('checkout') ? 'img-hover' : ''"></div>
         </div>
-        <div *ngIf="!menuToggled && !cartToggled && (routeIncludes('products') || routeIncludes('checkout'))" 
+        <div *ngIf="!menuToggled && !cartToggled && goBackRouteDisplay()" 
             class="go-back-container f-ac-column" #goBackContainer
             [ngClass]="shiftHeader === -100 ? 'top-up' : goBackScrolled ? 'go-back-top-up' : ''">
                 <div *ngIf="routeIncludes('products')" class="go-back-boxed">

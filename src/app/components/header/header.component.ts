@@ -39,6 +39,9 @@ export class HeaderComponent implements OnInit {
   }
 
   cartToggler(): void {
+    if (this.routeIncludes('checkout')) {
+      return
+    }
     this.menuToggle.setCartToggle(!this.cartToggled);
   }
 
@@ -63,6 +66,12 @@ export class HeaderComponent implements OnInit {
   routeIncludes(url: string): boolean {
     this.categoryType = this.router.url.slice(10);
     if (this.router.url.includes(url)) {
+      return true
+    } else return false
+  }
+
+  goBackRouteDisplay(): boolean {
+    if (this.router.url.includes('products') || this.router.url === '/checkout') {
       return true
     } else return false
   }
