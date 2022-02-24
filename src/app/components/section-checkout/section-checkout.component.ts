@@ -17,6 +17,7 @@ export class SectionCheckoutComponent implements OnInit {
 
   submitForm(): void {
     console.log('Submit Clicked');
+    console.log(this.form);
   }
 
   ngOnInit(): void {

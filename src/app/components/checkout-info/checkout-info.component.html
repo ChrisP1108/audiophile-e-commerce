@@ -10,8 +10,8 @@
                     [ngClass]="field.type === 'radio' ? 'radio-container' : 'f-column'">
                     <label for={{field.name}}>{{field.display}}</label>
                     <input *ngIf="field.type !== 'radio'" name={{field.name}} 
-                        type={{field.type}} id={{field.name}} (keyup)="textChange($event, field.name)"
-                        placeholder="{{field.display}}" value="{{fieldValue(field.name, field.display)}}">
+                        type={{field.type}} id={{field.name}} (keyup)="textChange($event, field.name, field.type)"
+                        placeholder="{{field.display}}" value="{{fieldValue(field.name, field.display, field.type)}}">
                     <div [ngClass]="formValues[field.name] === field.display ? 'border-selected' : ''" 
                         class="radio-border-fill"></div>
                     <div class="radio-btn-container"></div>

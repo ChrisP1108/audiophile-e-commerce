@@ -22,14 +22,21 @@ export class CheckoutInfoComponent implements OnInit {
     this.formData.emit(this.formValues);
   }
 
-  fieldValue(input:string, name: string): string {
+  fieldValue(input: string, name: string, type: string): any {
     let value = this.formValues[input];
     value = value === name ? '' : value;
+    if (type === 'number') {
+      value = Number(value);
+    }
     return value;
   }
 
-  textChange(input: any, field: string): void {
-    this.formValues[field] = input.target.value;
+  textChange(input: any, field: string, type: string): void {
+    let value = input.target.value;
+    if (type === 'number') {
+      value = Number(value)
+    }
+    this.formValues[field] = value;
     this.formData.emit(this.formValues);
   }
 
