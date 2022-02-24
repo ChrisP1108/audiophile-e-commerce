@@ -1,7 +1,5 @@
-import { Component, ElementRef, HostListener, ViewChild, 
-  Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { MenuToggleService } from './services/menu-toggle/menu-toggle.service';
 import '../styles.scss';
 

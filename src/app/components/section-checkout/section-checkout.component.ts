@@ -9,6 +9,16 @@ export class SectionCheckoutComponent implements OnInit {
 
   constructor() { }
 
+  form: Object = { }
+
+  formData(input: any) {
+    this.form = input;
+  }
+
+  submitForm(): void {
+    console.log('Submit Clicked');
+  }
+
   ngOnInit(): void {
   }
 

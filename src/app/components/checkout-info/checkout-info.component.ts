@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { data } from '../../../data';
 import { checkoutFormsInterface } from './checkout-info.component.interfaces';
 
@@ -9,6 +9,7 @@ import { checkoutFormsInterface } from './checkout-info.component.interfaces';
 })
 export class CheckoutInfoComponent implements OnInit {
 
+  @Output() formData = new EventEmitter<Object>();
 
   formValues : any = { };
   headingText: string = data.cartModal.text[9];
@@ -18,15 +19,37 @@ export class CheckoutInfoComponent implements OnInit {
 
   radioSelect(key: string, input: string): void {
     this.formValues[key] = input;
+    this.formData.emit(this.formValues);
+  }
+
+  fieldValue(input:string, name: string): string {
+    let value = this.formValues[input];
+    value = value === name ? '' : value;
+    return value;
+  }
+
+  textChange(input: any, field: string): void {
+    this.formValues[field] = input.target.value;
+    this.formData.emit(this.formValues);
   }
 
   ngOnInit(): void {
     this.checkoutForms.forEach(section => {
       section.fields.forEach(field => {
-        this.formValues[field.name] = field.value
+        switch(field.type) {
+          case 'number':
+            this.formValues[field.name] = 0;
+            break;
+          case 'text':
+            this.formValues[field.name] = "";
+            break;
+          case 'boolean':
+            this.formValues[field.name] = false;
+            break;
+        };
       });
     });
-    console.log(this.formValues);
+    this.formData.emit(this.formValues);
   }
 
 }

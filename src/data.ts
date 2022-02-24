@@ -604,7 +604,6 @@ export const data = {
           "id": 1,
           "display": "Name",
           "name": "name",
-          "value": "Name",
           "type": "text",
           "input": "",
           "fullWidth": false
@@ -613,7 +612,6 @@ export const data = {
           "id": 2,
           "display": "Email Address",
           "name": "email",
-          "value": "Email",
           "type": "email",
           "fullWidth": false
         },
@@ -621,7 +619,6 @@ export const data = {
           "id": 3,
           "display": "Phone Number",
           "name": "phone",
-          "value": "Phone",
           "type": "tel",
           "fullWidth": false
         },
@@ -635,7 +632,6 @@ export const data = {
           "id": 1,
           "display": "Your Address",
           "name": "Address",
-          "value": "Address",
           "type": "text",
           "fullWidth": true
         },
@@ -643,7 +639,6 @@ export const data = {
           "id": 2,
           "display": "Zip Code",
           "name": "zip",
-          "value": "Zip Code",
           "type": "number",
           "fullWidth": false
         },
@@ -651,7 +646,6 @@ export const data = {
           "id": 3,
           "display": "City",
           "name": "city",
-          "value": "City",
           "type": "text",
           "fullWidth": false
         },
@@ -659,7 +653,6 @@ export const data = {
           "id": 3,
           "display": "Country",
           "name": "country",
-          "value": "Country",
           "type": "text",
           "fullWidth": false
         },
@@ -667,13 +660,13 @@ export const data = {
     },
     {
       "id": 3, 
-      "section": "Payment Details", 
+      "section": "Payment Details",
+      "subSection": "Payment Method", 
       "fields": [
         {
           "id": 1,
           "display": "e-Money",
           "name": "payMethod",
-          "value": "",
           "type": "radio",
           "fullWidth": false
         },
@@ -681,7 +674,6 @@ export const data = {
           "id": 2,
           "display": "Cash on Delivery",
           "name": "payMethod",
-          "value": "",
           "type": "radio",
           "fullWidth": false
         },
@@ -689,7 +681,6 @@ export const data = {
           "id": 3,
           "display": "e-Money Number",
           "name": "eMoneyNumber",
-          "value": "eMoneyNumber",
           "type": "number",
           "fullWidth": false
         },
@@ -697,7 +688,6 @@ export const data = {
           "id": 3,
           "display": "e-Money PIN",
           "name": "eMoneyPin",
-          "value": "eMoneyPin",
           "type": "number",
           "fullWidth": false
         },
