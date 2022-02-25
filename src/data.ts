@@ -637,7 +637,7 @@ export const data = {
         },
         {
           "id": 2,
-          "display": "Zip Code",
+          "display": "ZIP Code",
           "name": "zip",
           "type": "number",
           "fullWidth": false
@@ -675,7 +675,7 @@ export const data = {
           "display": "Cash on Delivery",
           "name": "payMethod",
           "type": "radio",
-          "fullWidth": false
+          "fullWidth": true
         },
         {
           "id": 3,

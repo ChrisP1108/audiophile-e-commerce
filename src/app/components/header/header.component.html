@@ -8,10 +8,11 @@
             <app-nav-links></app-nav-links>  
             <div (click)="cartToggler()" class="img-cart" [ngClass]="!routeIncludes('checkout') ? 'img-hover' : ''"></div>
         </div>
-        <div *ngIf="!menuToggled && !cartToggled && goBackRouteDisplay()" 
+        <div *ngIf="!menuToggled && !cartToggled" 
             class="go-back-container f-ac-column" #goBackContainer
             [ngClass]="shiftHeader === -100 ? 'top-up' : goBackScrolled ? 'go-back-top-up' : ''">
-                <div *ngIf="routeIncludes('products')" class="go-back-boxed">
+                <div [ngClass]="routeIncludes('checkout') ? 'checkout-background' : ''" 
+                *ngIf="routeIncludes('products') || routeIncludes('checkout')" class="go-back-boxed">
                     <a (click)="goBackRoute()" class="go-back-text">{{ goBackText }}</a>
                 </div>
         </div>

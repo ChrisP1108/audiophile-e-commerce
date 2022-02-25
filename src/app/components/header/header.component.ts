@@ -57,7 +57,7 @@ export class HeaderComponent implements OnInit {
       this.shiftHeader = 0;
     }
     if (window.scrollY > 10) {
-      if(this.router.url.includes('products')) {
+      if(this.router.url.includes('products') || this.router.url.includes('checkout')) {
         this.goBackScrolled = true;
       }
     } else this.goBackScrolled = false;

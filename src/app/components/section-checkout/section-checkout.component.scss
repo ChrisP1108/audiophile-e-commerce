@@ -7,8 +7,16 @@ $extended: 1200px;
     align-items: center;
     flex-direction: column;
     background: var(--d);
-    padding: var(--go-back-height) 0 6.0625rem;
+    padding: 4.0625rem 0 6.0625rem;
     width: 100vw;
+
+    @media(min-width: $tablet) {
+        padding: 6.0625rem 0 7.25rem;
+    }
+
+    @media(min-width: $desktop) {
+        padding: 8.875rem 0 8.8125rem;
+    }
 
 }
 
@@ -16,8 +24,20 @@ $extended: 1200px;
     width: 100%;
     padding: 0 var(--boxed-padding) 0;
 
+    @media(min-width: $tablet) {
+        padding: 0 5.195% 0;
+    }
+
     @media(min-width: $extended) {
+        display: flex;
         padding: 0;
         max-width: var(--box-max);
+    }
+}
+
+app-cart-modal-list {
+    @media(min-width: $extended) {
+        margin-left: 1.875rem;
+        width: 39.567%;
     }
 }

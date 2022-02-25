@@ -27,6 +27,7 @@ export class CheckoutInfoComponent implements OnInit {
     value = value === name ? '' : value;
     if (type === 'number') {
       value = Number(value);
+      value = value === 0 ? null : value
     }
     return value;
   }
@@ -34,7 +35,8 @@ export class CheckoutInfoComponent implements OnInit {
   textChange(input: any, field: string, type: string): void {
     let value = input.target.value;
     if (type === 'number') {
-      value = Number(value)
+      value = Number(value);
+      value = value === 0 ? null : value;
     }
     this.formValues[field] = value;
     this.formData.emit(this.formValues);
