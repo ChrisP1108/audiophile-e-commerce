@@ -1,5 +1,5 @@
 <div class="header-section-headings-container" [ngClass]="shiftHeader === -100 && routeIncludes('products') ? 'header-go-back-out' 
-: shiftHeader === -100 ? 'header-out' : ''"> 
+    : shiftHeader === -100 ? 'header-out' : ''"> 
     <div class="header-section-headings-boxed">
         <div class="header-container" #headerContainer [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
             <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
@@ -8,7 +8,7 @@
             <app-nav-links></app-nav-links>  
             <div (click)="cartToggler()" class="img-cart" [ngClass]="!routeIncludes('checkout') ? 'img-hover' : ''"></div>
         </div>
-        <div *ngIf="!menuToggled && !cartToggled" 
+        <div *ngIf="!menuToggled && !cartToggled && !checkoutToggled" 
             class="go-back-container f-ac-column" #goBackContainer
             [ngClass]="shiftHeader === -100 ? 'top-up' : goBackScrolled ? 'go-back-top-up' : ''">
                 <div [ngClass]="routeIncludes('checkout') ? 'checkout-background' : ''" 

@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   menuToggled: boolean = false;
   cartToggled: boolean = false;
+  checkoutToggled: boolean = false;
   shiftHeader: number = 0;
   categoryType: string = '';
   goBackText: string = data.buttonTexts[6];
@@ -26,11 +27,14 @@ export class HeaderComponent implements OnInit {
   goBack!: ElementRef;
 
   constructor(private router: Router, private menuToggle: MenuToggleService) {
-    this.menuToggle.menuToggled().subscribe(value => {
+    this.menuToggle.menuToggled().subscribe((value: boolean) => {
       this.menuToggled = value;
     });
-    this.menuToggle.cartToggled().subscribe(value => {
+    this.menuToggle.cartToggled().subscribe((value: boolean) => {
       this.cartToggled = value;
+    });
+    this.menuToggle.checkoutToggled().subscribe((value: boolean) => {
+      this.checkoutToggled = value;
     });
   }
 

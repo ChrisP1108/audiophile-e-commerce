@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 
 @Component({
   selector: 'app-section-checkout',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionCheckoutComponent implements OnInit {
 
-  constructor() { }
+  checkoutToggled: boolean = false;
+
+  constructor(private checkoutToggle: MenuToggleService) {
+    this.checkoutToggle.checkoutToggled().subscribe((value: boolean) => {
+      this.checkoutToggled = value;
+    })
+  }
 
   form: Object = { }
 
@@ -16,8 +23,7 @@ export class SectionCheckoutComponent implements OnInit {
   }
 
   submitForm(): void {
-    console.log('Submit Clicked');
-    console.log(this.form);
+    this.checkoutToggle.setCheckoutToggle(true);
   }
 
   ngOnInit(): void {

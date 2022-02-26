@@ -693,5 +693,10 @@ export const data = {
         },
       ]
     }
-  ]
+  ],
+  "checkoutModal": {
+    "text": ["Thank You For Testing This Demo", "This e-commerce store was designed by frontendmentor.io and built by Chris Paschall."],
+    "image": "./assets/shared/desktop/icon-checkout.svg",
+    "additional": ["and", "other item(s)"]
+  }
 }

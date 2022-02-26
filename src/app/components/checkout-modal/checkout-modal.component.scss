@@ -1,0 +1,14 @@
+.checkout-modal-container {
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 16;
+    top: calc(var(--header-height) + 8.375rem);
+    left: 0;
+    margin: 0 var(--boxed-padding) 0;
+    background: var(--white);
+    right: 0;
+    height: 400px;
+    max-width: 33.75rem;
+    margin: 0 auto;
+    padding: 2rem;
+}

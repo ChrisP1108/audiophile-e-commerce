@@ -27,6 +27,10 @@ router-outlet {
     overflow-y: clip!important;
 }
 
+.checkout-modal-overlay {
+    z-index: 13!important;
+}
+
 app-bottom-headline {
     background: var(--white);
     padding-top: 7.5rem;
@@ -69,4 +73,8 @@ app-toggle-menu {
 app-footer {
     background: var(--white);
     z-index: 1;
+}
+
+app-checkout-modal {
+    z-index: 15;
 }
