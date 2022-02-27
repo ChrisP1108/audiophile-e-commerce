@@ -3,7 +3,7 @@ import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 import { Router } from '@angular/router';
-import { data } from '../../../data'
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-cart-modal-list',

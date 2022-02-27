@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-product-promo',

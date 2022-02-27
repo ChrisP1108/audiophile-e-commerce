@@ -4,7 +4,7 @@ $desktop: 1024px;
 $maxed: 1200px;
 
 .promotion2-container {
-    background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
+    background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/mobile/image-speaker-zx7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -16,7 +16,7 @@ $maxed: 1200px;
     justify-content: space-between;
 
     @media(min-width: $tablet) {
-        background-image: url('/assets/home/tablet/image-speaker-zx7.jpg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/tablet/image-speaker-zx7.jpg');
         background-position: center;
         height: 41.668vw;
         padding: 13.025vw 8.335vw 13.025vw;
@@ -24,7 +24,7 @@ $maxed: 1200px;
     }
 
     @media(min-width: $desktop) {
-        background-image: url('/assets/home/desktop/image-speaker-zx7.jpg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/desktop/image-speaker-zx7.jpg');
         height: 20rem;
         margin-top: 3rem;
         background-size: cover;

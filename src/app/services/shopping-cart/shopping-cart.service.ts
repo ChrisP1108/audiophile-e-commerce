@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { shoppingCartInterface } from './shopping-cart-service.interface'
-import { data } from '../../../data'
+import { data } from '../../../assets/data/data';
 
 @Injectable({
   providedIn: 'root'

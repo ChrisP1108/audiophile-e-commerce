@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { itemInterface } from './shopping-item.component.interfaces';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-shopping-item',

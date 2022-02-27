@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, Input, ViewChild, HostListener } from '@angular/core';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
 import { Router } from '@angular/router';
-import { data } from '../../../data'
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-header',

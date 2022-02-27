@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { data } from '../data';
+import { data } from '../assets/data/data';
 import { SectionCategoryComponent } from './components/section-category/section-category.component';
 import { SectionCheckoutComponent } from './components/section-checkout/section-checkout.component';
 import { SectionHomeComponent } from './components/section-home/section-home.component';

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 import { checkoutFormsInterface } from './checkout-info.component.interfaces';
 
 @Component({

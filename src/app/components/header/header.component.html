@@ -2,9 +2,9 @@
     : shiftHeader === -100 ? 'header-out' : ''"> 
     <div class="header-section-headings-boxed">
         <div class="header-container" #headerContainer [ngStyle]="{ 'transform': 'translateY(' + shiftHeader + '%)'}">
-            <img (click)="menuToggler()" class="img-hamburger" src="/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
+            <img (click)="menuToggler()" class="img-hamburger" src="https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/tablet/icon-hamburger.svg" alt="hamburger">
             <img routerLink="/" [ngClass]="goBackScrolled ? 'logo-top-up-shift' : ''" 
-                class="img-logo" src="/assets/shared/desktop/logo.svg" alt="logo">
+                class="img-logo" src="https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/desktop/logo.svg" alt="logo">
             <app-nav-links></app-nav-links>  
             <div (click)="cartToggler()" class="img-cart" [ngClass]="!routeIncludes('checkout') ? 'img-hover' : ''"></div>
         </div>

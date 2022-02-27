@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-new-product',

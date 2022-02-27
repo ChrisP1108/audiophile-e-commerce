@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
-import { data } from '../../../data'
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-checkout-modal',

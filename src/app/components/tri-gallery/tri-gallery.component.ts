@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { productInterface } from '../../app-interfaces';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 import { galleryInterface } from '../section-products/section-products.component-interfaces';
 
 @Component({

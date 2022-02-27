@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { othersInterface } from '../section-products/section-products.component-interfaces';
 import { RouteConfigLoadStart, Router } from '@angular/router';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-other-product-item',

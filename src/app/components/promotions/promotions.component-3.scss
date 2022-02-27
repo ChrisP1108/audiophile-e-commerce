@@ -10,13 +10,13 @@ $maxed: 1200px;
 }
 
 .promotion3-image-container {
-    background-image: url('/assets/home/mobile/image-earphones-yx1.jpg');
+    background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/mobile/image-earphones-yx1.jpg');
     background-size: cover;
     width: 100vw;
     height: 50.75vw;
 
     @media(min-width: $tablet) {
-        background-image: url('/assets/home/tablet/image-earphones-yx1.jpg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/tablet/image-earphones-yx1.jpg');
         background-position: center;
         margin-right: 0.3438rem;
         height: 41.668vw;
@@ -24,7 +24,7 @@ $maxed: 1200px;
     }
 
     @media(min-width: $desktop) {
-        background-image: url('/assets/home/desktop/image-earphones-yx1.jpg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/desktop/image-earphones-yx1.jpg');
         margin-right: 0.9375rem;
         height: 20rem;
     }

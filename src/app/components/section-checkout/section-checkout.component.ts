@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
-import { data } from '../../../data'
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-section-checkout',

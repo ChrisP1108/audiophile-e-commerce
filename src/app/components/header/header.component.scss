@@ -87,7 +87,7 @@ img {
 }
 
 .img-cart {
-    background-image: url('/assets/shared/desktop/icon-cart.svg');
+    background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/desktop/icon-cart.svg');
     background-repeat: no-repeat;
     background-position: center;
     width: 1.4375rem + 1.25rem;
@@ -110,7 +110,7 @@ img {
 .img-hover {
     cursor: pointer;
     &:hover {
-        background-image: url('/assets/shared/desktop/icon-cart-hover.svg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/desktop/icon-cart-hover.svg');
     }
 }
 

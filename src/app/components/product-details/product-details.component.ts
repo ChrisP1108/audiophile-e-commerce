@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface'
 import { productInterface } from '../../app-interfaces';
-import { data } from '../../../data';
+import { data } from '../../../assets/data/data';
 
 @Component({
   selector: 'app-product-details',

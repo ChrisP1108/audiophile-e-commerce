@@ -56,16 +56,16 @@ $extended: 1200px;
 .bottom-headline-image {
     width: 100vw;
     height: 75.85vw;
-    background-image: url('/assets/shared/mobile/image-best-gear.jpg');
+    background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/mobile/image-best-gear.jpg');
     background-size: cover;
 
     @media(min-width: $tablet) {
-        background-image: url('/assets/shared/tablet/image-best-gear.jpg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/tablet/image-best-gear.jpg');
         height: 38.265vw;
     }
 
     @media(min-width: $desktop) {
-        background-image: url('/assets/shared/desktop/image-best-gear.jpg');
+        background-image: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/shared/desktop/image-best-gear.jpg');
         width: 50%;
         height: 36.75rem;
         margin-left: 0.9375rem;
