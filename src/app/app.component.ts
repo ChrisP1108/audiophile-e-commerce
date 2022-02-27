@@ -12,7 +12,7 @@ export class AppComponent {
 
   menuToggled: boolean = false;
   cartToggled: boolean = false;
-  checkoutToggled: boolean = true;
+  checkoutToggled: boolean = false;
   footerPosition: number = 0;
 
   @ViewChild('footer', { static: false, read: ElementRef })

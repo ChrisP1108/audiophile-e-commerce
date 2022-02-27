@@ -32,16 +32,16 @@ export class CartModalListComponent implements OnInit {
       .subscribe((value: shoppingCartInterface[]) => {
         this.cartModalList = value.filter(item => item.quantity > 0);
         this.cartEmpty = !this.cartModalList.length ? true : false;
-        this.cartTotal = this.cartModalList.reduce((a: any, b: any) => {
-          if (!a) {
-            a = 0;
-          }
-          return a + (b.price * b.quantity);
-        }, 0);
         if (this.cartEmpty && this.router.url === '/checkout') {
           window.history.back();
         }
-    })
+    });
+    this.shoppingCart.getCartTotal().subscribe((value: any) => {
+      this.cartTotal = value;
+    });
+    this.shoppingCart.getGrandTotal().subscribe((value: any) => {
+      this.grandTotal = value;
+    });
   }
 
   clearList(): void {
@@ -60,7 +60,6 @@ export class CartModalListComponent implements OnInit {
     this.shoppingCart.initShoppingCart();
     this.checkout = this.router.url.includes('checkout') ? true : false;
     this.vat = Math.ceil(this.cartTotal * this.vat);
-    this.grandTotal = this.shipping + this.cartTotal;
   }
 
 }
