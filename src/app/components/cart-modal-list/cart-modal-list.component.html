@@ -1,4 +1,4 @@
-<div [ngClass]="checkout ? '' : 'cart-modal-main-container'">
+<div [ngClass]="checkout ? '' : 'cart-modal-main-container'" class="fade-in">
     <div [ngClass]="checkout ? 'cart-checkout-container' : 'cart-modal-boxed'" class="border-curve">
         <h6 class="empty-cart-text" *ngIf="cartEmpty">{{cartModalText[3]}}</h6>
         <div *ngIf="!cartEmpty" class="cart-modal-body">
