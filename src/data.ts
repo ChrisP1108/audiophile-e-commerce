@@ -606,21 +606,24 @@ export const data = {
           "name": "name",
           "type": "text",
           "input": "",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A Name"
         },
         {
           "id": 2,
           "display": "Email Address",
           "name": "email",
           "type": "email",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A Valid Email"
         },
         {
           "id": 3,
           "display": "Phone Number",
           "name": "phone",
           "type": "tel",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A Valid Number"
         },
       ]
     },
@@ -631,30 +634,34 @@ export const data = {
         {
           "id": 1,
           "display": "Your Address",
-          "name": "Address",
+          "name": "address",
           "type": "text",
-          "fullWidth": true
+          "fullWidth": true,
+          "errMsg": "Enter An Address"
         },
         {
           "id": 2,
           "display": "ZIP Code",
           "name": "zip",
           "type": "number",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A ZIP Code"
         },
         {
           "id": 3,
           "display": "City",
           "name": "city",
           "type": "text",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A City"
         },
         {
           "id": 3,
           "display": "Country",
           "name": "country",
           "type": "text",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A Country"
         },
       ]
     },
@@ -668,28 +675,32 @@ export const data = {
           "display": "e-Money",
           "name": "payMethod",
           "type": "radio",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Select A Payment"
         },
         {
           "id": 2,
           "display": "Cash on Delivery",
           "name": "payMethod",
           "type": "radio",
-          "fullWidth": true
+          "fullWidth": true,
+          "errMsg": "Select A Payment"
         },
         {
           "id": 3,
           "display": "e-Money Number",
           "name": "eMoneyNumber",
           "type": "number",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A Number"
         },
         {
           "id": 3,
           "display": "e-Money PIN",
           "name": "eMoneyPin",
           "type": "number",
-          "fullWidth": false
+          "fullWidth": false,
+          "errMsg": "Enter A PIN"
         },
       ]
     }

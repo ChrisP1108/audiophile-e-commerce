@@ -58,6 +58,7 @@ p {
 
 .input-container {
     margin-top: 1rem;
+    position: relative;
 }
 
 .input-width-half {
@@ -132,6 +133,11 @@ input:focus {
         width: 100%;
     }
 
+    .radio-error-fill {
+        border: 0.0625rem var(--h) solid!important;
+        opacity: 1;
+    }
+
     .border-selected {
         border: 0.0625rem var(--a) solid!important;
         opacity: 1;
@@ -143,4 +149,30 @@ input:focus {
     @media(min-width: $tablet) {
         margin-left: 51%;
     }
+}
+
+.err-text {
+    color: var(--h)!important;
+    margin: 0;
+}
+
+.err-border {
+    border: 0.0625rem var(--h) solid!important;
+    opacity: 1;
+}
+
+.input-heading {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.err-text-msg {
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    text-align: right;
+    color: var(--h)!important;
 }

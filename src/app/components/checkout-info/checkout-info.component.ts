@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { data } from '../../../data';
 import { checkoutFormsInterface } from './checkout-info.component.interfaces';
 
@@ -10,6 +10,8 @@ import { checkoutFormsInterface } from './checkout-info.component.interfaces';
 export class CheckoutInfoComponent implements OnInit {
 
   @Output() formData = new EventEmitter<Object>();
+  @Input() errCheck!: boolean;
+  @Input() errList!: string[];
 
   formValues : any = { };
   headingText: string = data.cartModal.text[9];
@@ -22,24 +24,31 @@ export class CheckoutInfoComponent implements OnInit {
     this.formData.emit(this.formValues);
   }
 
-  fieldValue(input: string, name: string, type: string): any {
+  fieldValue(input: string, display: string, type: string): any {
     let value = this.formValues[input];
-    value = value === name ? '' : value;
+    value = value === display ? '' : value;
     if (type === 'number') {
       value = Number(value);
       value = value === 0 ? null : value
     }
-    return value;
   }
 
-  textChange(input: any, field: string, type: string): void {
+  textChange(input: any, field: string, type: string, display: string): void {
     let value = input.target.value;
+    value = value === display ? '' : value;
     if (type === 'number') {
       value = Number(value);
       value = value === 0 ? null : value;
     }
+    console.log(value);
     this.formValues[field] = value;
     this.formData.emit(this.formValues);
+  }
+
+  errTrue(input: string): boolean {
+    if (this.errList.includes(input)) {
+      return true
+    } else return false
   }
 
   ngOnInit(): void {
@@ -49,11 +58,11 @@ export class CheckoutInfoComponent implements OnInit {
           case 'number':
             this.formValues[field.name] = 0;
             break;
-          case 'text':
-            this.formValues[field.name] = "";
-            break;
           case 'boolean':
             this.formValues[field.name] = false;
+            break;
+          default:
+            this.formValues[field.name] = "";
             break;
         };
       });

@@ -1,6 +1,6 @@
 <div class="section-checkout-container">
     <div class="section-checkout-boxed">
-        <app-checkout-info (formData)="formData($event)"></app-checkout-info>
-        <app-cart-modal-list (submitForm)="submitForm()"></app-cart-modal-list>
+        <app-checkout-info [errList]="errList" [errCheck]="errCheck" (formData)="formData($event)"></app-checkout-info>
+        <app-cart-modal-list [loading]="loading" (submitForm)="submitForm()"></app-cart-modal-list>
     </div>
 </div>

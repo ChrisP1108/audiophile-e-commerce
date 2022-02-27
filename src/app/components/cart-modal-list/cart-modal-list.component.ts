@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
@@ -14,6 +14,7 @@ import { data } from '../../../data'
 export class CartModalListComponent implements OnInit {
 
   @Output() submitForm = new EventEmitter();
+  @Input() loading!: boolean;
 
   cartModalList: shoppingCartInterface[] = [];
   cartEmpty: boolean = true;

@@ -8,6 +8,7 @@ export interface checkoutFormsInterface {
             display: string;
             name: string;
             type: string;
-            fullWidth: boolean
+            fullWidth: boolean;
+            errMsg: string;
     }[]
 }

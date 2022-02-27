@@ -9,12 +9,16 @@
                 <div [ngClass]="field.fullWidth && field.type ==='radio' ? 'radio-margin' : ''">
                 <div (click)="radioSelect(field.name, field.display)" 
                     [ngClass]="field.type === 'radio' ? 'radio-container' : 'f-column'">
-                    <label for={{field.name}}>
-                        {{field.display}}
-                    </label>
+                    <div class="input-heading">
+                        <label [ngClass]="errTrue(field.name) && errCheck ? 'err-text' : ''" for={{field.name}}>
+                            {{field.display}}
+                        </label>
+                        <p *ngIf="errTrue(field.name) && errCheck && field.type !== 'radio && errCheck'" class="err-text-msg">{{field.errMsg}}</p>
+                    </div>
                     <input *ngIf="field.type !== 'radio'" name={{field.name}} 
-                        type={{field.type}} id={{field.name}} (keyup)="textChange($event, field.name, field.type)"
-                        placeholder="{{field.display}}" value="{{fieldValue(field.name, field.display, field.type)}}">
+                        type={{field.type}} id={{field.name}} (keyup)="textChange($event, field.name, field.type, field.display)"
+                        value="{{fieldValue(field.name, field.display, field.type)}}"
+                        [ngClass]="errTrue(field.name) && errCheck ? 'err-border' : ''">
                     <div [ngClass]="formValues[field.name] === field.display ? 'border-selected' : ''" 
                         class="radio-border-fill"></div>
                     <div class="radio-btn-container"></div>
