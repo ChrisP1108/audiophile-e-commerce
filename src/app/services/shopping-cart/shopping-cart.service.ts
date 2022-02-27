@@ -7,16 +7,25 @@ import { data } from '../../../data'
   providedIn: 'root'
 })
 export class ShoppingCartService {
-  private shoppingCart: any = 
-    data.products.map(product => {
-      return { 
-        id: product.id, 
-        name: product.name,
-        price: product.price,
-        quantity: 0
-      }
+
+  shoppingListStorage(): any {
+    const storage: any = localStorage.getItem("audiophileShoppingCart");
+    if (JSON.parse(storage)) {
+      return JSON.parse(storage);
+    } else {
+        data.products.map(product => {
+          return { 
+            id: product.id, 
+            name: product.name,
+            price: product.price,
+            quantity: 0
+          }
+        }
+      )
     }
-  );
+  }
+  
+  private shoppingCart: any = this.shoppingListStorage();
   private cartTotal: number = 0;
   shipping: any = data.cartModal.costs[0].price;
   private grandTotal: number = 0;
@@ -26,7 +35,7 @@ export class ShoppingCartService {
 
   constructor() { }
 
-  totalUpdater(): void {
+  updater(): void {
     this.cartTotal = this.shoppingCart.reduce((a: any, b: any) => {
       if (!a) {
         a = 0;
@@ -36,10 +45,11 @@ export class ShoppingCartService {
     this.grandTotal = this.cartTotal + this.shipping;
     this.subjectCartTotal.next(this.cartTotal);
     this.subjectGrandTotal.next(this.grandTotal);
+    localStorage.setItem("audiophileShoppingCart", JSON.stringify(this.shoppingCart));
   }
 
   initShoppingCart(): void {
-    this.totalUpdater();
+    this.updater();
     this.subjectShoppingCartList.next(this.shoppingCart);
   }
 
@@ -49,7 +59,7 @@ export class ShoppingCartService {
     if (this.shoppingCart[index].quantity < 10) {
       this.shoppingCart[index].quantity += input.quantity;
     } else this.shoppingCart[index].quantity = 10;
-    this.totalUpdater();
+    this.updater();
     this.subjectShoppingCartList.next(this.shoppingCart);
   }
 
@@ -59,7 +69,7 @@ export class ShoppingCartService {
     if (this.shoppingCart[index].quantity > 0) {
       this.shoppingCart[index].quantity -= input.quantity;
     } else this.shoppingCart[index].quantity = 0;
-    this.totalUpdater();
+    this.updater();
     this.subjectShoppingCartList.next(this.shoppingCart);
   }
 
@@ -67,7 +77,7 @@ export class ShoppingCartService {
     const index = this.shoppingCart.findIndex((item: { id: number; }) => 
       item.id === input);
     this.shoppingCart[index].quantity = 0;
-    this.totalUpdater();
+    this.updater();
     this.subjectShoppingCartList.next(this.shoppingCart);
   }
 
@@ -75,7 +85,7 @@ export class ShoppingCartService {
     this.shoppingCart.forEach((item: shoppingCartInterface, index: number) => 
       this.shoppingCart[index].quantity = 0
     );
-    this.totalUpdater();
+    this.updater();
     this.subjectShoppingCartList.next(this.shoppingCart);
   }
 
