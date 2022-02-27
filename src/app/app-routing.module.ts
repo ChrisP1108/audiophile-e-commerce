@@ -15,13 +15,11 @@ const productsRoutes: Routes = data.products.map(p => {
 });
 
 const routes: Routes = [
-  { path: '', component: SectionHomeComponent },
+  { path: 'audiophile-e-commerce', component: SectionHomeComponent },
   { path: 'checkout', component: SectionCheckoutComponent },
   ...categoryRoutes, ...productsRoutes,
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'audiophile-e-commerce'}
 ];
-
-console.log(routes);
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

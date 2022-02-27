@@ -1,11 +1,12 @@
 {
   "name": "audiophile-e-commerce",
   "version": "0.0.0",
+  "homepage": "https://github.com/ChrisP1108/audiophile-e-commerce",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "bash deploy.sh",
+    "deploy": "gh-pages -d dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -30,6 +31,7 @@
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^1.0.0",
+    "gh-pages": "^3.2.3",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

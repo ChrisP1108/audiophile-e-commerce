@@ -36,7 +36,7 @@ $margin: 0;
     height: $height;
     width: 100%;
     filter: contrast(1.25);
-    background: url('/assets/home/mobile/image-header.jpg');
+    background: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/mobile/image-header.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0% 0%;
@@ -70,7 +70,7 @@ $margin: 0;
     }
 
     @media(min-width: $desktop) {
-        background: url('/assets/home/desktop/image-hero.jpg');
+        background: url('https://raw.githubusercontent.com/ChrisP1108/audiophile-e-commerce/gh-pages/assets/home/desktop/image-hero.jpg');
         height: 57vw;
         max-height: 39.5rem;
         max-width: var(--box-max);
