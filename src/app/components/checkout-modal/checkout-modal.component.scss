@@ -6,8 +6,8 @@ $extended: 1200px;
     position: fixed;
     box-sizing: border-box;
     z-index: 16;
-    // top: calc(var(--header-height) + 8.375rem);
     top: 50vh;
+    max-height: 100vh;
     transform: translateY(-50%);
     left: 0;
     margin: 0 var(--boxed-padding) 0;
@@ -32,6 +32,12 @@ h5 {
     line-height: 1.75rem;
     margin: 1.25rem 0 1rem;
     font-weight: 700;
+
+    @media(min-width: $tablet) {
+        font-size: 2rem;
+        letter-spacing: 0.0712rem;
+        line-height: 2.25rem;
+    }
 }
 
 p {

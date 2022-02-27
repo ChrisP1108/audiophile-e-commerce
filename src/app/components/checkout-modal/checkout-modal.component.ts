@@ -40,8 +40,10 @@ export class CheckoutModalComponent implements OnInit {
   }
 
   untoggleModal(): void {
-    this.shoppingCart.resetShoppingCart();
-    this.modalToggle.setCheckoutToggle(false);
+    setTimeout(() => {
+      this.shoppingCart.resetShoppingCart();
+      this.modalToggle.setCheckoutToggle(false);
+    }, 50)
   }
 
   ngOnInit(): void {

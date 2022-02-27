@@ -25,16 +25,32 @@ export class AppComponent {
           this.cartToggled = false;
         }
         this.menuToggled = value;
+        if (value) {
+          this.toggleScrollBar(false);
+        } else this.toggleScrollBar(true);
       });
       this.menuToggle.cartToggled().subscribe((value: boolean) => {
         if (this.menuToggled) {
           this.menuToggled = value;
         }
         this.cartToggled = value;
+        if (value) {
+          this.toggleScrollBar(false);
+        } else this.toggleScrollBar(true);
       });
       this.menuToggle.checkoutToggled().subscribe((value: boolean) => {
         this.checkoutToggled = value;
+        if (value) {
+          this.toggleScrollBar(false);
+        } else this.toggleScrollBar(true);
       });
+  }
+
+  toggleScrollBar(value: boolean): void {
+    const hideScroll: any = document.querySelector('body');
+    if (value) {
+      hideScroll.style.overflowY = "auto"
+    } else hideScroll.style.overflowY = "hidden";
   }
 
   overlayClick(): void {
@@ -50,7 +66,6 @@ export class AppComponent {
     return this.router.url !== url;
   }
 
-
   @HostListener('window:resize', ['$event'])
   handleResize() {
     this.footerPosition = this.footer.nativeElement.offsetTop +
@@ -62,5 +77,6 @@ export class AppComponent {
       this.footerPosition = this.footer.nativeElement.offsetTop +
       this.footer.nativeElement.clientHeight;
     }, 0)
+    this.toggleScrollBar(true);
   }
 }

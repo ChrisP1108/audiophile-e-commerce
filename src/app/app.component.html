@@ -4,7 +4,7 @@
         *ngIf="menuToggled || cartToggled"></div>
 
     <!-- Grayout Over Entire UI When Checkout Modal Is Toggled -->
-    <div class=" cart-checkout-overlay checkout-modal-overlay" (click)="overlayClick()" 
+    <div class="cart-checkout-overlay checkout-modal-overlay" (click)="overlayClick()" 
         *ngIf="checkoutToggled"></div>
     
     <app-header [footerPosition]="footerPosition"></app-header>
