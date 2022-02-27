@@ -24,17 +24,18 @@ export class SectionCheckoutComponent implements OnInit {
 
   formData(input: any): void {
     const inputKeys: string[] = Object.keys(input);
-    const inputValues: string[] = Object.values(input)
+    const inputValues: string[] = Object.values(input);
     const displayNames: string[] = []
     data.checkoutForms.forEach(section => {
       section.fields.forEach(field => {
-        displayNames.push(field.display)
+        if (field.type !== 'radio') {
+          displayNames.push(field.display)
+        }
       })
     })
     inputKeys.forEach((key, index) => {
       if (displayNames.includes(inputValues[index])) {
         input[key] = "";
-        console.log('caught')
       }
     })
     this.formFields = input;
@@ -50,7 +51,8 @@ export class SectionCheckoutComponent implements OnInit {
           } 
           break;
         case 'number':
-          if (this.formFields[field.field] === 0 || typeof this.formFields[field.field] !== 'number') {
+          this.formFields[field.field] = Number(this.formFields[field.field]);
+          if (this.formFields[field.field] === 0) {
             if (!this.errList.includes(field.field)) {
               this.errList.push(field.field);
             }
@@ -89,7 +91,6 @@ export class SectionCheckoutComponent implements OnInit {
           break;
       }
     });
-    console.log(this.errList);
   }
 
   formErrCheck(): boolean {

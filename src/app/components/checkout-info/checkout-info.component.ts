@@ -15,6 +15,7 @@ export class CheckoutInfoComponent implements OnInit {
 
   formValues : any = { };
   headingText: string = data.cartModal.text[9];
+  radioField: string = "";
   checkoutForms: checkoutFormsInterface[] = data.checkoutForms
 
   constructor() { }
@@ -65,9 +66,13 @@ export class CheckoutInfoComponent implements OnInit {
             this.formValues[field.name] = "";
             break;
         };
+        if (field.type === 'radio') {
+          this.radioField = field.name
+        }
       });
     });
     this.formData.emit(this.formValues);
+    console.log(this.radioField);
   }
 
 }

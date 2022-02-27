@@ -32,7 +32,8 @@
                 {{buttonTextCheckout}}
             </button>
             <button *ngIf="checkout" (click)="submitPayment()" class="btn-1 continue-button">
-                {{buttonTextContinue}}
+                {{!loading ? buttonTextContinue : ''}}
+                <app-loading-spinner *ngIf="loading"></app-loading-spinner>
             </button>
         </div>
     </div>

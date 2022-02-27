@@ -3,7 +3,7 @@
     <div *ngFor="let section of checkoutForms" class="form-section-container">
         <div class="subtitle-text">{{section.section}}</div>
         <div class="input-container-main">
-            <p class="input-container" *ngIf="section.subSection">{{section.subSection}}</p>
+            <p [ngClass]="errTrue(radioField) && errCheck ? 'err-text' : ''" class="input-container" *ngIf="section.subSection">{{section.subSection}}</p>
             <div [ngClass]="field.fullWidth ? 'input-width-full' : 'input-width-half'"
                 class="input-container" *ngFor="let field of section.fields">
                 <div [ngClass]="field.fullWidth && field.type ==='radio' ? 'radio-margin' : ''">
@@ -13,13 +13,13 @@
                         <label [ngClass]="errTrue(field.name) && errCheck ? 'err-text' : ''" for={{field.name}}>
                             {{field.display}}
                         </label>
-                        <p *ngIf="errTrue(field.name) && errCheck && field.type !== 'radio && errCheck'" class="err-text-msg">{{field.errMsg}}</p>
+                        <p *ngIf="errTrue(field.name) && errCheck && field.type !== 'radio' && errCheck" class="err-text-msg">{{field.errMsg}}</p>
                     </div>
                     <input *ngIf="field.type !== 'radio'" name={{field.name}} 
                         type={{field.type}} id={{field.name}} (keyup)="textChange($event, field.name, field.type, field.display)"
                         value="{{fieldValue(field.name, field.display, field.type)}}"
                         [ngClass]="errTrue(field.name) && errCheck ? 'err-border' : ''">
-                    <div [ngClass]="formValues[field.name] === field.display ? 'border-selected' : ''" 
+                    <div [ngClass]="formValues[field.name] === field.display ? 'border-selected' : errTrue(field.name) && errCheck ? 'radio-error-fill' : ''" 
                         class="radio-border-fill"></div>
                     <div class="radio-btn-container"></div>
                     <div *ngIf="formValues[field.name] === field.display" class="radio-dot"></div>
