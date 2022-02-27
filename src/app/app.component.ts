@@ -1,7 +1,5 @@
-import { Component, ElementRef, HostListener, ViewChild, 
-  Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { MenuToggleService } from './services/menu-toggle/menu-toggle.service';
 import '../styles.scss';
 
@@ -14,6 +12,7 @@ export class AppComponent {
 
   menuToggled: boolean = false;
   cartToggled: boolean = false;
+  checkoutToggled: boolean = false;
   footerPosition: number = 0;
 
   @ViewChild('footer', { static: false, read: ElementRef })
@@ -21,25 +20,30 @@ export class AppComponent {
 
   constructor(private router: Router, 
     private menuToggle: MenuToggleService) { 
-      this.menuToggle.menuToggled().subscribe(value => {
+      this.menuToggle.menuToggled().subscribe((value: boolean) => {
         if (this.cartToggled) {
           this.cartToggled = false;
         }
         this.menuToggled = value;
       });
-      this.menuToggle.cartToggled().subscribe(value => {
+      this.menuToggle.cartToggled().subscribe((value: boolean) => {
         if (this.menuToggled) {
           this.menuToggled = value;
         }
         this.cartToggled = value;
       });
+      this.menuToggle.checkoutToggled().subscribe((value: boolean) => {
+        this.checkoutToggled = value;
+      });
   }
 
-  checkoutOverlayClick(): void {
+  overlayClick(): void {
     this.menuToggle.setCartToggle(false);
     this.menuToggle.setMenuToggle(false);
-    this.menuToggled = false;
-    this.cartToggled = false;
+    if (this.router.url !== '/checkout') {
+      this.menuToggle.setCheckoutToggle(false);
+      this.checkoutToggled = false;
+    }
   }
 
   routeNot(url: string): boolean {

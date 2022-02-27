@@ -1,13 +1,13 @@
-<div class="cart-modal-main-container">
-    <div class="cart-modal-boxed border-curve">
+<div [ngClass]="checkout ? '' : 'cart-modal-main-container'">
+    <div [ngClass]="checkout ? 'cart-checkout-container' : 'cart-modal-boxed'" class="border-curve">
         <h6 class="empty-cart-text" *ngIf="cartEmpty">{{cartModalText[3]}}</h6>
         <div *ngIf="!cartEmpty" class="cart-modal-body">
-            <div class="f-sb" [ngClass]="checkout ? 'cart-modal-heading-summary' : 'cart-modal-heading-cart'">
+            <div class="f-sb cart-modal-heading-cart">
                 <h6 *ngIf="!checkout">{{cartModalText[0].toUpperCase()}} ({{cartModalList.length}})</h6>
                 <h6 *ngIf="checkout">{{cartModalText[5].toUpperCase()}}</h6>
                 <p *ngIf="!checkout" (click)="clearList()" class="remove-text">{{cartModalText[1]}}</p>
             </div>
-            <p *ngIf="!checkout" class="click-image-text">{{cartModalText[4]}}</p>
+            <p class="click-image-text">{{cartModalText[4]}}</p>
             <app-cart-modal-item *ngFor="let item of cartModalList" [item]="item"></app-cart-modal-item>
             <div class="cart-modal-price f-sb">
                 <p class="total-text">{{cartModalText[2].toUpperCase()}}</p>

@@ -1,1 +1,6 @@
-<p>section-checkout works!</p>
+<div class="section-checkout-container">
+    <div class="section-checkout-boxed">
+        <app-checkout-info (formData)="formData($event)"></app-checkout-info>
+        <app-cart-modal-list (submitForm)="submitForm()"></app-cart-modal-list>
+    </div>
+</div>

@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   menuToggled: boolean = false;
   cartToggled: boolean = false;
+  checkoutToggled: boolean = false;
   shiftHeader: number = 0;
   categoryType: string = '';
   goBackText: string = data.buttonTexts[6];
@@ -26,11 +27,14 @@ export class HeaderComponent implements OnInit {
   goBack!: ElementRef;
 
   constructor(private router: Router, private menuToggle: MenuToggleService) {
-    this.menuToggle.menuToggled().subscribe(value => {
+    this.menuToggle.menuToggled().subscribe((value: boolean) => {
       this.menuToggled = value;
     });
-    this.menuToggle.cartToggled().subscribe(value => {
+    this.menuToggle.cartToggled().subscribe((value: boolean) => {
       this.cartToggled = value;
+    });
+    this.menuToggle.checkoutToggled().subscribe((value: boolean) => {
+      this.checkoutToggled = value;
     });
   }
 
@@ -39,6 +43,9 @@ export class HeaderComponent implements OnInit {
   }
 
   cartToggler(): void {
+    if (this.routeIncludes('checkout')) {
+      return
+    }
     this.menuToggle.setCartToggle(!this.cartToggled);
   }
 
@@ -54,7 +61,7 @@ export class HeaderComponent implements OnInit {
       this.shiftHeader = 0;
     }
     if (window.scrollY > 10) {
-      if(this.router.url.includes('products')) {
+      if(this.router.url.includes('products') || this.router.url.includes('checkout')) {
         this.goBackScrolled = true;
       }
     } else this.goBackScrolled = false;
@@ -63,6 +70,12 @@ export class HeaderComponent implements OnInit {
   routeIncludes(url: string): boolean {
     this.categoryType = this.router.url.slice(10);
     if (this.router.url.includes(url)) {
+      return true
+    } else return false
+  }
+
+  goBackRouteDisplay(): boolean {
+    if (this.router.url.includes('products') || this.router.url === '/checkout') {
       return true
     } else return false
   }

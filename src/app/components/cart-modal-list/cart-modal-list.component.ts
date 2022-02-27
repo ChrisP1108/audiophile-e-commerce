@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 import { shoppingCartInterface } from '../../services/shopping-cart/shopping-cart-service.interface';
 import { MenuToggleService } from '../../services/menu-toggle/menu-toggle.service';
@@ -12,6 +12,8 @@ import { data } from '../../../data'
 })
 
 export class CartModalListComponent implements OnInit {
+
+  @Output() submitForm = new EventEmitter();
 
   cartModalList: shoppingCartInterface[] = [];
   cartEmpty: boolean = true;
@@ -30,13 +32,16 @@ export class CartModalListComponent implements OnInit {
       .subscribe((value: shoppingCartInterface[]) => {
         this.cartModalList = value.filter(item => item.quantity > 0);
         this.cartEmpty = !this.cartModalList.length ? true : false;
-        this.cartTotal = this.cartModalList.reduce((a: any, b: any) => {
-          if (!a) {
-            a = 0;
-          }
-          return a + (b.price * b.quantity);
-        }, 0);
-    })
+        if (this.cartEmpty && this.router.url === '/checkout') {
+          window.history.back();
+        }
+    });
+    this.shoppingCart.getCartTotal().subscribe((value: any) => {
+      this.cartTotal = value;
+    });
+    this.shoppingCart.getGrandTotal().subscribe((value: any) => {
+      this.grandTotal = value;
+    });
   }
 
   clearList(): void {
@@ -48,14 +53,13 @@ export class CartModalListComponent implements OnInit {
   }
 
   submitPayment(): void {
-    console.log('Submitted');
+    this.submitForm.emit();
   }
 
   ngOnInit(): void {
     this.shoppingCart.initShoppingCart();
     this.checkout = this.router.url.includes('checkout') ? true : false;
     this.vat = Math.ceil(this.cartTotal * this.vat);
-    this.grandTotal = this.shipping + this.cartTotal;
   }
 
 }

@@ -1,1 +1,33 @@
-<p>checkout-modal works!</p>
+<div class="checkout-modal-container border-curve">
+    <div [ngStyle]="{'background-image': 'url(' + image + ')'}"
+        class="icon-checkout"></div>
+    <h5>{{text[0]}}</h5>
+    <p class="confirmation-text">{{text[1]}}</p>
+    <div class="items-total-container border-curve">
+        <div class="item-container-main">
+            <div class="item-container f">
+                <div class="image-container">
+                    <img class="border-curve" src="{{product.image.desktop}}" 
+                        alt="{{cartModalName.name.toUpperCase()}}">
+                </div>
+                <div class="name-price-container">
+                    <p class="name-heading">{{ cartModalName.name.toUpperCase() }}</p>
+                    <p class="price-text">${{ product.price.toLocaleString() }}</p>
+                </div>
+                <div class="quantity-count-container">
+                    <p class="quantity-text">x{{cartItem.quantity}}</p>
+                    <p class="invisible">x1{{cartItem.quantity}}</p>
+                </div>
+            </div>
+            <p class="additional-text">{{additional[0]}} {{cartList.length - 1}} {{additional[1]}}</p>
+        </div>
+        <div class="total-container">
+            <p class="grand-total-text">{{grandTotalText.toUpperCase()}}</p>
+            <h6 class="grand-total-count">${{grandTotal.toLocaleString()}}</h6>
+        </div>
+    </div>
+    <button routerLink="/" (click)="untoggleModal()" class="btn-1">
+        {{buttonText}}
+    </button>
+</div>
+

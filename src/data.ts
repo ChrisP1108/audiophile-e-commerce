@@ -575,7 +575,7 @@ export const data = {
   "productHeadlines" :["Features", "In The Box"],
   "otherHeadline": "You May Also Like",
   "cartModal": {
-    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart", "Summary", "Shipping", "VAT (Included)", "Grand Total"],
+    "text": ["Cart", "Remove all", "Total", "Cart Is Empty", "Click image to remove from cart", "Summary", "Shipping", "VAT (Included)", "Grand Total", "Checkout"],
     "costs": [
       {
         "type": "Shipping",
@@ -602,22 +602,23 @@ export const data = {
       "fields": [
         {
           "id": 1,
-          "name": "Name",
-          "value": "name",
+          "display": "Name",
+          "name": "name",
           "type": "text",
+          "input": "",
           "fullWidth": false
         },
         {
           "id": 2,
-          "name": "Email Address",
-          "value": "email",
+          "display": "Email Address",
+          "name": "email",
           "type": "email",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "Phone Number",
-          "value": "phone",
+          "display": "Phone Number",
+          "name": "phone",
           "type": "tel",
           "fullWidth": false
         },
@@ -629,29 +630,29 @@ export const data = {
       "fields": [
         {
           "id": 1,
-          "name": "Your Address",
-          "value": "address",
+          "display": "Your Address",
+          "name": "Address",
           "type": "text",
           "fullWidth": true
         },
         {
           "id": 2,
-          "name": "Zip Code",
-          "value": "zip",
+          "display": "ZIP Code",
+          "name": "zip",
           "type": "number",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "City",
-          "value": "city",
+          "display": "City",
+          "name": "city",
           "type": "text",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "Country",
-          "value": "country",
+          "display": "Country",
+          "name": "country",
           "type": "text",
           "fullWidth": false
         },
@@ -659,37 +660,44 @@ export const data = {
     },
     {
       "id": 3, 
-      "section": "Payment Details", 
+      "section": "Payment Details",
+      "subSection": "Payment Method", 
       "fields": [
         {
           "id": 1,
-          "name": "e-Money",
-          "value": "eMoney",
+          "display": "e-Money",
+          "name": "payMethod",
           "type": "radio",
           "fullWidth": false
         },
         {
           "id": 2,
-          "name": "Cash on Delivery",
-          "value": "cashOnDelivery",
+          "display": "Cash on Delivery",
+          "name": "payMethod",
           "type": "radio",
-          "fullWidth": false
+          "fullWidth": true
         },
         {
           "id": 3,
-          "name": "e-Money Number",
-          "value": "eMoneyNumber",
+          "display": "e-Money Number",
+          "name": "eMoneyNumber",
           "type": "number",
           "fullWidth": false
         },
         {
           "id": 3,
-          "name": "e-Money PIN",
-          "value": "eMoneyPin",
+          "display": "e-Money PIN",
+          "name": "eMoneyPin",
           "type": "number",
           "fullWidth": false
         },
       ]
     }
-  ]
+  ],
+  "checkoutModal": {
+    "text": ["Thank You For Testing This Demo", "This e-commerce store was designed by frontendmentor.io and built by Chris Paschall."],
+    "image": "./assets/shared/desktop/icon-checkout.svg",
+    "additional": ["and", "other item(s)"],
+    "button": "Back To Home"
+  }
 }

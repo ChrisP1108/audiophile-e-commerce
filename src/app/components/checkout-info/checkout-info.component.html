@@ -1,1 +1,27 @@
-<p>checkout-info works!</p>
+<div class="checkout-info-container border-curve">
+    <h4>{{headingText}}</h4>
+    <div *ngFor="let section of checkoutForms" class="form-section-container">
+        <div class="subtitle-text">{{section.section}}</div>
+        <div class="input-container-main">
+            <p class="input-container" *ngIf="section.subSection">{{section.subSection}}</p>
+            <div [ngClass]="field.fullWidth ? 'input-width-full' : 'input-width-half'"
+                class="input-container" *ngFor="let field of section.fields">
+                <div [ngClass]="field.fullWidth && field.type ==='radio' ? 'radio-margin' : ''">
+                <div (click)="radioSelect(field.name, field.display)" 
+                    [ngClass]="field.type === 'radio' ? 'radio-container' : 'f-column'">
+                    <label for={{field.name}}>
+                        {{field.display}}
+                    </label>
+                    <input *ngIf="field.type !== 'radio'" name={{field.name}} 
+                        type={{field.type}} id={{field.name}} (keyup)="textChange($event, field.name, field.type)"
+                        placeholder="{{field.display}}" value="{{fieldValue(field.name, field.display, field.type)}}">
+                    <div [ngClass]="formValues[field.name] === field.display ? 'border-selected' : ''" 
+                        class="radio-border-fill"></div>
+                    <div class="radio-btn-container"></div>
+                    <div *ngIf="formValues[field.name] === field.display" class="radio-dot"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

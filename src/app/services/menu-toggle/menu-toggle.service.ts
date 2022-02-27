@@ -7,8 +7,10 @@ import { Observable, Subject } from 'rxjs';
 export class MenuToggleService {
   private cartToggle: boolean = false;
   private menuToggle: boolean = false;
+  private checkoutToggle: boolean = false;
   private subjectCart = new Subject<boolean>();
   private subjectMenu = new Subject<boolean>();
+  private subjectCheckout = new Subject<boolean>();
 
   constructor() { }
   
@@ -38,5 +40,16 @@ export class MenuToggleService {
 
   menuToggled(): Observable<boolean> {
     return this.subjectMenu.asObservable();
+  }
+
+  // Checkout Modal Toggle
+
+  setCheckoutToggle(toggle: boolean): void {
+    this.checkoutToggle = toggle;
+    this.subjectCheckout.next(this.checkoutToggle);
+  }
+
+  checkoutToggled(): Observable<boolean> {
+    return this.subjectCheckout.asObservable();
   }
 }

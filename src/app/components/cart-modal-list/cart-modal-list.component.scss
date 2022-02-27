@@ -9,6 +9,7 @@ $extended: 1200px;
     overflow-x: clip;
     position: fixed;
     z-index: 11;
+    margin-left: auto;
 
     @media(min-width: $desktop) {
         max-width: var(--box-max);
@@ -25,14 +26,27 @@ $extended: 1200px;
     padding: 2rem 1.75rem;
     background: var(--white);
     max-width: 23.5625rem;
+
+    @media(min-width: $mobileLarge) {
+        position: absolute;
+        margin: calc(var(--header-height) + 1.5rem) 0 0 auto;
+        transform: translateX(-100%);
+        left: calc(100% - var(--boxed-padding));
+    }
+
+    @media(min-width: $extended) {
+        left: 100%;
+    }
+}
+
+.cart-checkout-container {
+    background: var(--white);
+    min-height: 15rem;
+    padding: 2rem 1.75rem;
 }
 
 .cart-modal-heading-cart {
     margin-bottom: 1rem;
-}
-
-.cart-modal-heading-summary {
-    margin-bottom: 1.875rem;
 }
 
 .cart-modal-price {
