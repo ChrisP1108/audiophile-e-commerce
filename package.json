@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng deploy --base-href=''",
+    "deploy": "ng deploy --base-href=app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
