@@ -10,10 +10,10 @@ export class ShoppingCartService {
 
   shoppingListStorage(): any {
     const storage: any = localStorage.getItem("audiophileShoppingCart");
-    if (JSON.parse(storage)) {
+    if (storage !== null) {
       return JSON.parse(storage);
     } else {
-        data.products.map(product => {
+        return data.products.map(product => {
           return { 
             id: product.id, 
             name: product.name,

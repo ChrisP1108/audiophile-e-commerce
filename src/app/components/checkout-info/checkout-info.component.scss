@@ -100,8 +100,9 @@ input:focus {
     position: relative;
 
     .radio-btn-container {
-        width: 1.25rem;
-        height: 1.25rem;
+        position: absolute;
+        width: 1.25rem!important;
+        height: 1.25rem!important;
         margin: 0 0 0 0.9375rem;
         border: 0.0625rem var(--g) solid;
         border-radius: 50%;
@@ -119,7 +120,7 @@ input:focus {
     }
 
     label {
-        margin-left: 1rem;
+        margin-left: 3rem;
         font-size: 0.875rem;
     }
 
