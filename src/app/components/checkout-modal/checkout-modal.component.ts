@@ -42,7 +42,6 @@ export class CheckoutModalComponent implements OnInit {
   untoggleModal(): void {
     this.shoppingCart.resetShoppingCart();
     this.modalToggle.setCheckoutToggle(false);
-    window.history.back();
   }
 
   ngOnInit(): void {
