@@ -78,5 +78,10 @@ export class AppComponent {
       this.footer.nativeElement.clientHeight;
     }, 0)
     this.toggleScrollBar(true);
+    if (window.location.href.includes("audiophile-e-commerce") && window.location.href.includes("#")) {
+      const redirect = "/" + window.location.href.slice(52);
+      console.log("Page redirected to " + redirect);
+      this.router.navigate([redirect])
+    }
   }
 }

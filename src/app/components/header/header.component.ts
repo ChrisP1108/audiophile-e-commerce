@@ -82,6 +82,9 @@ export class HeaderComponent implements OnInit {
 
   goBackRoute(): void {
     window.history.back();
+    if (window.location.href.includes("#")) {
+      this.router.navigate(["/"])
+    }
   }
 
   ngOnInit(): void { }
